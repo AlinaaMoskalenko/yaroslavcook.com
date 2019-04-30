@@ -1,0 +1,66 @@
+@import '../../typography/typography.scss';
+@import '../../styles/base-styles.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+button,
+input {
+  font: $font;
+}
+
+button,
+input {
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+.app {
+  margin: 0 auto;
+  width: 80%;
+
+  &Hidden {
+    opacity: 0.5;
+    background-color: $bg;
+  }
+
+  @include md {
+    width: 100%;
+    padding: 0 25px;
+  }
+}

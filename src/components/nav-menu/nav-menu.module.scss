@@ -1,0 +1,112 @@
+@import '../../styles/base-styles.scss';
+@import '../../typography/typography.scss';
+
+.navMenu {
+  margin-top: 25px;
+  position: relative;
+
+  .toggle {
+    display: none;
+  }
+
+  @include sm {
+    display: none;
+  }
+}
+
+.sideMenu {
+  display: none;
+
+  @include sm {
+    display: block;
+    margin-top: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    padding: 45px 0;
+    background-color: $white;
+    box-shadow: 0 1px 4px $box-shadow;
+
+    .toggle {
+      @include flex-column-center-around;
+      width: 20px;
+      height: 18px;
+      position: absolute;
+      cursor: pointer;
+      left: 20px;
+      top: 20px;
+      transition: 0.5s;
+    }
+
+    .linkBlock {
+      display: none;
+      flex-direction: column;
+
+      .link {
+        width: 180px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+    }
+
+    &Opened {
+      width: 220px;
+      overflow: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      transition: 0.5s;
+
+      .toggle {
+        left: 180px;
+
+        .toggleLine {
+          background-color: $gray;
+
+          &:first-child {
+            position: absolute;
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+            transform: rotate(-45deg);
+          }
+
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+
+      .linkBlock {
+        display: flex;
+        opacity: 1;
+      }
+    }
+  }
+
+  .toggleLine {
+    width: 20px;
+    height: 2px;
+    background-color: $primary;
+  }
+}
+
+.linkBlock {
+  @include flex-justify-center;
+  flex-wrap: wrap;
+
+  .link {
+    padding: 5px 15px;
+    font-size: $font-size-larger;
+
+    &Active,
+    &:hover {
+      color: $gray;
+    }
+  }
+}

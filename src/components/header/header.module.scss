@@ -1,0 +1,41 @@
+@import '../../typography/typography.scss';
+@import '../../styles/base-styles.scss';
+
+.header {
+  @include flex-column-center-center;
+  padding: 25px 0;
+
+  @include sm {
+    align-items: flex-end;
+    padding: 20px 0;
+
+    .title,
+    .subtitle {
+      display: none;
+    }
+  }
+
+  .titleBlock {
+    text-align: center;
+
+    .title,
+    .titleSmallScreen,
+    .subtitle {
+      font: $font-main-title;
+    }
+
+    .titleSmallScreen {
+      display: none;
+
+      @include sm {
+        display: block;
+        font-size: $font-size-large;
+      }
+    }
+
+    .subtitle {
+      margin-top: 7px;
+      font-size: $font-size-large;
+    }
+  }
+}

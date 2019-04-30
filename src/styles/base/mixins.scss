@@ -1,0 +1,74 @@
+$xs-screen: 576px;
+$sm-screen: 768px;
+$md-screen: 1032px;
+$lg-screen: 1370px;
+
+/* Extra Small devices (portrait phones, less than 576px) */
+@mixin xs {
+  @media (max-width: #{$xs-screen - 0.1px}) {
+    @content;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@mixin sm {
+  @media (max-width: #{$sm-screen - 0.1px}) {
+    @content;
+  }
+}
+
+/* Medium devices (tablets, less than 1032px) */
+@mixin md {
+  @media (max-width: #{$md-screen - 0.1px}) {
+    @content;
+  }
+}
+
+/* Large devices (desktops, less than 1370px) */
+@mixin lg {
+  @media (max-width: #{$lg-screen - 0.1px}) {
+    @content;
+  }
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column-center-around {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin position-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
