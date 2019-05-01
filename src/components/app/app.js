@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import NavMenuService from '../service';
+import { NavMenuService } from '../service';
 import NavMenu from '../nav-menu';
 import Header from '../header';
 import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
+import DocumentsPage from '../pages/documents-page';
 import classNames from 'classnames/bind';
 import styles from './app.module.scss';
 
@@ -56,7 +57,7 @@ export default class App extends Component {
               <Route path="/gallery" component={GalleryPage} />
               {/* <Route path="/about" component={LazyAdminPage} /> */}
               {/* <Route path="/one-week-menu" component={LazyExercisesPage} /> */}
-              {/* <Route path="/documents" component={LazyExercisesPage} /> */}
+              <Route path="/documents" component={DocumentsPage} />
               {/* <Route path="/contact" component={LazyExercisesPage} /> */}
             </Switch>
           </main>

@@ -1,0 +1,29 @@
+@import '../../../styles/base-styles.scss';
+
+.link {
+  @include flex-align-center;
+
+  .iconBlock {
+    position: relative;
+    width: 45px;
+    min-width: 45px;
+    height: 50px;
+  
+    & > img {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+    }
+  
+    & > span {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .title {
+    margin-left: 10px;
+  }
+}

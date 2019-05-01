@@ -1,3 +1,7 @@
 import NavMenuService from './nav-menu-service';
+import DocumentService from './documents-service';
 
-export default NavMenuService;
+export { 
+  NavMenuService,
+  DocumentService
+};
