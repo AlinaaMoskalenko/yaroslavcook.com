@@ -49,9 +49,9 @@ export default class App extends Component {
           toggleNavMenu={this.toggleNavMenu}
           type="SIDE" />
 
-        <div className={classes}>
+        <div className={classes} onClick={this.closeNavMenu}>
           <Header menuLink={menuLink} />
-          <main className={styles.main} onClick={this.closeNavMenu}>
+          <main className={styles.main}>
             <Switch>
               <Route path="/" component={HomePage} exact />
               <Route path="/gallery" component={GalleryPage} />
