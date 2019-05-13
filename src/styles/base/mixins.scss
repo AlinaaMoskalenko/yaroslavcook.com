@@ -2,6 +2,7 @@ $xs-screen: 576px;
 $sm-screen: 768px;
 $md-screen: 1032px;
 $lg-screen: 1370px;
+$landscape-screen: 900px;
 
 /* Extra Small devices (portrait phones, less than 576px) */
 @mixin xs {
@@ -27,6 +28,12 @@ $lg-screen: 1370px;
 /* Large devices (desktops, less than 1370px) */
 @mixin lg {
   @media (max-width: #{$lg-screen - 0.1px}) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) and (max-width: #{$landscape-screen - 0.1px}) {
     @content;
   }
 }

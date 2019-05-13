@@ -1,0 +1,46 @@
+@import '../../typography/typography.scss';
+@import '../../styles/base-styles.scss';
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 0;
+  text-align: center;
+
+  .link {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    i {
+      background-color: $gray;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: relative;
+      color: $white;
+      font-size: $font-size-large;
+  
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @include sm {
+        width: 35px;
+        height: 35px;
+        font-size: $font-size-larger;
+
+        &:before {
+          top: 53%;
+        }
+      }
+    }
+  }
+}

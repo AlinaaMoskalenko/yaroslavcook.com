@@ -18,13 +18,13 @@ const DocumentsPage = () => {
           <img src={icon} alt='Icon' />
           <span>{ format }</span>
         </div>
-        <span className={styles.title}>{ name }</span>
+        <span className={styles.title}>{ name }{ format }</span>
       </a>
     );
   });
 
   return (
-    <div>{ documents }</div>
+    <div className={styles.documentsPage}>{ documents }</div>
   );
 };
 

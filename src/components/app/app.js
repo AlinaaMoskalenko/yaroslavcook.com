@@ -8,6 +8,7 @@ import GalleryPage from '../pages/gallery-page';
 import DocumentsPage from '../pages/documents-page';
 import classNames from 'classnames/bind';
 import styles from './app.module.scss';
+import Footer from '../footer';
 
 export default class App extends Component {
   service = new NavMenuService();
@@ -35,7 +36,7 @@ export default class App extends Component {
     window.removeEventListener('orientationchange', this.closeNavMenu);
   }
 
-  render () {
+  render() {
     const { isOpened } = this.state;
     const { menuLink } = this.service;
     const cx = classNames.bind(styles);
@@ -61,6 +62,7 @@ export default class App extends Component {
               {/* <Route path="/contact" component={LazyExercisesPage} /> */}
             </Switch>
           </main>
+          <Footer />
         </div>
       </>
     );
