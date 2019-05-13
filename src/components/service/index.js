@@ -1,9 +1,9 @@
 import NavMenuService from './nav-menu-service';
 import DocumentService from './documents-service';
-import ImagesService from './images-service';
+import images from '../../photos/photos';
 
 export { 
   NavMenuService,
   DocumentService,
-  ImagesService
+  images
 };
