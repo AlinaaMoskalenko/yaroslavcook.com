@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { images } from '../../service';
+import Image from './components/image';
 import styles from './gallery-page.module.scss';
 
 export default class GalleryPage extends Component {
@@ -16,28 +17,10 @@ export default class GalleryPage extends Component {
   render() {
     const { size } = this.state;
 
-    const photosList = images.map(({ id, url, rotate = 0 }) => {
-      let imgHeight = 310;
-      let imgWidth = 310;
-      const margin = 5;
-
-      if (size < 330) {
-        imgHeight = size - margin * 2;
-        imgWidth = size - margin * 2;
-      }
-
-      const backgroundImage = {
-        backgroundImage: `url(${url})`,
-        transform: `rotate(${rotate}deg)`,
-        width: `${imgWidth}px`,
-        height: `${imgHeight}px`,
-        margin: `${margin}px`
-      };
-
-      return <div key={id}
-                  className={styles.img}
-                  style={backgroundImage} />;
-    })
+    const photosList = images.map((image) => {
+      const { id } = image;
+      return <Image key={id} deviceSize={size} image={image} />;
+    });
 
     return (
       <div className={styles.galleryPage} ref={this.divRef}>

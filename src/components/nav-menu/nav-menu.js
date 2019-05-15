@@ -11,7 +11,7 @@ const NavMenu = ({ link, isOpened, toggleNavMenu, type, location }) => {
   const isActive = (path) => {
     const opts = {
       path,
-      exact: path === '#/'
+      exact: path === '/'
     };
 
     return !!matchPath(location.pathname, opts);

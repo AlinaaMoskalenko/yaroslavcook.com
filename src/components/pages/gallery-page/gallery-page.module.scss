@@ -3,9 +3,4 @@
 .galleryPage {
   @include flex-justify-center;
   flex-wrap: wrap;
-
-  .img {
-    background-size: contain;
-    background-position: center;
-  }
 }

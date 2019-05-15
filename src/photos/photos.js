@@ -73,456 +73,538 @@ import IMG_1772 from './img/IMG_1772.jpg';
 import IMG_1773 from './img/IMG_1773.jpg';
 
 const photos = [
-  IMG_1701, IMG_1702, IMG_1703, IMG_1704, IMG_1705, IMG_1706, IMG_1707, IMG_1708, IMG_1709, IMG_1710,
-  IMG_1711, IMG_1712, IMG_1713, IMG_1714, IMG_1715, IMG_1716, IMG_1717, IMG_1718, IMG_1719, IMG_1720,
-  IMG_1721, IMG_1722, IMG_1723, IMG_1724, IMG_1725, IMG_1726, IMG_1727, IMG_1728, IMG_1729, IMG_1730,
-  IMG_1731, IMG_1732, IMG_1733, IMG_1734, IMG_1735, IMG_1736, IMG_1737, IMG_1738, IMG_1739, IMG_1740,
-  IMG_1741, IMG_1742, IMG_1743, IMG_1744, IMG_1745, IMG_1746, IMG_1747, IMG_1748, IMG_1749, IMG_1750,
-  IMG_1751, IMG_1752, IMG_1753, IMG_1754, IMG_1755, IMG_1756, IMG_1757, IMG_1758, IMG_1759, IMG_1760,
-  IMG_1761, IMG_1762, IMG_1763, IMG_1764, IMG_1765, IMG_1766, IMG_1767, IMG_1768, IMG_1769, IMG_1770,
-  IMG_1771, IMG_1772, IMG_1773
+  IMG_1701,
+  IMG_1702,
+  IMG_1703,
+  IMG_1704,
+  IMG_1705,
+  IMG_1706,
+  IMG_1707,
+  IMG_1708,
+  IMG_1709,
+  IMG_1710,
+  IMG_1711,
+  IMG_1712,
+  IMG_1713,
+  IMG_1714,
+  IMG_1715,
+  IMG_1716,
+  IMG_1717,
+  IMG_1718,
+  IMG_1719,
+  IMG_1720,
+  IMG_1721,
+  IMG_1722,
+  IMG_1723,
+  IMG_1724,
+  IMG_1725,
+  IMG_1726,
+  IMG_1727,
+  IMG_1728,
+  IMG_1729,
+  IMG_1730,
+  IMG_1731,
+  IMG_1732,
+  IMG_1733,
+  IMG_1734,
+  IMG_1735,
+  IMG_1736,
+  IMG_1737,
+  IMG_1738,
+  IMG_1739,
+  IMG_1740,
+  IMG_1741,
+  IMG_1742,
+  IMG_1743,
+  IMG_1744,
+  IMG_1745,
+  IMG_1746,
+  IMG_1747,
+  IMG_1748,
+  IMG_1749,
+  IMG_1750,
+  IMG_1751,
+  IMG_1752,
+  IMG_1753,
+  IMG_1754,
+  IMG_1755,
+  IMG_1756,
+  IMG_1757,
+  IMG_1758,
+  IMG_1759,
+  IMG_1760,
+  IMG_1761,
+  IMG_1762,
+  IMG_1763,
+  IMG_1764,
+  IMG_1765,
+  IMG_1766,
+  IMG_1767,
+  IMG_1768,
+  IMG_1769,
+  IMG_1770,
+  IMG_1771,
+  IMG_1772,
+  IMG_1773
 ];
 
 const imagesList = [
   {
-    id:"_IMG_1701",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1701',
+    url: '',
+    name: 'IMG_1701',
+    description: 'Description IMG_1701'
   },
   {
-    id:"_IMG_1702",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1702',
+    url: '',
+    name: 'IMG_1702',
+    description: 'Description IMG_1702'
   },
   {
-    id:"_IMG_1703",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1703',
+    url: '',
+    name: 'IMG_1702',
+    description: 'Description IMG_1703'
   },
   {
-    id:"_IMG_1704",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1704',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionY: 'bottom'
   },
   {
-    id:"_IMG_1705",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1705',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1706",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1706',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1707",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1707',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1708",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1708',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionX: '-100px'
   },
   {
-    id:"_IMG_1709",
-    url: "",
-    name: "",
-    description: "",
+    id: '_IMG_1709',
+    url: '',
+    name: '',
+    description: '',
     rotate: -90
   },
   {
-    id:"_IMG_1710",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1710',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1711",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1711',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1712",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1712',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1713",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1713',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1714",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1714',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1715",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1715',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1716",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1716',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1717",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1717',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1718",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1718',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1719",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1719',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1720",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1720',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1721",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1721',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionY: 'bottom'
   },
   {
-    id:"_IMG_1722",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1722',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionX: 'right'
   },
   {
-    id:"_IMG_1723",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1723',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1724",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1724',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1725",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1725',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1726",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1726',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1727",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1727',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1728",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1728',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionY: 'bottom'
   },
   {
-    id:"_IMG_1729",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1729',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1730",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1730',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1731",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1731',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1732",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1732',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionX: '-15px'
   },
   {
-    id:"_IMG_1733",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1733',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1734",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1734',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1735",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1735',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1736",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1736',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1737",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1737',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1738",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1738',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1739",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1739',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1740",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1740',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1741",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1741',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1742",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1742',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1743",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1743',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1744",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1744',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1745",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1745',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1746",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1746',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1747",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1747',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1748",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1748',
+    url: '',
+    name: '',
+    description: '',
+    backgroundSize: 'contain'
   },
   {
-    id:"_IMG_1749",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1749',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1750",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1750',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1751",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1751',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1752",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1752',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1753",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1753',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1754",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1754',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1755",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1755',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionY: 'bottom'
   },
   {
-    id:"_IMG_1756",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1756',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1757",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1757',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1758",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1758',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1759",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1759',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1760",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1760',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1761",
-    url: "",
-    name: "",
-    description: "",
-    rotate: "90"
+    id: '_IMG_1761',
+    url: '',
+    name: '',
+    description: '',
+    rotate: 90
   },
   {
-    id:"_IMG_1762",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1762',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1763",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1763',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1764",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1764',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1765",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1765',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1766",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1766',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1767",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1767',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1768",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1768',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1769",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1769',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1770",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1770',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1771",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1771',
+    url: '',
+    name: '',
+    description: '',
+    backgroundPositionX: 'right' 
   },
   {
-    id:"_IMG_1772",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1772',
+    url: '',
+    name: '',
+    description: ''
   },
   {
-    id:"_IMG_1773",
-    url: "",
-    name: "",
-    description: ""
+    id: '_IMG_1773',
+    url: '',
+    name: '',
+    description: ''
   }
 ];
 
