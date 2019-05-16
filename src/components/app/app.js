@@ -9,6 +9,7 @@ import DocumentsPage from '../pages/documents-page';
 import classNames from 'classnames/bind';
 import styles from './app.module.scss';
 import Footer from '../footer';
+import PhotoViewer from '../common/photo-viewer';
 
 export default class App extends Component {
   service = new NavMenuService();
@@ -38,9 +39,10 @@ export default class App extends Component {
 
   render() {
     const { isOpened } = this.state;
+    const { isPhotoViewer = true } = this.props;
     const { menuLink } = this.service;
     const cx = classNames.bind(styles);
-    const classes = cx('app', { 'appHidden': isOpened });
+    const classes = cx('app', { 'appHidden': isOpened, 'appNoScroll': isPhotoViewer });
 
     return (
       <>
@@ -64,6 +66,8 @@ export default class App extends Component {
           </main>
           <Footer />
         </div>
+
+        { isPhotoViewer && <PhotoViewer /> }
       </>
     );
   };

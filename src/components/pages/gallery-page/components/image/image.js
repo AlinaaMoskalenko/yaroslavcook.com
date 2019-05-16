@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './image.module.scss';
 
-const Image = ({ deviceSize, image }) => {
+const Image = ({ deviceSize, image, onViewPhoto }) => {
   const { url, name, description,
           rotate, backgroundSize, backgroundPositionX,
           backgroundPositionY } = image;
@@ -26,13 +26,19 @@ const Image = ({ deviceSize, image }) => {
   };
 
   return (
-    <div className={styles.img} style={(deviceSize < 330) ? smallSizeImage : normalImage}>
+    <div className={styles.img}
+      style={(deviceSize < 330) ? smallSizeImage : normalImage}
+      onClick={onViewPhoto}>
       <div className={styles.description}>
         <div>{name}</div>
         <div>{description}</div>
       </div>
     </div>
   );
+};
+
+Image.defaultProps = {
+  onViewPhoto: () => {}
 };
 
 Image.propTypes = {
@@ -45,7 +51,8 @@ Image.propTypes = {
     backgroundSize: PropTypes.string,
     backgroundPositionX: PropTypes.string,
     backgroundPositionY: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  onViewPhoto: PropTypes.func
 };
 
 export default Image;

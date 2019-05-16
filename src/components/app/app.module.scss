@@ -53,21 +53,29 @@ h6 {
 .app {
   margin: 0 auto;
   width: 70%;
+  height: 100vh;
   position: relative;
 
   &Hidden {
     opacity: 0.5;
     background-color: $bg;
+    overflow: hidden;
 
     .main {
       pointer-events: none;
     }
   }
+
+  &NoScroll {
+    overflow: hidden;
+  }
+
   .main {
     @include landscape {
       margin-bottom: 50px;
     }
   }
+
   @include lg {
     width: 85%;
   }
