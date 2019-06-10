@@ -14,12 +14,16 @@ export default class GalleryPage extends Component {
     this.setState({ size: this.divRef.current.offsetWidth });
   }
 
+  onViewPhoto = () => {
+    console.log('dfdfdf')
+  }
+
   render() {
     const { size } = this.state;
 
     const photosList = images.map((image) => {
       const { id } = image;
-      return <Image key={id} deviceSize={size} image={image} />;
+      return <Image key={id} deviceSize={size} image={image} onViewPhoto={this.onViewPhoto} />;
     });
 
     return (

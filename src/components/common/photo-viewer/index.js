@@ -1,3 +1,3 @@
-import PhotoViewer from './photo-viewer';
+import PhotoViewerContainer from './photo-viewer-container';
 
-export default PhotoViewer;
+export default PhotoViewerContainer;

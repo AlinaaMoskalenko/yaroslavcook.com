@@ -39,38 +39,25 @@ import IMG_1738 from './img/IMG_1738.jpg';
 import IMG_1739 from './img/IMG_1739.jpg';
 import IMG_1740 from './img/IMG_1740.jpg';
 import IMG_1741 from './img/IMG_1741.jpg';
-import IMG_1742 from './img/IMG_1742.jpg';
-import IMG_1743 from './img/IMG_1743.jpg';
-import IMG_1744 from './img/IMG_1744.jpg';
-import IMG_1745 from './img/IMG_1745.jpg';
-import IMG_1746 from './img/IMG_1746.jpg';
-import IMG_1747 from './img/IMG_1747.jpg';
-import IMG_1748 from './img/IMG_1748.jpg';
-import IMG_1749 from './img/IMG_1749.jpg';
-import IMG_1750 from './img/IMG_1750.jpg';
-import IMG_1751 from './img/IMG_1751.jpg';
-import IMG_1752 from './img/IMG_1752.jpg';
-import IMG_1753 from './img/IMG_1753.jpg';
-import IMG_1754 from './img/IMG_1754.jpg';
-import IMG_1755 from './img/IMG_1755.jpg';
-import IMG_1756 from './img/IMG_1756.jpg';
-import IMG_1757 from './img/IMG_1757.jpg';
-import IMG_1758 from './img/IMG_1758.jpg';
-import IMG_1759 from './img/IMG_1759.jpg';
-import IMG_1760 from './img/IMG_1760.jpg';
-import IMG_1761 from './img/IMG_1761.jpg';
-import IMG_1762 from './img/IMG_1762.jpg';
-import IMG_1763 from './img/IMG_1763.jpg';
-import IMG_1764 from './img/IMG_1764.jpg';
-import IMG_1765 from './img/IMG_1765.jpg';
-import IMG_1766 from './img/IMG_1766.jpg';
-import IMG_1767 from './img/IMG_1767.jpg';
-import IMG_1768 from './img/IMG_1768.jpg';
-import IMG_1769 from './img/IMG_1769.jpg';
-import IMG_1770 from './img/IMG_1770.jpg';
-import IMG_1771 from './img/IMG_1771.jpg';
-import IMG_1772 from './img/IMG_1772.jpg';
-import IMG_1773 from './img/IMG_1773.jpg';
+// import IMG_1742 from './img/IMG_1742.jpg';
+// import IMG_1743 from './img/IMG_1743.jpg';
+// import IMG_1744 from './img/IMG_1744.jpg';
+// import IMG_1745 from './img/IMG_1745.jpg';
+// import IMG_1746 from './img/IMG_1746.jpg';
+// import IMG_1747 from './img/IMG_1747.jpg';
+// import IMG_1748 from './img/IMG_1748.jpg';
+// import IMG_1749 from './img/IMG_1749.jpg';
+// import IMG_1750 from './img/IMG_1750.jpg';
+// import IMG_1751 from './img/IMG_1751.jpg';
+// import IMG_1752 from './img/IMG_1752.jpg';
+// import IMG_1753 from './img/IMG_1753.jpg';
+// import IMG_1754 from './img/IMG_1754.jpg';
+// import IMG_1755 from './img/IMG_1755.jpg';
+// import IMG_1756 from './img/IMG_1756.jpg';
+// import IMG_1757 from './img/IMG_1757.jpg';
+// import IMG_1758 from './img/IMG_1758.jpg';
+// import IMG_1759 from './img/IMG_1759.jpg';
+// import IMG_1760 from './img/IMG_1760.jpg';
 
 const photos = [
   IMG_1701,
@@ -113,39 +100,26 @@ const photos = [
   IMG_1738,
   IMG_1739,
   IMG_1740,
-  IMG_1741,
-  IMG_1742,
-  IMG_1743,
-  IMG_1744,
-  IMG_1745,
-  IMG_1746,
-  IMG_1747,
-  IMG_1748,
-  IMG_1749,
-  IMG_1750,
-  IMG_1751,
-  IMG_1752,
-  IMG_1753,
-  IMG_1754,
-  IMG_1755,
-  IMG_1756,
-  IMG_1757,
-  IMG_1758,
-  IMG_1759,
-  IMG_1760,
-  IMG_1761,
-  IMG_1762,
-  IMG_1763,
-  IMG_1764,
-  IMG_1765,
-  IMG_1766,
-  IMG_1767,
-  IMG_1768,
-  IMG_1769,
-  IMG_1770,
-  IMG_1771,
-  IMG_1772,
-  IMG_1773
+  IMG_1741
+  // IMG_1742,
+  // IMG_1743,
+  // IMG_1744,
+  // IMG_1745,
+  // IMG_1746,
+  // IMG_1747,
+  // IMG_1748,
+  // IMG_1749,
+  // IMG_1750,
+  // IMG_1751,
+  // IMG_1752,
+  // IMG_1753,
+  // IMG_1754,
+  // IMG_1755,
+  // IMG_1756,
+  // IMG_1757,
+  // IMG_1758,
+  // IMG_1759,
+  // IMG_1760
 ];
 
 const imagesList = [
@@ -171,8 +145,7 @@ const imagesList = [
     id: '_IMG_1704',
     url: '',
     name: '',
-    description: '',
-    backgroundPositionY: 'bottom'
+    description: ''
   },
   {
     id: '_IMG_1705',
@@ -196,15 +169,13 @@ const imagesList = [
     id: '_IMG_1708',
     url: '',
     name: '',
-    description: '',
-    backgroundPositionX: '-100px'
+    description: ''
   },
   {
     id: '_IMG_1709',
     url: '',
     name: '',
-    description: '',
-    rotate: -90
+    description: ''
   },
   {
     id: '_IMG_1710',
@@ -276,15 +247,13 @@ const imagesList = [
     id: '_IMG_1721',
     url: '',
     name: '',
-    description: '',
-    backgroundPositionY: 'bottom'
+    description: ''
   },
   {
     id: '_IMG_1722',
     url: '',
     name: '',
-    description: '',
-    backgroundPositionX: 'right'
+    description: ''
   },
   {
     id: '_IMG_1723',
@@ -320,8 +289,7 @@ const imagesList = [
     id: '_IMG_1728',
     url: '',
     name: '',
-    description: '',
-    backgroundPositionY: 'bottom'
+    description: ''
   },
   {
     id: '_IMG_1729',
@@ -339,15 +307,13 @@ const imagesList = [
     id: '_IMG_1731',
     url: '',
     name: '',
-    description: '',
-    backgroundSize: 'contain'
+    description: ''
   },
   {
     id: '_IMG_1732',
     url: '',
     name: '',
-    description: '',
-    backgroundPositionX: '-15px'
+    description: ''
   },
   {
     id: '_IMG_1733',
@@ -402,210 +368,121 @@ const imagesList = [
     url: '',
     name: '',
     description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1742',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1743',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1744',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1745',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1746',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1747',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1748',
-    url: '',
-    name: '',
-    description: '',
-    backgroundSize: 'contain'
-  },
-  {
-    id: '_IMG_1749',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1750',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1751',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1752',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1753',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1754',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1755',
-    url: '',
-    name: '',
-    description: '',
-    backgroundPositionY: 'bottom'
-  },
-  {
-    id: '_IMG_1756',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1757',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1758',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1759',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1760',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1761',
-    url: '',
-    name: '',
-    description: '',
-    rotate: 90
-  },
-  {
-    id: '_IMG_1762',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1763',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1764',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1765',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1766',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1767',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1768',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1769',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1770',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1771',
-    url: '',
-    name: '',
-    description: '',
-    backgroundPositionX: 'right' 
-  },
-  {
-    id: '_IMG_1772',
-    url: '',
-    name: '',
-    description: ''
-  },
-  {
-    id: '_IMG_1773',
-    url: '',
-    name: '',
-    description: ''
   }
+  // {
+  //   id: '_IMG_1742',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1743',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1744',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1745',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1746',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1747',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1748',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1749',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1750',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1751',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1752',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1753',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1754',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1755',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1756',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1757',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1758',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1759',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // },
+  // {
+  //   id: '_IMG_1760',
+  //   url: '',
+  //   name: '',
+  //   description: ''
+  // }
 ];
 
 const images = imagesList.map((item, idx) => {

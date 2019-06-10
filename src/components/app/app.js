@@ -9,7 +9,7 @@ import DocumentsPage from '../pages/documents-page';
 import classNames from 'classnames/bind';
 import styles from './app.module.scss';
 import Footer from '../footer';
-import PhotoViewer from '../common/photo-viewer';
+import PhotoViewerContainer from '../common/photo-viewer';
 
 export default class App extends Component {
   service = new NavMenuService();
@@ -67,7 +67,7 @@ export default class App extends Component {
           <Footer />
         </div>
 
-        { isPhotoViewer && <PhotoViewer /> }
+        { isPhotoViewer && <PhotoViewerContainer image={{}} /> }
       </>
     );
   };
