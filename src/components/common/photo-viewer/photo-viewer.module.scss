@@ -48,18 +48,9 @@
       }
 
       .infoBlock {
-        @include flex-column-align-center;
         margin-top: 15px;
         color: $white;
-
-        & > span:first-child {
-          font-size: $font-size-larger;
-          margin-bottom: 5px;
-        }
-
-        & > span:last-child {
-          font-style: italic;
-        }
+        font-style: italic;
       }
     }
 

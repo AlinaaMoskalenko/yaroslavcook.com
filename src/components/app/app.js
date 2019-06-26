@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { NavMenuService } from '../service';
 import NavMenu from '../nav-menu';
 import Header from '../header';
-import HomePage from '../pages/home-page';
+// import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
 import DocumentsPage from '../pages/documents-page';
 import classNames from 'classnames/bind';
@@ -11,9 +10,17 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import PhotoViewerContainer from '../common/photo-viewer';
 
-export default class App extends Component {
-  service = new NavMenuService();
+const menuLink = [
+  // { name: 'Home', link: '/' },
+  { name: 'Gallery', link: '/' },
+  // { name: 'Gallery', link: '/gallery' },
+  // { name: 'About Chef', link: '/about' },
+  // { name: 'One Week Menu', link: '/one-week-menu' },
+  { name: 'Documents', link: '/documents' },
+  // { name: 'Contact', link: '/contact' },
+];
 
+export default class App extends Component {
   state = {
     isOpened: false
   };
@@ -39,8 +46,7 @@ export default class App extends Component {
 
   render() {
     const { isOpened } = this.state;
-    const { isPhotoViewer = true } = this.props;
-    const { menuLink } = this.service;
+    const { isPhotoViewer } = this.props;
     const cx = classNames.bind(styles);
     const classes = cx('app', { 'appHidden': isOpened, 'appNoScroll': isPhotoViewer });
 
@@ -56,8 +62,9 @@ export default class App extends Component {
           <Header menuLink={menuLink} />
           <main className={styles.main}>
             <Switch>
-              <Route path="/" component={HomePage} exact />
-              <Route path="/gallery" component={GalleryPage} />
+              {/* <Route path="/" component={HomePage} exact /> */}
+              <Route path="/" component={GalleryPage} exact />
+              {/* <Route path="/gallery" component={GalleryPage} /> */}
               {/* <Route path="/about" component={LazyAdminPage} /> */}
               {/* <Route path="/one-week-menu" component={LazyExercisesPage} /> */}
               <Route path="/documents" component={DocumentsPage} />
@@ -67,7 +74,7 @@ export default class App extends Component {
           <Footer />
         </div>
 
-        { isPhotoViewer && <PhotoViewerContainer image={{}} /> }
+        { isPhotoViewer && <PhotoViewerContainer selectedPhoto={{}} /> }
       </>
     );
   };

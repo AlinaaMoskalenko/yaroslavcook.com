@@ -1,39 +1,41 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { images } from '../../service';
 import PhotoViewer from './photo-viewer';
 
 class PhotoViewerContainer extends Component {
   state = {
-    currentImage: this.props.image
+    selectedPhoto: this.props.selectedPhoto,
   };
 
-  onToggleImage = (currentId, toggleId) => {
-    const idx = images.findIndex(({ id }) => id === currentId);
+  onTogglePhoto = (currentId, toggleId) => {
+    const { photos } = this.props;
+
+    const idx = photos.findIndex(({ id }) => id === currentId);
     
-    let newImageIdx = idx + toggleId;
-    if (newImageIdx === -1) {
-      newImageIdx = images.length - 1;
+    let newPhotoIdx = idx + toggleId;
+    if (newPhotoIdx === -1) {
+      newPhotoIdx = photos.length - 1;
     }
 
-    if(newImageIdx === images.length) {
-      newImageIdx = 0;
+    if(newPhotoIdx === photos.length) {
+      newPhotoIdx = 0;
     }
 
-    const newImage = images[newImageIdx];
-    if (newImageIdx >= 0 && newImageIdx < images.length) {
-      this.setState({ currentImage: newImage });
+    const newPhoto = photos[newPhotoIdx];
+    if (newPhotoIdx >= 0 && newPhotoIdx < photos.length) {
+      this.setState({ selectedPhoto: newPhoto });
     }
   }
 
   render() {
-    const { currentImage } = this.state;
-    return <PhotoViewer image={currentImage} onToggleImage={this.onToggleImage} />;
+    const { selectedPhoto } = this.state;
+
+    return <PhotoViewer photo={selectedPhoto} onTogglePhoto={this.onTogglePhoto} />;
   }
 }
 
 PhotoViewerContainer.propTypes = {
-  image: PropTypes.object
+  selectedPhoto: PropTypes.object
 };
 
 export default PhotoViewerContainer;

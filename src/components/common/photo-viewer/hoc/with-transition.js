@@ -9,11 +9,11 @@ const withTransition = (Wrapped) => {
       animation: 'openPhoto'
     };
 
-    onToggleImage = (currentId, toggleId) => {
+    onTogglePhoto = (currentId, toggleId) => {
       this.setState({ animation: 'closePhoto' },
         () => {
           setTimeout(() => {
-            this.props.onToggleImage(currentId, toggleId);
+            this.props.onTogglePhoto(currentId, toggleId);
             this.setState({ animation: 'openPhoto' });
           }, this.CLOSE_TIME);
         }
@@ -22,17 +22,17 @@ const withTransition = (Wrapped) => {
 
     render() {
       const { animation } = this.state;
-      return <Wrapped {...this.props} className={animation} onToggleImage={this.onToggleImage} />
+      return <Wrapped {...this.props} className={animation} onTogglePhoto={this.onTogglePhoto} />
     }
   }
 };
 
 withTransition.defaultProps = {
-  onToggleImage: () => {}
+  onTogglePhoto: () => {}
 };
 
 withTransition.propTypes = {
-  onToggleImage: PropTypes.func
+  onTogglePhoto: PropTypes.func
 };
 
 export default withTransition;

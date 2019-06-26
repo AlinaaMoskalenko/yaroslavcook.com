@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, matchPath, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames/bind';
 import styles from './nav-menu.module.scss';
 
@@ -18,8 +17,7 @@ const NavMenu = ({ link, isOpened, toggleNavMenu, type, location }) => {
   };
 
   const menuLinks = link.map(({ name, link }) => {
-    const classes = cx('link', { 'linkActive': isActive(link) 
-  });
+    const classes = cx('link', { 'linkActive': isActive(link) });
 
     return <Link to={link}
               key={name}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "CV_Moskalenko",
+    "url": "/chef_documents/CV_Moskalenko.pdf",
+    "format": ".pdf"
+  },
+  {
+    "name": "Reference_from_Carinthia_VII",
+    "url": "/chef_documents/Reference_from_Carinthia_VII.pdf",
+    "format": ".pdf"
+  },
+  {
+    "name": "Reference_from_Africa",
+    "url": "./chef_documents/reference_from_Africa.pdf",
+    "format": ".pdf"
+  },
+  {
+    "name": "Reference_from_La_Nouvelle_Etoile",
+    "url": "/chef_documents/reference_from_La_Nouvelle_Etoile.pdf",
+    "format": ".pdf"
+  }
+]
