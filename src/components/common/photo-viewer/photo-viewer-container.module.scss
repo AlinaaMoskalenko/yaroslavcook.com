@@ -1,0 +1,26 @@
+@import '../../../styles/base-styles.scss';
+
+.viewerContainer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $bg-light-black;
+
+  .exitBtn {
+    width: 20px;
+    height: 20px;
+    stroke: $white;
+    stroke-width: 20;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 1;
+
+    @include xs {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}

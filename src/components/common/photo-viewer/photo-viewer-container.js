@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import PhotoViewer from './photo-viewer';
+
+import styles from './photo-viewer-container.module.scss';
 
 class PhotoViewerContainer extends Component {
   state = {
-    selectedPhoto: this.props.selectedPhoto,
+    photo: this.props.selectedPhoto
   };
 
   onTogglePhoto = (currentId, toggleId) => {
@@ -23,19 +26,41 @@ class PhotoViewerContainer extends Component {
 
     const newPhoto = photos[newPhotoIdx];
     if (newPhotoIdx >= 0 && newPhotoIdx < photos.length) {
-      this.setState({ selectedPhoto: newPhoto });
+      this.setState({ photo: newPhoto });
     }
   }
 
   render() {
-    const { selectedPhoto } = this.state;
+    const { onClose } = this.props;
+    const { photo } = this.state;
 
-    return <PhotoViewer photo={selectedPhoto} onTogglePhoto={this.onTogglePhoto} />;
+    const exitButton = (
+      <svg viewBox="0 0 180 180" className={styles.exitBtn} onClick={onClose}>
+        <path d="M5 5 L175 175 M175 5 L5 175" />
+      </svg>
+    );
+
+    return (
+      <div className={styles.viewerContainer}>
+        { exitButton }
+        <PhotoViewer photo={photo} onTogglePhoto={this.onTogglePhoto} />
+      </div>
+    );
   }
 }
 
+PhotoViewerContainer.defaultProps = {
+  onClose: () => {} 
+};
+
 PhotoViewerContainer.propTypes = {
-  selectedPhoto: PropTypes.object
+  selectedPhoto: PropTypes.object.isRequired,
+  photos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.any.isRequired,
+    url: PropTypes.string.isRequired,
+    description: PropTypes.string
+  })).isRequired,
+  onClose: PropTypes.func
 };
 
 export default PhotoViewerContainer;

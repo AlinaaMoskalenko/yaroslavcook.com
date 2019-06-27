@@ -1,48 +1,86 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import HTTPService from '../../common/service';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { openViewer, setPhotosList, setCurrentPhoto } from '../../../reducers/actions';
+
 import Image from './components/image';
+
 import styles from './gallery-page.module.scss';
 
-export default class GalleryPage extends Component {
+class GalleryPage extends Component {
   state = {
-    size: undefined,
-    photos: [],
     loading: true
   };
 
   httpService = new HTTPService();
-  divRef = React.createRef();
 
   componentDidMount() {
-    this.setState({ size: this.divRef.current.offsetWidth });
-
     this.httpService.get(
       'photos/photos.json',
-      (photos) => this.setState({ photos, loading: false }),
+      (photos) => {
+        this.props.setPhotosList(photos);
+        this.setState({ loading: false });
+      },
       (err) => console.log(err)
     );
   }
 
-  onViewPhoto = () => {
-    console.log('dfdfdf')
+  onViewPhoto = (currentPhoto) => {
+    this.props.openViewer();
+    this.props.setCurrentPhoto(currentPhoto);
   }
 
   render() {
-    const { size, photos, loading } = this.state;
+    const { loading } = this.state;
+    const { photosList } = this.props;
 
-    const photosList = photos.map((photo) => {
+    const photos = photosList.map((photo) => {
       const { id } = photo;
       return <Image
                 key={id}
-                deviceSize={size}
                 image={photo}
                 onViewPhoto={this.onViewPhoto} />;
     });
 
     return (
-      <div className={styles.galleryPage} ref={this.divRef}>
-        { loading ? <div>Loading...</div> : photosList }
+      <div className={styles.galleryPage}>
+        { loading ? <div>Loading...</div> : photos }
       </div>
     );
   }
+
+  static defaultProps = {
+    openViewer: () => {},
+    setPhotosList: () => {},
+    setCurrentPhoto: () => {}
+  };
+
+  static propTypes = {
+    photosList: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.any.isRequired,
+      url: PropTypes.string.isRequired,
+      description: PropTypes.string
+    })),
+    openViewer: PropTypes.func,
+    setPhotosList: PropTypes.func,
+    setCurrentPhoto: PropTypes.func
+  };
 }
+
+const mapStateToProps = ({ photosList }) => {
+  return {
+    photosList
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    openViewer,
+    setPhotosList,
+    setCurrentPhoto
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GalleryPage);

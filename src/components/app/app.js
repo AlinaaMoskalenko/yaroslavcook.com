@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { closeViewer } from '../../reducers/actions';
+
 import NavMenu from '../nav-menu';
 import Header from '../header';
+import Footer from '../footer';
+import PhotoViewerContainer from '../common/photo-viewer';
+
 // import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
 import DocumentsPage from '../pages/documents-page';
+
 import classNames from 'classnames/bind';
 import styles from './app.module.scss';
-import Footer from '../footer';
-import PhotoViewerContainer from '../common/photo-viewer';
 
 const menuLink = [
   // { name: 'Home', link: '/' },
@@ -20,7 +27,7 @@ const menuLink = [
   // { name: 'Contact', link: '/contact' },
 ];
 
-export default class App extends Component {
+class App extends Component {
   state = {
     isOpened: false
   };
@@ -46,9 +53,19 @@ export default class App extends Component {
 
   render() {
     const { isOpened } = this.state;
-    const { isPhotoViewer } = this.props;
+    const {
+      photosList,
+      currentPhoto,
+      photoViewer,
+      closeViewer
+    } = this.props;
+
     const cx = classNames.bind(styles);
-    const classes = cx('app', { 'appHidden': isOpened, 'appNoScroll': isPhotoViewer });
+    const classes = cx(
+      'app',
+      { 'appHidden': isOpened,
+        'appNoScroll': photoViewer }
+    );
 
     return (
       <>
@@ -74,8 +91,44 @@ export default class App extends Component {
           <Footer />
         </div>
 
-        { isPhotoViewer && <PhotoViewerContainer selectedPhoto={{}} /> }
+        { photoViewer && 
+          <PhotoViewerContainer
+            selectedPhoto={currentPhoto}
+            photos={photosList}
+            onClose={closeViewer} />
+        }
       </>
     );
+  }
+
+  static defaultProps = {
+    closeViewer: () => {}
+  };
+
+  static propTypes = {
+    photosList: PropTypes.arrayOf(PropTypes.object),
+    currentPhoto: PropTypes.object,
+    photoViewer: PropTypes.bool,
+    closeViewer: PropTypes.func
   };
 }
+
+//get current state from redux store
+const mapStateToProps = ({ photosList, currentPhoto, photoViewer }) => {
+  return {
+    photosList,
+    currentPhoto,
+    photoViewer
+  };
+};
+
+//get action creators
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    closeViewer
+  }, dispatch);
+};
+
+//connect creates new component that contents App
+//and inside this new component we get access to store via Context API
+export default connect(mapStateToProps, mapDispatchToProps)(App);
