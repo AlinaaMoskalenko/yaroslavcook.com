@@ -18,9 +18,7 @@ const PhotoViewer = ({ photo, onTogglePhoto, className }) => {
 
         <div className={classes}>
           <div className={styles.photo} style={{ 'backgroundImage': `url(${url})` }} />
-          <div className={styles.infoBlock}>
-            <span>{ description }</span>
-          </div>
+          <div className={styles.description}>{ description }</div>
         </div>
         
       <div className={styles.toggle} onClick={() => onTogglePhoto(id, 1)} /> 

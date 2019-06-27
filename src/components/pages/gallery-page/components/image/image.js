@@ -10,9 +10,7 @@ const Image = ({ image, onViewPhoto }) => {
     <div className={styles.img}
       style={{'backgroundImage': `url(${url})`}}
       onClick={() => onViewPhoto(image)}>
-      <div className={styles.description}>
-        <div>{description}</div>
-      </div>
+      <div className={styles.description}>{ description }</div>
     </div>
   );
 };

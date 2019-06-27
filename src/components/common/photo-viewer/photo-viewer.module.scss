@@ -6,6 +6,10 @@
   position: relative;
   height: 100%;
 
+  @include sm {
+    padding: 0;
+  }
+
   .photoBlock {
     width: 85%;
     height: 100%;
@@ -19,15 +23,26 @@
       background-repeat: no-repeat;
       background-position: center;
 
-      @include xs {
+      @include md {
+        width: 70%;
+        height: 90%;
+      }
+
+      @include sm {
         width: 90%;
+        height: 80%;
       }
     }
 
-    .infoBlock {
-      margin-top: 15px;
+    .description {
       color: $white;
       font-style: italic;
+      text-align: center;
+      font-size: $font-size-larger;
+
+      @include xs {
+        font-size: $font-size-primary;
+      }
     }
   }
 
@@ -43,33 +58,25 @@
       border-left: 2px solid $white;
       transform: rotate(-45deg) translateY(-50%);
       left: 5%;
-
-      &:hover {
-        transform: scale(1.2) rotate(-45deg) translateY(-50%);
-      }
     }
 
     &:last-child {
       border-right: 2px solid $white;
       transform: rotate(45deg) translateY(-50%);
       right: 5%;
+    }
 
-      &:hover {
-        transform: scale(1.2) rotate(45deg) translateY(-50%);
-      }
+    @include md {
+      top: 45%;
+    }
+
+    @include sm {
+      top: 40%;
     }
 
     @include xs {
       width: 17px;
       height: 17px;
-
-      &:first-child:hover {
-        transform: scale(1) rotate(-45deg) translateY(-50%);
-      }
-
-      &:last-child:hover {
-        transform: scale(1) rotate(45deg) translateY(-50%);
-      }
     }
   }
 }
