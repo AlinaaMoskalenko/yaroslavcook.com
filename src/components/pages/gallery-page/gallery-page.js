@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { openViewer, setPhotosList, setCurrentPhoto } from '../../../reducers/actions';
 
 import Image from './components/image';
+import Loader from '../../common/loader';
 
 import styles from './gallery-page.module.scss';
 
@@ -46,7 +47,7 @@ class GalleryPage extends Component {
 
     return (
       <div className={styles.galleryPage}>
-        { loading ? <div>Loading...</div> : photos }
+        { loading ? <Loader /> : photos }
       </div>
     );
   }

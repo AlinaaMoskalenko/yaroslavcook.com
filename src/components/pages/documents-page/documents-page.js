@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import HTTPService from '../../common/service';
 import icon from './img/fileIcon.svg';
+import Loader from '../../common/loader';
+
 import styles from './documents-page.module.scss';
 
 export default class DocumentsPage extends Component {
@@ -40,7 +42,7 @@ export default class DocumentsPage extends Component {
 
     return (
       <div className={styles.documentsPage}>
-        { loading ? <div>Loading...</div> : documentsList }
+        { loading ? <Loader /> : documentsList }
       </div>
     );
   }
