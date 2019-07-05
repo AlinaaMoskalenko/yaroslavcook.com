@@ -5,12 +5,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 310px;
-  height: 310px;
+  flex-basis: 24%;
+  padding-top: 24%;
   margin: 5px;
   cursor: pointer;
+  position: relative;
 
   .description {
+    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
     background-color:$bg;
     width: 100%;
@@ -34,5 +38,10 @@
         opacity: 0;
       }
     }
+  }
+
+  @include xs {
+    flex-basis: 45%;
+    padding-top: 45%;
   }
 }

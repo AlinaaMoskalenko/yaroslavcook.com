@@ -10,7 +10,7 @@ import Header from '../header';
 import Footer from '../footer';
 import PhotoViewerContainer from '../common/photo-viewer';
 
-// import HomePage from '../pages/home-page';
+import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
 import DocumentsPage from '../pages/documents-page';
 
@@ -18,9 +18,8 @@ import classNames from 'classnames/bind';
 import styles from './app.module.scss';
 
 const menuLink = [
-  // { name: 'Home', link: '/' },
-  { name: 'Gallery', link: '/' },
-  // { name: 'Gallery', link: '/gallery' },
+  { name: 'Home', link: '/' },
+  { name: 'Gallery', link: '/gallery' },
   // { name: 'About Chef', link: '/about' },
   // { name: 'One Week Menu', link: '/one-week-menu' },
   { name: 'Documents', link: '/documents' },
@@ -29,30 +28,40 @@ const menuLink = [
 
 class App extends Component {
   state = {
-    isOpened: false
+    isOpened: false,
+    appHeight: null
   };
 
   toggleNavMenu = () => {
     this.setState(({ isOpened }) => ({ isOpened: !isOpened }));
-  }
+  };
 
   closeNavMenu = () => {
     const { isOpened } = this.state;
     if (isOpened) {
       this.setState({ isOpened: false });
     }
-  }
+  };
+
+  onWindowHeight = () => {
+    const footerSize = window.innerWidth < 768 ? 110 : 130; //sm screen
+    const appHeight = window.innerHeight - footerSize;
+    this.setState({ appHeight });
+  };
 
   componentDidMount() {
+    this.onWindowHeight();
     window.addEventListener('orientationchange', this.closeNavMenu);
+    window.addEventListener('resize', this.onWindowHeight);
   }
 
   componentWillUnmount() {
     window.removeEventListener('orientationchange', this.closeNavMenu);
+    window.removeEventListener('resize', this.onWindowHeight);
   }
 
   render() {
-    const { isOpened } = this.state;
+    const { isOpened, appHeight } = this.state;
     const {
       photosList,
       currentPhoto,
@@ -75,21 +84,24 @@ class App extends Component {
           toggleNavMenu={this.toggleNavMenu}
           type="SIDE" />
 
-        <div className={classes} onClick={this.closeNavMenu}>
+        <div
+          className={classes}
+          style={{ 'minHeight': appHeight }}
+          onClick={this.closeNavMenu}>
           <Header menuLink={menuLink} />
           <main className={styles.main}>
             <Switch>
-              {/* <Route path="/" component={HomePage} exact /> */}
-              <Route path="/" component={GalleryPage} exact />
-              {/* <Route path="/gallery" component={GalleryPage} /> */}
+              <Route path="/" component={HomePage} exact />
+              <Route path="/gallery" component={GalleryPage} />
               {/* <Route path="/about" component={LazyAdminPage} /> */}
               {/* <Route path="/one-week-menu" component={LazyExercisesPage} /> */}
               <Route path="/documents" component={DocumentsPage} />
               {/* <Route path="/contact" component={LazyExercisesPage} /> */}
             </Switch>
           </main>
-          <Footer />
         </div>
+
+        <Footer />
 
         { photoViewer && 
           <PhotoViewerContainer

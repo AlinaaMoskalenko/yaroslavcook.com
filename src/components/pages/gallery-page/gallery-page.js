@@ -30,7 +30,7 @@ class GalleryPage extends Component {
   onViewPhoto = (currentPhoto) => {
     this.props.openViewer();
     this.props.setCurrentPhoto(currentPhoto);
-  }
+  };
 
   render() {
     const { loading } = this.state;

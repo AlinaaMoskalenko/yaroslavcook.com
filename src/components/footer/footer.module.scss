@@ -2,9 +2,11 @@
 @import '../../styles/base-styles.scss';
 
 .footer {
+  @include flex-center-center;
   width: 100%;
-  padding: 25px 0;
-  text-align: center;
+  margin-top: 20px;
+  height: 110px;
+  background-color: $bg-footer;
 
   .link {
     margin-right: 15px;
@@ -14,12 +16,12 @@
     }
 
     i {
-      background-color: $gray;
+      background-color: $white;
       border-radius: 50%;
       width: 50px;
       height: 50px;
       position: relative;
-      color: $white;
+      color: $gray;
       font-size: $font-size-large;
   
       &:before {
@@ -39,5 +41,9 @@
         }
       }
     }
+  }
+
+  @include sm {
+    height: 90px;
   }
 }

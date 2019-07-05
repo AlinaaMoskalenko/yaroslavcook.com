@@ -53,7 +53,7 @@ h6 {
 .app {
   margin: 0 auto;
   width: 70%;
-  height: 100vh;
+  height: 100%;
   position: relative;
 
   &Hidden {
@@ -76,20 +76,16 @@ h6 {
     }
   }
 
-  @include lg {
-    width: 85%;
+  @include lg-xl {
+    width: 80%;
   }
 
   @include md {
-    width: 90%;
-    padding: 0 25px;
+    width: 85%;
   }
 
   @include sm {
-    width: 100%;
-  }
-
-  @include landscape {
-    height: 100%;
+    width: 95%;
+    padding: 0 15px;
   }
 }
