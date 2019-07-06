@@ -7,11 +7,13 @@ import styles from './photo-viewer-container.module.scss';
 
 class PhotoViewerContainer extends Component {
   state = {
-    photo: this.props.selectedPhoto
+    photo: this.props.selectedPhoto,
+    prevPhoto: null
   };
 
   onTogglePhoto = (currentId, toggleId) => {
     const { photos } = this.props;
+    this.setState({ prevPhoto: currentId });
 
     const idx = photos.findIndex(({ id }) => id === currentId);
     
@@ -32,7 +34,7 @@ class PhotoViewerContainer extends Component {
 
   render() {
     const { onClose } = this.props;
-    const { photo } = this.state;
+    const { photo, prevPhoto } = this.state;
 
     const exitButton = (
       <svg viewBox="0 0 180 180" className={styles.exitBtn} onClick={onClose}>
@@ -43,7 +45,10 @@ class PhotoViewerContainer extends Component {
     return (
       <div className={styles.viewerContainer}>
         { exitButton }
-        <PhotoViewer photo={photo} onTogglePhoto={this.onTogglePhoto} />
+        <PhotoViewer
+          photo={photo}
+          prevPhoto={prevPhoto}
+          onTogglePhoto={this.onTogglePhoto} />
       </div>
     );
   }

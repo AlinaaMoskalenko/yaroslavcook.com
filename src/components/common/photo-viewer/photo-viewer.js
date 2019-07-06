@@ -6,8 +6,9 @@ import withTransition from './hoc';
 import classNames from 'classnames/bind';
 import styles from './photo-viewer.module.scss';
 
-const PhotoViewer = ({ photo, onTogglePhoto, className }) => {
-  const { id, url, description = "Description" } = photo;
+const PhotoViewer = ({ photo, prevPhoto, onTogglePhoto, className }) => {
+  const { id, url, description } = photo;
+  const loading = prevPhoto === id;
 
   const cx = classNames.bind(styles);
   const classes = cx('photoBlock', `${className}`);
@@ -17,8 +18,12 @@ const PhotoViewer = ({ photo, onTogglePhoto, className }) => {
       <div className={styles.toggle} onClick={() => onTogglePhoto(id, -1)} /> 
 
         <div className={classes}>
-          <div className={styles.photo} style={{ 'backgroundImage': `url(${url})` }} />
-          <div className={styles.description}>{ description }</div>
+          { !loading && 
+          ( <>
+              <img className={styles.photo} src={url} alt="Tasty dish" />
+              <div className={styles.description}>{ description }</div>
+            </> ) 
+          }
         </div>
         
       <div className={styles.toggle} onClick={() => onTogglePhoto(id, 1)} /> 
@@ -32,8 +37,8 @@ PhotoViewer.defaultProps = {
 
 PhotoViewer.propTypes =  {
   photo: PropTypes.shape({
-    id: PropTypes.any,
-    url: PropTypes.string,
+    id: PropTypes.any.isRequired,
+    url: PropTypes.string.isRequired,
     description: PropTypes.string
   }),
   onTogglePhoto: PropTypes.func,

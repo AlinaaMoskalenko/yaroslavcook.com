@@ -6,7 +6,7 @@ import styles from './nav-menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-const NavMenu = ({ link, isOpened, toggleNavMenu, type, location }) => {
+const NavMenu = ({ link, isOpened, isViewer, toggleNavMenu, type, location }) => {
   const isActive = (path) => {
     const opts = {
       path,
@@ -30,7 +30,8 @@ const NavMenu = ({ link, isOpened, toggleNavMenu, type, location }) => {
   const classesMenu = cx({
     'navMenu': type === 'NORMAL',
     'sideMenu': type === 'SIDE',
-    'sideMenuOpened': isOpened && type === 'SIDE'
+    'sideMenuOpened': isOpened && type === 'SIDE',
+    'sideMenuHidden': isViewer && type === 'SIDE'
   });
 
   return (

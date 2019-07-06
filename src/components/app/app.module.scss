@@ -59,15 +59,10 @@ h6 {
   &Hidden {
     opacity: 0.5;
     background-color: $bg;
-    overflow: hidden;
 
     .main {
       pointer-events: none;
     }
-  }
-
-  &NoScroll {
-    overflow: hidden;
   }
 
   .main {

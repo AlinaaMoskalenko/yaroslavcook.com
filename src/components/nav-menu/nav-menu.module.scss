@@ -87,6 +87,10 @@
         opacity: 1;
       }
     }
+
+    &Hidden {
+      pointer-events: none;
+    }
   }
 
   .toggleLine {

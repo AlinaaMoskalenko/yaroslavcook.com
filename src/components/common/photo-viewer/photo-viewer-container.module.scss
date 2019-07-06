@@ -9,19 +9,28 @@
   background-color: $bg-light-black;
 
   .exitBtn {
-    width: 20px;
-    height: 20px;
+    width: $exit-btn-size-xl;
+    height: $exit-btn-size-xl;
     stroke: $white;
     stroke-width: 20;
     position: absolute;
-    right: 5%;
-    top: 5%;
+    right: $photo-viewer-indent-xl;
+    top: $photo-viewer-indent-xl;
     z-index: 1;
     cursor: pointer;
 
+    @include md {
+      width: $exit-btn-size-md;
+      height: $exit-btn-size-md;
+      right: $photo-viewer-indent-md;
+      top: $photo-viewer-indent-md;
+    }
+
     @include xs {
-      width: 17px;
-      height: 17px;
+      width: $exit-btn-size-xs;
+      height: $exit-btn-size-xs;
+      right: $photo-viewer-indent-xs;
+      top: $photo-viewer-indent-xs;
     }
   }
 }

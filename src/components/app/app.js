@@ -50,7 +50,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.onWindowHeight();
+    this.onWindowHeight();    
     window.addEventListener('orientationchange', this.closeNavMenu);
     window.addEventListener('resize', this.onWindowHeight);
   }
@@ -70,17 +70,14 @@ class App extends Component {
     } = this.props;
 
     const cx = classNames.bind(styles);
-    const classes = cx(
-      'app',
-      { 'appHidden': isOpened,
-        'appNoScroll': photoViewer }
-    );
+    const classes = cx('app', { 'appHidden': isOpened });
 
     return (
       <>
         <NavMenu 
           link={menuLink} 
           isOpened={isOpened}
+          isViewer={photoViewer}
           toggleNavMenu={this.toggleNavMenu}
           type="SIDE" />
 

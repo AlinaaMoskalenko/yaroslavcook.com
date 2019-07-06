@@ -1,92 +1,146 @@
 @import '../../../styles/base-styles.scss';
 @import '../../../typography/typography.scss';
 
+$padding-top-xl: calc(2 * #{$photo-viewer-indent-xl} + #{$exit-btn-size-xl});
+$padding-top-md: calc(2 * #{$photo-viewer-indent-md} + #{$exit-btn-size-md});
+$padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
+
 .photoViewer {
-  padding: 5% 0;
+  padding-top: $padding-top-xl;
+  padding-bottom: calc(#{$padding-top-xl} / 2);
   position: relative;
   height: 100%;
 
-  @include sm {
-    padding: 0;
+  @include md {
+    padding-top: $padding-top-md;
+    padding-bottom: calc(#{$padding-top-md} / 2);
+  }
+
+  @include xs {
+    padding-top: $padding-top-xs;
+    padding-bottom: calc(#{$padding-top-xs} / 2);
   }
 
   .photoBlock {
-    width: 85%;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 calc(2 * #{$photo-viewer-indent-xl});
+    @include flex-column-center-center;
+
+    @include md {
+      margin: 0 calc(2 * #{$photo-viewer-indent-md});
+    }
+
+    @include xs {
+      margin: 0 calc(2 * #{$photo-viewer-indent-xs});
+    }
 
     .photo {
-      margin: 0 auto;
-      width: 50%;
-      height: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+      width: 60%;
+      height: auto;
+      max-height: 85%;
+      object-fit: contain;
+
+      @include lg {
+        width: 70%;
+      }
 
       @include md {
-        width: 70%;
-        height: 90%;
+        width: 80%;
       }
 
       @include sm {
         width: 90%;
+      }
+
+      @include xs {
+        max-height: 100%;
+      }
+
+      @include landscape {
         height: 80%;
       }
     }
 
     .description {
+      margin-top: 25px;
       color: $white;
       font-style: italic;
       text-align: center;
-      font-size: $font-size-larger;
+      font-size: $font-size-large;
+
+      @include md {
+        font-size: $font-size-larger;
+      }
 
       @include xs {
+        margin-top: 15px;
+        font-size: $font-size-primary;
+      }
+
+      @include landscape {
         font-size: $font-size-primary;
       }
     }
   }
 
   .toggle {
-    width: 20px;
-    height: 20px;
+    width: $toggle-arrow-size-xl;
+    height: $toggle-arrow-size-xl;
+    border-top: 2px solid $white;
     position: absolute;
     top: 50%;
-    border-top: 2px solid $white;
     cursor: pointer;
 
     &:first-child {
       border-left: 2px solid $white;
       transform: rotate(-45deg) translateY(-50%);
-      left: 5%;
+      left: $photo-viewer-indent-xl;
+
+      @include md {
+        left: $photo-viewer-indent-md;
+      }
+
+      @include xs {
+        left: $photo-viewer-indent-xs;
+      }
     }
 
     &:last-child {
       border-right: 2px solid $white;
       transform: rotate(45deg) translateY(-50%);
-      right: 5%;
+      right: $photo-viewer-indent-xl;
+
+      @include md {
+        right: $photo-viewer-indent-md;
+      }
+
+      @include xs {
+        right: $photo-viewer-indent-xs;
+      }
     }
 
     @include md {
-      top: 45%;
-    }
-
-    @include sm {
-      top: 40%;
+      width: $toggle-arrow-size-md;
+      height: $toggle-arrow-size-md;
     }
 
     @include xs {
-      width: 17px;
-      height: 17px;
+      width: $toggle-arrow-size-xs;
+      height: $toggle-arrow-size-xs;
     }
   }
 }
 
+
+
 .closePhoto {
   animation: closePhoto 0.7s;
+  opacity: 0;
 }
 
 .openPhoto {
   animation: openPhoto 0.7s;
+  opacity: 1;
 }
 
 @keyframes openPhoto {
