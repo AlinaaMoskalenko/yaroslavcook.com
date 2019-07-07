@@ -41,6 +41,10 @@ $transition-time: 0.3s;
       left: 25px;
       top: 25px;
       transition: $transition-time;
+
+      .toggleLine {
+        background-color: $white;
+      }
     }
 
     .linkBlock {
@@ -108,11 +112,8 @@ $transition-time: 0.3s;
 
   .link {
     padding: 5px 15px;
-    font-size: $font-size-large;
+    font-size: $font-size-larger;
 
-    @include md {
-      font-size: $font-size-larger;
-    }
 
     &Active,
     &:hover {

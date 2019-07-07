@@ -59,10 +59,6 @@ h6 {
     opacity: 0.5;
     background-color: $bg;
 
-    & > div:first-child {
-      background-color: $lightgray;
-    }
-
     .main {
       pointer-events: none;
     }

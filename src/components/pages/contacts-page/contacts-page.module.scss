@@ -60,12 +60,12 @@
 
         @include xs {
           margin-bottom: 25px;
-          font-size: $font-size-large;
+          font-size: $font-size-x-larger;
         }
 
         @include landscape {
           margin-bottom: 25px;
-          font-size: $font-size-large;
+          font-size: $font-size-x-larger;
         }
       }
 
@@ -74,7 +74,7 @@
         @include flex-align-center;
 
         & > i, span {
-          font-size: $font-size-large;
+          font-size: $font-size-x-larger;
         }
 
         & > span {

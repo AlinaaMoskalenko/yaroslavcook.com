@@ -66,11 +66,7 @@ $padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
       color: $white;
       font-style: italic;
       text-align: center;
-      font-size: $font-size-large;
-
-      @include md {
-        font-size: $font-size-larger;
-      }
+      font-size: $font-size-x-larger;
 
       @include xs {
         margin-top: 15px;
@@ -130,8 +126,6 @@ $padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
     }
   }
 }
-
-
 
 .closePhoto {
   animation: closePhoto 0.7s;

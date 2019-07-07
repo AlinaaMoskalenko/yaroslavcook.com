@@ -5,7 +5,7 @@
 .header {
   @include flex-column-center-center;
   @include page-width;
-  padding: 45px 0;
+  padding: 35px 0;
 
   @include sm {
     align-items: flex-end;
@@ -36,6 +36,7 @@
     .titleSmallScreen {
       display: none;
       margin-right: 25px;
+      color: $white;
 
       @include sm {
         display: block;

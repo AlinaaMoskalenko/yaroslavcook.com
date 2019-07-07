@@ -5,34 +5,40 @@ import data from './chef_description';
 import styles from './home-page.module.scss';
 
 class HomePage extends Component {
-  state = {
-    readMoreDescription: false,
-    descriptionHeight: null
+   state = {
+    description: false,
+    dHeight: null
   };
-  
+ 
+  dRef = React.createRef();
+
   toggleViewDescription = () => {
-    this.setState(({ readMoreDescription }) => (
-      { readMoreDescription: !readMoreDescription }
+    this.setState(({ description }) => (
+      { description: !description }
     ));
   };
 
-  componentDidMount() {
-    const readMoreBtnHeight = 65;
-    const descriptionHeight = this.refs.description.scrollHeight + readMoreBtnHeight;
-    this.setState({ descriptionHeight });
+  onDescriptionHeight = () => {
+    const btnHeight = 65;
+    if (this.dRef.current !== null) {
+      const dHeight = this.dRef.current.clientHeight + btnHeight;
+      this.setState({ dHeight });
+    }
+  };
 
-    // window.addEventListener('orientationchange', () => {
-    //   const descriptionHeight = this.refs.description.scrollHeight + readMoreBtnHeight;
-    //   this.setState({ descriptionHeight });
-    // });
+  componentDidMount() {
+    this.onDescriptionHeight();
+    window.addEventListener('resize', this.onDescriptionHeight);
+  }
+
+  componentWillMount() {
+    window.removeEventListener('resize', this.onDescriptionHeight);
   }
 
   render () {
-    const { readMoreDescription, descriptionHeight } = this.state;
-    
-    const descriptionStyle = {
-      height: readMoreDescription && descriptionHeight
-    };
+    const { description, dHeight } = this.state;
+
+    const descriptionStyle = description ? { height: dHeight } : null;
 
     return (
       <div className={styles.homePage}>
@@ -42,15 +48,16 @@ class HomePage extends Component {
             <img src={chef} alt="Chef" />
           </div>
           <div className={styles.description}
-            ref={'description'}
             style={descriptionStyle}>
-            <p>{ data.paragraph1 }</p>
-            <p>{ data.paragraph2 }</p>
-            <p>{ data.paragraph3 }</p>
-            <p>{ data.paragraph4 }</p>
+            <div ref={this.dRef} className={styles.paragraphBlock}>
+              <p>{ data.paragraph1 }</p>
+              <p>{ data.paragraph2 }</p>
+              <p>{ data.paragraph3 }</p>
+              <p>{ data.paragraph4 }</p>
+            </div>
             <div className={styles.readMore}
               onClick={this.toggleViewDescription}>
-                { readMoreDescription ? 'Read less' : 'Read more' }
+              { description ? 'Read less' : 'Read more' }
             </div>
           </div>
         </div>

@@ -13,8 +13,8 @@
     }
 
     .photo {
-      min-width: 500px;
-      width: 500px;
+      min-width: 400px;
+      width: 400px;
       overflow: hidden;
       float: left;
       margin-right: 40px;
@@ -26,16 +26,16 @@
       }
 
       @include lg {
-        min-width: 430px;
-        width: 430px;
+        min-width: 330px;
+        width: 330px;
       }
 
       @include md {
         float: none;
         margin-right: 0;
         margin-bottom: 20px;
-        min-width: 360px;
-        width: 360px;
+        min-width: 260px;
+        width: 260px;
       }
 
       @include sm {
@@ -53,7 +53,7 @@
     .description {
       width: 90%;
       font-style: italic;
-      font-size: $font-size-large;
+      font-size: $font-size-larger;
       text-align: justify;
       line-height: 1.5;
       position: relative;
@@ -72,16 +72,18 @@
         cursor: pointer;
       }
 
-      & > p {
-        margin-bottom: 20px;
-        text-indent: 15px;
-
-        @include sm {
-          padding: 0 15px;
-        }
-
-        @include xs {
-          margin-bottom: 10px;
+      .paragraphBlock {
+        & > p {
+          margin-bottom: 20px;
+          text-indent: 15px;
+  
+          @include sm {
+            padding: 0 15px;
+          }
+  
+          @include xs {
+            margin-bottom: 10px;
+          }
         }
       }
 
