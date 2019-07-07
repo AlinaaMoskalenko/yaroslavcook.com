@@ -10,7 +10,7 @@
 
   @include sm {
     padding-bottom: $main-pagging-bottom-sm;
-    padding-top: 74px; //header
+    padding-top: calc(#{$header-height} + #{$main-padding});
   }
 
   .container {

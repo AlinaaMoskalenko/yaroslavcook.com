@@ -58,6 +58,10 @@ h6 {
     opacity: 0.5;
     background-color: $bg;
 
+    & > div:first-child {
+      background-color: $lightgray;
+    }
+
     .main {
       pointer-events: none;
     }
@@ -69,7 +73,7 @@ h6 {
 
     @include sm {
       padding-bottom: $main-pagging-bottom-sm;
-      padding-top: 74px; //header
+      padding-top: calc(#{$header-height} + #{$main-padding});
     }
   }
 }
