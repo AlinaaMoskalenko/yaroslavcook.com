@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   background-color: $bg-light-black;
+  z-index: 2;
 
   .exitBtn {
     width: $exit-btn-size-xl;
@@ -16,7 +17,7 @@
     position: absolute;
     right: $photo-viewer-indent-xl;
     top: $photo-viewer-indent-xl;
-    z-index: 1;
+    z-index: 3;
     cursor: pointer;
 
     @include md {

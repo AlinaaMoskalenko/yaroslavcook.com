@@ -10,6 +10,12 @@
   @include sm {
     align-items: flex-end;
     padding: 25px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $white;
+    width: 100%;
 
     .title,
     .subtitle {
@@ -28,6 +34,7 @@
 
     .titleSmallScreen {
       display: none;
+      margin-right: 25px;
 
       @include sm {
         display: block;

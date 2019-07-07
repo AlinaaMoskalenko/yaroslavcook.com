@@ -51,7 +51,7 @@ class App extends Component {
     const appHeight = window.innerHeight;
 
     const headerHeight = this.headerRef.current.clientHeight;
-    const value = appHeight - headerHeight;
+    const value = window.innerWidth < 768 ? appHeight : appHeight - headerHeight;
     const mainHeight = value < 450 ? 450 : value;
 
     this.setState({ appHeight, mainHeight });
