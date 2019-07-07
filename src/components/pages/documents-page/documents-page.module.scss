@@ -42,6 +42,10 @@
       @include xs {
         font-size: $font-size-primary;
       }
+
+      @include landscape {
+        font-size: $font-size-primary;
+      }
     }
   }
 }
