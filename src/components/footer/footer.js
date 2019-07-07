@@ -21,6 +21,12 @@ const Footer = () => {
         className={styles.link}>
         <i className="fab fa-skype" />
       </a>
+      <a href="https://www.linkedin.com/in/yaroslav-moskalenko-9b2911a7/"
+        className={styles.link}
+        target="_blank"
+        rel="noopener noreferrer">
+        <i className="fab fa-linkedin-in" />
+      </a>
     </div>
   );
 };

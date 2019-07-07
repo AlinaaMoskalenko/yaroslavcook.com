@@ -4,9 +4,15 @@
 .footer {
   @include flex-center-center;
   width: 100%;
-  margin-top: 20px;
-  height: 110px;
+  height: $footer-size-primary;
   background-color: $lightgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @include sm {
+    height: $footer-size-sm;
+  }
 
   .link {
     margin-right: 15px;
@@ -41,9 +47,5 @@
         }
       }
     }
-  }
-
-  @include sm {
-    height: 90px;
   }
 }

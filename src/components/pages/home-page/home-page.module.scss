@@ -1,0 +1,5 @@
+@import '../../../styles/base-styles.scss';
+
+.homePage {
+  @include page-width;
+}

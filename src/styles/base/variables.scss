@@ -1,3 +1,8 @@
+$footer-size-primary: 110px;
+$footer-size-sm: 90px;
+$main-pagging-bottom-primary: calc(#{$footer-size-primary} + 20px); //20px intent to footer 
+$main-pagging-bottom-sm: calc(#{$footer-size-sm} + 20px);
+
 $photo-viewer-indent-xl: 50px;
 $photo-viewer-indent-md: 35px;
 $photo-viewer-indent-xs: 20px;

@@ -2,5 +2,6 @@
 
 .galleryPage {
   @include flex-justify-center;
+  @include page-width;
   flex-wrap: wrap;
 }

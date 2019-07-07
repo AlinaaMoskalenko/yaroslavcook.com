@@ -1,6 +1,8 @@
 @import '../../styles/base-styles.scss';
 @import '../../typography/typography.scss';
 
+$transition-time: 0.3s;
+
 .navMenu {
   margin-top: 35px;
   position: relative;
@@ -36,9 +38,9 @@
       height: 18px;
       position: absolute;
       cursor: pointer;
-      left: 20px;
-      top: 20px;
-      transition: 0.5s;
+      left: 25px;
+      top: 25px;
+      transition: $transition-time;
     }
 
     .linkBlock {
@@ -58,7 +60,7 @@
       overflow: auto;
       padding-left: 20px;
       padding-right: 20px;
-      transition: 0.5s;
+      transition: $transition-time;
 
       .toggle {
         left: 180px;
@@ -106,7 +108,11 @@
 
   .link {
     padding: 5px 15px;
-    font-size: $font-size-larger;
+    font-size: $font-size-large;
+
+    @include md {
+      font-size: $font-size-larger;
+    }
 
     &Active,
     &:hover {

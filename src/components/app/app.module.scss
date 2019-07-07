@@ -52,8 +52,6 @@ h6 {
 
 .app {
   margin: 0 auto;
-  width: 70%;
-  height: 100%;
   position: relative;
 
   &Hidden {
@@ -66,21 +64,11 @@ h6 {
   }
 
   .main {
-    @include landscape {
-      margin-bottom: 50px;
+    padding-bottom: $main-pagging-bottom-primary;
+    position: relative;
+
+    @include sm {
+      padding-bottom: $main-pagging-bottom-sm;
     }
-  }
-
-  @include lg-xl {
-    width: 80%;
-  }
-
-  @include md {
-    width: 85%;
-  }
-
-  @include sm {
-    width: 95%;
-    padding: 0 15px;
   }
 }

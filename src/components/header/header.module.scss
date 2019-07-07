@@ -4,11 +4,12 @@
 
 .header {
   @include flex-column-center-center;
-  padding: 25px 0;
+  @include page-width;
+  padding: 45px 0;
 
   @include sm {
     align-items: flex-end;
-    padding: 20px 0;
+    padding: 25px 0;
 
     .title,
     .subtitle {

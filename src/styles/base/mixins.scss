@@ -103,3 +103,21 @@ $lg-xl-screen: 1427px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin page-width {
+  width: 70%;
+  margin: 0 auto;
+
+  @include lg-xl {
+    width: 80%;
+  }
+
+  @include md {
+    width: 85%;
+  }
+
+  @include sm {
+    width: 95%;
+    padding: 0 15px;
+  }
+}
