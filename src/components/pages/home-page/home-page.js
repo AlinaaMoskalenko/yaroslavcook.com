@@ -1,66 +1,73 @@
 import React, { Component } from 'react';
+import AboutChef from './components/about-chef/about-chef';
+import SkillsAndStyles from './components/skills';
+
 import chef from './img/chef_photo.jpg';
-import data from './chef_description';
+import dataInfo from './chef_description';
+import dataSkills from './skills-and-styles.json';
 
 import styles from './home-page.module.scss';
 
+
 class HomePage extends Component {
-   state = {
-    description: false,
-    dHeight: null
+  state = {
+    chefInfo: false,
+    infoHeight: null
   };
  
-  dRef = React.createRef();
+  infoRef = React.createRef();
 
-  toggleViewDescription = () => {
-    this.setState(({ description }) => (
-      { description: !description }
+  toggleInfo = () => {
+    this.setState(({ chefInfo }) => (
+      { chefInfo: !chefInfo }
     ));
   };
 
-  onDescriptionHeight = () => {
-    const btnHeight = 65;
-    if (this.dRef.current !== null) {
-      const dHeight = this.dRef.current.clientHeight + btnHeight;
-      this.setState({ dHeight });
+  onChangeInfoHeight = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight
+    const landscapeOrientation = width > height;
+
+    if (width < 768) {
+      const btnHeight = 65;
+      if (this.infoRef.current !== null) {
+        const infoHeight = this.infoRef.current.clientHeight + btnHeight;
+        this.setState({ infoHeight });
+      }
+
+    } else if (landscapeOrientation && width < 900 && width >= 768) {
+      this.setState({ infoHeight: null });
     }
   };
 
   componentDidMount() {
-    this.onDescriptionHeight();
-    window.addEventListener('resize', this.onDescriptionHeight);
+    this.onChangeInfoHeight();
+    window.addEventListener('resize', this.onChangeInfoHeight);
   }
 
   componentWillMount() {
-    window.removeEventListener('resize', this.onDescriptionHeight);
+    window.removeEventListener('resize', this.onChangeInfoHeight);
   }
 
   render () {
-    const { description, dHeight } = this.state;
+    const { chefInfo, infoHeight } = this.state;
 
-    const descriptionStyle = description ? { height: dHeight } : null;
+    const descriptionStyle = chefInfo ? { height: infoHeight } : null;
 
     return (
       <div className={styles.homePage}>
         <div className={styles.categoryBanner}></div>
-        <div className={styles.aboutChef}>
-          <div className={styles.photo}>
-            <img src={chef} alt="Chef" />
-          </div>
-          <div className={styles.description}
-            style={descriptionStyle}>
-            <div ref={this.dRef} className={styles.paragraphBlock}>
-              <p>{ data.paragraph1 }</p>
-              <p>{ data.paragraph2 }</p>
-              <p>{ data.paragraph3 }</p>
-              <p>{ data.paragraph4 }</p>
-            </div>
-            <div className={styles.readMore}
-              onClick={this.toggleViewDescription}>
-              { description ? 'Read less' : 'Read more' }
-            </div>
-          </div>
-        </div>
+        <AboutChef
+          photo={chef}
+          data={dataInfo}
+          style={descriptionStyle}
+          description={chefInfo}
+          ref={this.infoRef}
+          onView={this.toggleInfo} />
+
+        <div className={styles.line} />
+
+        <SkillsAndStyles data={dataSkills} />
       </div>
     );
   }

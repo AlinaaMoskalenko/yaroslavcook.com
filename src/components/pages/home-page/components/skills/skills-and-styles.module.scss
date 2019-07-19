@@ -1,0 +1,90 @@
+@import '../../../../../typography/typography.scss';
+@import '../../../../../styles/base-styles.scss';
+
+.skillsAndStyles {
+  padding: 60px;
+  background-color: $bg;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  @include flex-column-align-center;
+
+  @include xs {
+    padding: 35px;
+  }
+
+  @include landscape {
+    padding: 35px;
+  }
+
+  .header {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    
+    .title {
+      font-family: $font-stack-main-title;
+      font-size: $font-size-x-large;
+      padding-left: $font-size-xxx-large;
+    }
+
+    .hatIcon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      font-size: $font-size-xx-large;
+      transform: translateY(-50%) rotate(-20deg);
+      color: $darkslategray;
+    }
+  }
+
+  .body {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 300px;
+
+    @include lg {
+      width: 90%;
+    }
+
+    @include md {
+      width: 100%;
+    }
+
+    @include xs {
+      height: auto;
+      flex-wrap: nowrap;
+    }
+
+    .item {
+      display: flex;
+      margin: 0 15px 15px 0;
+
+      & > i {
+        color: $darkslategray;
+      }
+      
+      .title {
+        padding-left: 10px;
+      }
+
+      @include xs {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        width: 50%;
+
+        @include xs {
+          width: 100%;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

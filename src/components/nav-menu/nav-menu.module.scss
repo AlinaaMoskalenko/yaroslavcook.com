@@ -39,12 +39,8 @@ $transition-time: 0.3s;
       position: absolute;
       cursor: pointer;
       left: 25px;
-      top: 25px;
+      top: 28px;
       transition: $transition-time;
-
-      .toggleLine {
-        background-color: $white;
-      }
     }
 
     .linkBlock {

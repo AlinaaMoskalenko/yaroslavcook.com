@@ -1,3 +1,5 @@
+@import './fonts/fonts.scss';
+
 $font-weight-primary: 500;
 $font-size-primary: 14px;
 $font-stack: Arial, Helvetica, sans-serif;
@@ -10,5 +12,6 @@ $font-size-x-larger: 1.35rem;
 $font-size-large: 1.5rem;
 $font-size-x-large: 2rem;
 $font-size-xx-large: 3rem;
+$font-size-xxx-large: 4rem;
 
 $font-main-title: $font-weight-primary $font-size-xx-large $font-stack-main-title;
