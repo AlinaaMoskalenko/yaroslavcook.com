@@ -71,6 +71,11 @@ $lg-xl-screen: 1427px;
   align-items: center;
   justify-content: center;
 }
+@mixin flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 @mixin flex-column {
   display: flex;

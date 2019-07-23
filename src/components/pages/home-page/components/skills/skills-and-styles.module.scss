@@ -2,11 +2,26 @@
 @import '../../../../../styles/base-styles.scss';
 
 .skillsAndStyles {
+  width: 75%;
+  margin: 0 auto;
   padding: 60px;
   background-color: $bg;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   @include flex-column-align-center;
+  border: 1px solid $lightergray;
+
+  @include lg {
+    width: 90%;
+  }
+
+  @include md {
+    width: 95%;
+  }
+
+  @include sm {
+    width: 100%;
+  }
 
   @include xs {
     padding: 35px;

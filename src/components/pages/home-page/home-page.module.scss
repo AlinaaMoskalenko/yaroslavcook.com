@@ -11,6 +11,14 @@
     border-radius: 20%;
     margin: 40px auto;
 
+    @include md {
+      width: 60%;
+    }
+
+    @include sm {
+      width: 70%;
+    }
+
     @include xs {
       margin: 25px auto;
     }

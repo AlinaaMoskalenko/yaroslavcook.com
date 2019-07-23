@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import AboutChef from './components/about-chef/about-chef';
+import AboutChef from './components/about-chef';
+import PhotoSlider from './components/photo-slider';
 import SkillsAndStyles from './components/skills';
 
 import chef from './img/chef_photo.jpg';
-import dataInfo from './chef_description';
-import dataSkills from './skills-and-styles.json';
+import dataInfo from './data/chef_description';
+import dataSkills from './data/skills-and-styles.json';
 
 import styles from './home-page.module.scss';
 
@@ -64,6 +65,10 @@ class HomePage extends Component {
           description={chefInfo}
           ref={this.infoRef}
           onView={this.toggleInfo} />
+
+        <div className={styles.line} />
+
+        <PhotoSlider />
 
         <div className={styles.line} />
 
