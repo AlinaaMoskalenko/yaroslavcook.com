@@ -1,3 +1,3 @@
-import PhotoSlider from './photo-slider';
+import PhotoSliderContainer from './photo-slider-container';
 
-export default PhotoSlider;
+export default PhotoSliderContainer;
