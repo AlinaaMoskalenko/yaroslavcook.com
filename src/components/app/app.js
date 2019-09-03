@@ -12,6 +12,7 @@ import PhotoViewerContainer from '../common/photo-viewer';
 
 import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
+import MenusPage from '../pages/menus-page';
 import DocumentsPage from '../pages/documents-page';
 import ContactsPage from '../pages/contacts-page';
 
@@ -22,7 +23,7 @@ const menuLink = [
   { name: 'Home', link: '/' },
   { name: 'Gallery', link: '/gallery' },
   // { name: 'About Chef', link: '/about' },
-  // { name: 'One Week Menu', link: '/one-week-menu' },
+  { name: 'One Week Menu', link: '/one-week-menu' },
   { name: 'Documents', link: '/documents' },
   { name: 'Contacts', link: '/contacts' }
 ];
@@ -101,7 +102,7 @@ class App extends Component {
               <Route path="/" component={HomePage} exact />
               <Route path="/gallery" component={GalleryPage} />
               {/* <Route path="/about" component={LazyAdminPage} /> */}
-              {/* <Route path="/one-week-menu" component={LazyExercisesPage} /> */}
+              <Route path="/one-week-menu" component={MenusPage} />
               <Route path="/documents" component={DocumentsPage} />
               <Route path="/contacts" component={ContactsPage} />
             </Switch>

@@ -119,7 +119,7 @@ const withTransition = (Wrapped) => {
     };
 
     componentWillUnmount() {
-      this.stopSliding();
+      clearInterval(this.timerInterval);
       clearTimeout(this.timeOut);
     }
 

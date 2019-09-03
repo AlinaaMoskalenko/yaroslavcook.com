@@ -1,0 +1,51 @@
+@import '../../../styles/base-styles.scss';
+
+@mixin menus-block {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+  }
+
+  @include md {
+    height: 400px;
+  }
+
+  @include sm {
+    height: 300px;
+  }
+
+  @include xs {
+    height: 200px;
+  }
+}
+
+.menusPage {
+  @include page-width;
+
+  & > div:nth-child(n+2) {
+    margin-top: 25px;
+
+    @include xs {
+      margin-top: 15px;
+    }
+  }
+
+  .sweets {
+    background: url('./img/sweet.jpg') no-repeat;
+    @include menus-block;
+  }
+
+  .pastry {
+    background: url('./img/pastry.jpg') no-repeat;
+    background-position-y: 30%;
+    @include menus-block;
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "crewMenu": {
+    "0": {
+      "lunch": [
+        "Beef meatballs soup with fresh herbs", 
+        "Spaghetti ‘Aglio e Olio’ with parmegano and extra tomato sauce",
+        "Chicken nugget",
+        "‘Capreze’ Salad",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Beef stew with vegetables and red wine sauce",
+        "Pan fried salmon steak with lime and herbs", 
+        "Mashed potatoes", 	
+        "Grilled vegies with garlic and parsley oil", 			
+        "Corn salad",
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "1": {
+      "lunch": [
+        "Broccoli cream soup", 
+        "Buritos with guacamole and tomato salsa",
+        "Fish’n’chips",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Stir fry chicken with cashew nuts",
+        "Thai curry with prawns, eggplant, green peas", 
+        "Steamed jasmine rice", 	
+        "Green papaya salad with fresh coriander, greens and lime", 			
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "2": {
+      "lunch": [
+        "Pork tenderloin pan fried in balsamic vinegar/black pepper", 
+        "Cod fish with steamed vegetables and lime",
+        "Penne with ‘Arrabbiata’ Sauce",
+        "Lentils salad with cherry tomatoes and fresh herbs",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Beef Steak with mushroom or pepper sauce",
+        "Fried calamari with lemon and parsley oil", 
+        "Roasted potatoes wedges with garlic and rosemary", 	
+        "Steamed broccoli salad ", 			
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "3": {
+      "lunch": [
+        "Lasagna", 
+        "Pork with vegetables in sweet and sour sauce with steamed rice",
+        "Grilled eggplant salad with feta cheese and fresh herbs",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Roasted lamb shoulder /rosemary/garlic/onion/spices",
+        "Backed Chicken wings/honey/soy sauce/spices", 
+        "French fries", 	
+        "Green peas in mint and butter sauce", 			
+        "Coleslaw salad",
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "4": {
+      "lunch": [
+        "Pumpkin Soup", 
+        "Hamm & Cheese Quiche Lorraine",
+        "Grilled shrimps with zucchini and garlic",
+        "Caesar salad",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Sushi night",
+        "Avocado/seaweed/sesame/cucumber salad", 
+        "Udon noodles with vagatables (Japanese styled fried pasta)", 	
+        "Pork Tonkatzu (Breaded pork schnitzel Japanese style)", 			
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "5": {
+      "lunch": [
+        "Potato Gnocchi with carbonara sauce/bacon/onion/cream/egg yolk", 
+        "Roasted pork/chicken/turkey sausages with fried cabbage",
+        "Tabbouleh couscous salad",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Meat balls with pepper sauce",
+        "Fish cakes", 
+        "Mashed potato", 	
+        "Cauliflower with Tahini sauce", 			
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "6": {
+      "lunch": [
+        "Chicken breast with cream sauce and mushrooms", 
+        "Mussels with white wine sauce",
+        "Lebanese rice with fried noodles",
+        "Pasta salad",
+        "Assorted fresh vegetables and salad leaves",
+        "Fruits"
+      ],
+      "dinner": [
+        "Lamb chops/rosemary/garlic/olive oil",
+        "Grilled freshly caught/bought fish", 
+        "Potatoes ‘gratin’", 	
+        "Onion Pie", 			
+        "Assorted fresh vegetables and salad leaves",	
+        "Fruits"
+      ]
+    },
+
+    "sweets": [
+      "Tiramisu",
+      "Panna Cotta",
+      "Chocolate mousse",
+      "Vienna Strudel",
+      "Chocolate lava cake",
+      "NY Cheese cake",
+      "Lemon pie",
+      "Yoghurt cake",
+      "Sacher cake",
+      "Pavlova cake",
+      "Fruite mousse cake",
+      "Sponge cake with cream and berries"
+    ],
+
+    "pastry": [
+      "White bread",
+      "Dark wholegrain bread",
+      "Rye bread",
+      "Croissants and viennoiserie"
+    ]
+  }
+}
