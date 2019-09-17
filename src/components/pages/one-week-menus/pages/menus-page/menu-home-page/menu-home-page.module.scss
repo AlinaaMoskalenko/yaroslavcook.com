@@ -1,4 +1,4 @@
-@import '../../../styles/base-styles.scss';
+@import '../../../../../../styles/base-styles.scss';
 
 @mixin menus-block {
   background-position: center;
@@ -8,9 +8,10 @@
   opacity: 0.75;
   cursor: pointer;
   transition: 0.5s;
+  display: block;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     transition: 0.3s;
   }
 
@@ -30,7 +31,7 @@
 .menusPage {
   @include page-width;
 
-  & > div:nth-child(n+2) {
+  & > a:nth-child(n+2) {
     margin-top: 25px;
 
     @include xs {
@@ -39,12 +40,12 @@
   }
 
   .sweets {
-    background: url('./img/sweet.jpg') no-repeat;
+    background: url('../../img/sweet.jpg') no-repeat;
     @include menus-block;
   }
 
   .pastry {
-    background: url('./img/pastry.jpg') no-repeat;
+    background: url('../../img/pastry.jpg') no-repeat;
     background-position-y: 30%;
     @include menus-block;
   }

@@ -12,7 +12,7 @@ import PhotoViewerContainer from '../common/photo-viewer';
 
 import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
-import MenusPage from '../pages/menus-page';
+import { MenuPages } from '../pages/one-week-menus';
 import DocumentsPage from '../pages/documents-page';
 import ContactsPage from '../pages/contacts-page';
 
@@ -101,8 +101,8 @@ class App extends Component {
             <Switch>
               <Route path="/" component={HomePage} exact />
               <Route path="/gallery" component={GalleryPage} />
-              {/* <Route path="/about" component={LazyAdminPage} /> */}
-              <Route path="/one-week-menu" component={MenusPage} />
+              {/* <Route path="/about" component={AboutPage} /> */}
+              <Route path="/one-week-menu" component={MenuPages} />
               <Route path="/documents" component={DocumentsPage} />
               <Route path="/contacts" component={ContactsPage} />
             </Switch>
