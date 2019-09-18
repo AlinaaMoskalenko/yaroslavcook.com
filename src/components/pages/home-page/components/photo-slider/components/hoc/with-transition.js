@@ -121,6 +121,13 @@ const withTransition = (Wrapped) => {
     componentWillUnmount() {
       clearInterval(this.timerInterval);
       clearTimeout(this.timeOut);
+      document.removeEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          this.startSliding();
+        } else {
+          this.stopSliding();
+        }
+      });
     }
 
     render() {

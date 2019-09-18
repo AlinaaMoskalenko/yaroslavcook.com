@@ -37,16 +37,16 @@
     display: flex;
     
     .title {
-      font-family: $font-stack-main-title;
+      font-family: $font-stack-monotype;
       font-size: $font-size-x-large;
-      padding-left: $font-size-xxx-large;
+      padding-left: $font-size-xxxx-large;
     }
 
     .hatIcon {
       position: absolute;
       top: 50%;
       left: 0;
-      font-size: $font-size-xx-large;
+      font-size: $font-size-xxxx-large;
       transform: translateY(-50%) rotate(-20deg);
       color: $darkslategray;
     }
