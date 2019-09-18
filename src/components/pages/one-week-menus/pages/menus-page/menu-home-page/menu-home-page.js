@@ -8,20 +8,39 @@ const MenusHomePage = ({ history }) => {
 
   return (
     <div className={styles.menusPage}>
-      {/* crew menu */}
-      
-      {/* middle eastern menu */}
-
       {/* french charter dinner menu */}
-
-      {/* sweets */}
-      <Link to={`${path}/sweets`} className={styles.sweets}>
-        <h1>Sweets menu</h1>
+      <Link to={`${path}/french-charter-dinner`} className={styles.frenchCharter}>
+        <div className={styles.titleContainer}>
+          French charter dinner menu
+        </div>
       </Link>
-      
+
+      {/* desserts */}
+      <Link to={`${path}/desserts`} className={styles.desserts}>
+        <div className={styles.titleContainer}>
+          Desserts menu
+        </div>
+      </Link>
+
+      {/* crew menu */}
+      <Link to={`${path}/crew`} className={styles.crew}>
+        <div className={styles.titleContainer}>
+          Crew menu
+        </div>
+      </Link>
+
       {/* pastry */}
       <Link to={`${path}/pastry`} className={styles.pastry}>
-        <h1>Pastry menu</h1>
+        <div className={styles.titleContainer}>
+          Pastry menu
+        </div>
+      </Link>
+      
+      {/* middle eastern menu */}
+      <Link to={`${path}/middle-eastern`} className={styles.middleEastern}>
+        <div className={styles.titleContainer}>
+          Middle Eastern menu
+        </div>
       </Link>
     </div>
   );

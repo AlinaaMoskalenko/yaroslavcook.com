@@ -2,7 +2,7 @@ import React from 'react';
 
 import MenuCard from '../../components/menu-card';
 
-const SweetsMenu = () => {
+const DessertsMenu = () => {
   return (
     <div>
       Hello!
@@ -11,4 +11,4 @@ const SweetsMenu = () => {
   );
 };
 
-export default SweetsMenu;
+export default DessertsMenu;
