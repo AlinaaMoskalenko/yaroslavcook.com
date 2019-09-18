@@ -1,9 +1,14 @@
 import React from 'react';
 
-import MenuCard from '../../components/menu-card';
+import PageContainer from '../../../../common/page-container';
+import image from '../img/pastry.jpg';
 
 const PastryMenu = () => {
-  return <MenuCard />;
+  return (
+    <PageContainer image={image}>
+      <div> Hello! </div>
+    </PageContainer>
+  );
 };
 
 export default PastryMenu;

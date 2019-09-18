@@ -1,13 +1,13 @@
 import React from 'react';
 
-import MenuCard from '../../components/menu-card';
+import PageContainer from '../../../../common/page-container';
+import image from '../img/dessert_3.jpg';
 
 const DessertsMenu = () => {
   return (
-    <div>
-      Hello!
-      <MenuCard />
-    </div>
+    <PageContainer image={image}>
+      <div> Hello! </div>
+    </PageContainer>
   );
 };
 

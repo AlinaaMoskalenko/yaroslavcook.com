@@ -1,9 +1,14 @@
 import React from 'react';
 
-import MenuCard from '../../components/menu-card';
+import PageContainer from '../../../../common/page-container';
+import image from '../img/middle_eastern.jpg';
 
 const MiddleEasternMenu = () => {
-  return <MenuCard />;
+  return (
+    <PageContainer image={image}>
+      <div> Hello! </div>
+    </PageContainer>
+  );
 };
 
 export default MiddleEasternMenu;

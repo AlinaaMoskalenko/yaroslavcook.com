@@ -1,9 +1,14 @@
 import React from 'react';
 
-import MenuCard from '../../components/menu-card';
+import PageContainer from '../../../../common/page-container';
+// import image from '../img/dessert_3.jpg';
 
 const FrenchCharterMenu = () => {
-  return <MenuCard />;
+  return (
+    <PageContainer>
+      <div> Hello! </div>
+    </PageContainer>
+  );
 };
 
 export default FrenchCharterMenu;
