@@ -5,7 +5,6 @@ import {
   MenuHomePage,
   CrewMenu,
   DessertsMenu,
-  PastryMenu,
   FrenchCharterMenu,
   MiddleEasternMenu
 } from './pages';
@@ -15,7 +14,6 @@ const MenuModule = ({ match: { path: base }}) => (
     <Route exact path={`${base}`} component={MenuHomePage} />
     <Route path={`${base}/crew`} component={CrewMenu} />
     <Route path={`${base}/desserts`} component={DessertsMenu} />
-    <Route path={`${base}/pastry`} component={PastryMenu} />
     <Route path={`${base}/french-charter-dinner`} component={FrenchCharterMenu} />
     <Route path={`${base}/middle-eastern`} component={MiddleEasternMenu} />
   </Switch>

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import PageContainer from '../../../../common/page-container';
-// import image from '../img/dessert_3.jpg';
+import image from '../img/french_dinner.jpg';
 
 const FrenchCharterMenu = () => {
   return (
-    <PageContainer>
+    <PageContainer image={image}>
       <div> Hello! </div>
     </PageContainer>
   );

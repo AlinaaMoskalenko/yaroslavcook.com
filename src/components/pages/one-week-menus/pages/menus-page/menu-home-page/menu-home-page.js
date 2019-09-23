@@ -15,24 +15,10 @@ const MenusHomePage = ({ history }) => {
         </div>
       </Link>
 
-      {/* desserts */}
-      <Link to={`${path}/desserts`} className={styles.desserts}>
-        <div className={styles.titleContainer}>
-          Desserts menu
-        </div>
-      </Link>
-
       {/* crew menu */}
       <Link to={`${path}/crew`} className={styles.crew}>
         <div className={styles.titleContainer}>
           Crew menu
-        </div>
-      </Link>
-
-      {/* pastry */}
-      <Link to={`${path}/pastry`} className={styles.pastry}>
-        <div className={styles.titleContainer}>
-          Pastry menu
         </div>
       </Link>
       
@@ -40,6 +26,13 @@ const MenusHomePage = ({ history }) => {
       <Link to={`${path}/middle-eastern`} className={styles.middleEastern}>
         <div className={styles.titleContainer}>
           Middle Eastern menu
+        </div>
+      </Link>
+
+      {/* desserts */}
+      <Link to={`${path}/desserts`} className={styles.desserts}>
+        <div className={styles.titleContainer}>
+          Desserts menu
         </div>
       </Link>
     </div>

@@ -5,7 +5,6 @@
   background-size: cover;
   width: 100%;
   height: 500px;
-  opacity: 0.85;
   cursor: pointer;
   display: block;
   font-family: $font-stack-monotype;
@@ -23,7 +22,7 @@
   }
 
   @include landscape {
-    height: 300px;
+    height: 350px;
   }
 }
 
@@ -56,7 +55,6 @@
       padding: 30px 50px;
       font-size: $font-size-x-large;
     }
-
   }
 
   .crew {
@@ -72,22 +70,22 @@
   }
 
   .frenchCharter {
+    background: url('../../img/french_dinner.jpg') no-repeat;
+    background-position-y: 35%;
     @include menus-block;
+
+    @include sm {
+      background-position-y: 20%;
+    }
   }
 
   .desserts {
-    background: url('../../img/dessert_3.jpg') no-repeat;
+    background: url('../../img/dessert.jpg') no-repeat;
     background-position-y: center;
     @include menus-block;
 
     @include sm {
       background-position-y: 30%;
     }
-  }
-
-  .pastry {
-    background: url('../../img/pastry.jpg') no-repeat;
-    background-position-y: 30%;
-    @include menus-block;
   }
 }

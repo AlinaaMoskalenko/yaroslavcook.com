@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PageContainer from '../../../../common/page-container';
-import image from '../img/dessert_3.jpg';
+import image from '../img/dessert.jpg';
 
 const DessertsMenu = () => {
   return (
