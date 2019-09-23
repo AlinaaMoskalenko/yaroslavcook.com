@@ -15,18 +15,18 @@ const PhotoViewer = ({ photo, prevPhoto, onTogglePhoto, className }) => {
   
   return (
     <div className={styles.photoViewer}>
-      <div className={styles.toggle} onClick={() => onTogglePhoto(id, -1)} /> 
+      <i className="fas fa-chevron-left" onClick={() => onTogglePhoto(id, -1)} /> 
 
-        <div className={classes}>
-          { !loading && 
-          ( <>
-              <img className={styles.photo} src={url} alt="Tasty dish" />
-              <div className={styles.description}>{ description }</div>
-            </> ) 
-          }
-        </div>
+      <div className={classes}>
+        { !loading && 
+        ( <>
+            <img className={styles.photo} src={url} alt="Tasty dish" />
+            <div className={styles.description}>{ description }</div>
+          </> ) 
+        }
+      </div>
         
-      <div className={styles.toggle} onClick={() => onTogglePhoto(id, 1)} /> 
+      <i className="fas fa-chevron-right" onClick={() => onTogglePhoto(id, 1)} /> 
     </div>
   );
 };

@@ -1,9 +1,6 @@
 @import '../../../styles/base-styles.scss';
 @import '../../../typography/typography.scss';
 
-$padding-top-xl: calc(2 * #{$photo-viewer-indent-xl} + #{$exit-btn-size-xl});
-$padding-top-md: calc(2 * #{$photo-viewer-indent-md} + #{$exit-btn-size-md});
-$padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
 
 .photoViewer {
   padding-top: $padding-top-xl;
@@ -79,17 +76,14 @@ $padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
     }
   }
 
-  .toggle {
-    width: $toggle-arrow-size-xl;
-    height: $toggle-arrow-size-xl;
-    border-top: 2px solid $white;
+  & > i {
+    color: $white;
+    font-size: $font-size-large;
     position: absolute;
     top: 50%;
     cursor: pointer;
 
     &:first-child {
-      border-left: 2px solid $white;
-      transform: rotate(-45deg) translateY(-50%);
       left: $photo-viewer-indent-xl;
 
       @include md {
@@ -102,8 +96,6 @@ $padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
     }
 
     &:last-child {
-      border-right: 2px solid $white;
-      transform: rotate(45deg) translateY(-50%);
       right: $photo-viewer-indent-xl;
 
       @include md {
@@ -113,16 +105,6 @@ $padding-top-xs: calc(2 * #{$photo-viewer-indent-xs} + #{$exit-btn-size-xs});
       @include xs {
         right: $photo-viewer-indent-xs;
       }
-    }
-
-    @include md {
-      width: $toggle-arrow-size-md;
-      height: $toggle-arrow-size-md;
-    }
-
-    @include xs {
-      width: $toggle-arrow-size-xs;
-      height: $toggle-arrow-size-xs;
     }
   }
 }

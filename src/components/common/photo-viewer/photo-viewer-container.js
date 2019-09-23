@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import PhotoViewer from './photo-viewer';
 
+import classNames from 'classnames/bind';
 import styles from './photo-viewer-container.module.scss';
 
 class PhotoViewerContainer extends Component {
@@ -36,15 +37,12 @@ class PhotoViewerContainer extends Component {
     const { onClose } = this.props;
     const { photo, prevPhoto } = this.state;
 
-    const exitButton = (
-      <svg viewBox="0 0 180 180" className={styles.exitBtn} onClick={onClose}>
-        <path d="M5 5 L175 175 M175 5 L5 175" />
-      </svg>
-    );
+    const cx = classNames.bind(styles);
+    const exitBtn = "fas fa-times " + cx('exitBtn');
 
     return (
       <div className={styles.viewerContainer}>
-        { exitButton }
+        <i className={exitBtn} onClick={onClose} />
         <PhotoViewer
           photo={photo}
           prevPhoto={prevPhoto}
