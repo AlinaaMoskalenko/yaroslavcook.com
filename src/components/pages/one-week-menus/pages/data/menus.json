@@ -143,8 +143,8 @@
 
   "middleEastern": [
     {
-      "lunch": [
-        {
+      "lunch": {
+        "courses": {
           "firstCourse": [
             "Makdous (marinated whole eggplants stuffed with garlic and walnuts)",
             "Muhammara (is a hot pepper dip originally from Aleppo, Syria,found in Levantine and Turkish cuisines)",
@@ -159,9 +159,9 @@
             "Roasted cauliflower with tahini dip"
           ]
         }
-      ],
-      "dinner": [
-        {
+      },
+      "dinner": {
+        "courses": {
           "firstCourse": [
             "Tabouli salad",
             "Roasted beets, kale and almonds salad"
@@ -175,12 +175,12 @@
             "Roasted egg plant with pomegranat, pine nuts and tahini"
           ]
         }
-      ]
+      }
     },
 
     {
-      "lunch": [
-        {
+      "lunch": {
+        "courses": {
           "firstCourse": [
             "Water melon, cucumber and feta salad",
             "Roasted bell pepper hummus",
@@ -195,9 +195,9 @@
             "Mediterranean grilled zucchini with dried tomatoes and feta"
           ]
         }
-      ],
-      "dinner": [
-        {
+      },
+      "dinner": {
+        "courses": {
           "firstCourse": [
             "Fattoush salad",
             "Mediterranean tomato herb salad"
@@ -211,12 +211,12 @@
             "Mediterranean pearl couscous with vegetables"
           ]
         }
-      ]
+      }
     },
 
     {
-      "lunch": [
-        {
+      "lunch": {
+        "courses": {
           "firstCourse": [
             "Kidney bean salad with cilantro and dijon vinaigrette",
             "Arugula salad with avocados and garlic herb vinaigrette"
@@ -230,9 +230,9 @@
             "Mediterranean green beans in tomato sauce Fasolakia"
           ]
         }
-      ],
-      "dinner": [
-        {
+      },
+      "dinner": {
+        "courses": {
           "firstCourse": [
             "Pineapple salad with herbs and chilli",
             "Guacamole with cilantro"
@@ -246,12 +246,12 @@
             "Steamed vegetables"
           ]
         }
-      ]
+      }
     },
 
     {
-      "lunch": [
-        {
+      "lunch": {
+        "courses": {
           "firstCourse": [
             "Assorted letuce with orange dressing",
             "Labneh with olives, pistachios and oregano",
@@ -266,9 +266,9 @@
             "Brussel sprouts with pomegranate and pistachios"
           ]
         }
-      ],
-      "dinner": [
-        {
+      },
+      "dinner": {
+        "courses": {
           "firstCourse": [
             "Caprese salad",
             "Adjika georgian dip"
@@ -282,7 +282,7 @@
             "Challah bread"
           ]
         }
-      ]
+      }
     }
   ],
 
