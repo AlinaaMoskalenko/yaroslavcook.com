@@ -1,13 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames/bind';
 import styles from './page-container.module.scss';
 
-const PageContainer = ({ children, image }) => {
+const PageContainer = ({ children, image, type, position }) => {
+  const cx = classNames.bind(styles);
+  
+  const pageContainer = cx(
+    'pageContainer',
+    { 'pageContainerPrimary': type === 'PRIMARY',
+      'pageContainerMenu': type === 'MENU' }
+  );
+
+  const mainContainer = cx(
+    'mainContentContainer',
+    { 'contentLeft': position === 'LEFT',
+      'contentCenter': position === 'CENTER' });
+
   return (
-    <div className={styles.pageContainer}>
+    <div className={pageContainer}>
       <div
-        className={styles.mainContentContainer}
+        className={mainContainer}
         style={{'backgroundImage': `url(${ image })`}}>
         <div className={styles.contentArea}>
           { children }
@@ -17,9 +31,16 @@ const PageContainer = ({ children, image }) => {
   );
 };
 
+PageContainer.defaultProps = {
+  type: 'PRIMARY',
+  position: 'LEFT'
+};
+
 PageContainer.propTypes = {
   children: PropTypes.node.isRequired,
-  image: PropTypes.string
+  image: PropTypes.string,
+  type: PropTypes.string,
+  position: PropTypes.string
 };
 
 export default PageContainer;

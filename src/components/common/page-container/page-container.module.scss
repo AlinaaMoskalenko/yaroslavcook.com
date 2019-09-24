@@ -7,9 +7,36 @@
   width: 100%;
   height: 100%;
 
-  @include sm {
-    padding-bottom: $main-pagging-bottom-sm;
-    padding-top: calc(#{$header-height} + #{$main-padding});
+  &Primary {
+    @include sm {
+      padding-bottom: $main-pagging-bottom-sm;
+      padding-top: calc(#{$header-height} + #{$main-padding});
+    }
+  }
+
+  &Menu {
+    @include sm {
+      padding-bottom: 0;
+      position: relative;
+      height: 100%;
+    }
+
+    @include landscape-md {
+      padding-bottom: 0;
+      position: relative;
+      height: 100%;
+    }
+
+    @include landscape-xs {
+      padding-bottom: 0;
+      position: relative;
+      height: 100%;
+    }
+
+    @include xs {
+      height: 100%;
+    }
+
   }
 
   .mainContentContainer {
@@ -18,10 +45,8 @@
     width: 100%;
     height: 100%;
     @include flex-align-center;
-    padding-left: 5%;
-
+    
     @include md {
-      padding: 0 7%;
       justify-content: center;
     }
 
@@ -31,7 +56,7 @@
       border-top-left-radius: 50px;
       border-bottom-right-radius: 50px;
       color: $dark-gray;
-    
+
       @include xs {
         padding: 35px;
       }
@@ -39,6 +64,41 @@
       @include landscape {
         padding: 35px;
       }
+    }
+  }
+
+  .mainContentContainer.contentLeft {
+    padding-left: 5%;
+
+    @include md {
+      padding: 0 7%;
+    }
+  }
+
+  .mainContentContainer.contentCenter {
+    justify-content: center;
+
+    @include lg {
+      padding: 0 30px;
+    }
+
+    @include sm {
+      padding: 15px;
+      padding-bottom: 60px;
+    }
+
+    @include landscape-md {
+      padding: 30px;
+      padding-bottom: 60px;
+    }
+
+    @include landscape-xs {
+      padding: 15px;
+      padding-bottom: 60px;
+    }
+
+    .contentArea {
+      padding: 0;
     }
   }
 }
