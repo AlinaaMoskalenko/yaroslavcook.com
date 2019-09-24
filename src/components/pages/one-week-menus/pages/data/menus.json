@@ -130,6 +130,215 @@
         "Assorted fresh vegetables and salad leaves",	
         "Fruits"
       ]
+    },
+    {
+      "pastry": [
+        "White bread",
+        "Dark wholegrain bread",
+        "Rye bread",
+        "Croissants and viennoiserie"
+      ]
+    }
+  ],
+
+  "middleEastern": [
+    {
+      "lunch": [
+        {
+          "firstCourse": [
+            "Makdous (marinated whole eggplants stuffed with garlic and walnuts)",
+            "Muhammara (is a hot pepper dip originally from Aleppo, Syria,found in Levantine and Turkish cuisines)",
+            "Mediterranean pasta salad"
+          ],
+          "mainCourse": [
+            "Breaded chicken legs with tzatziki sauce",
+            "White hamour"
+          ],
+          "sideDishes": [
+            "Burghul banadura",
+            "Roasted cauliflower with tahini dip"
+          ]
+        }
+      ],
+      "dinner": [
+        {
+          "firstCourse": [
+            "Tabouli salad",
+            "Roasted beets, kale and almonds salad"
+          ],
+          "mainCourse": [
+            "Roasted lamb leg",
+            "Prawns grilled"
+          ],
+          "sideDishes": [
+            "Batata hara",
+            "Roasted egg plant with pomegranat, pine nuts and tahini"
+          ]
+        }
+      ]
+    },
+
+    {
+      "lunch": [
+        {
+          "firstCourse": [
+            "Water melon, cucumber and feta salad",
+            "Roasted bell pepper hummus",
+            "Baba Ganoush"
+          ],
+          "mainCourse": [
+            "Beef roulade stuffed with zataar and herbs",
+            "Fish cakes"
+          ],
+          "sideDishes": [
+            "Lebanese vermicelli rice",
+            "Mediterranean grilled zucchini with dried tomatoes and feta"
+          ]
+        }
+      ],
+      "dinner": [
+        {
+          "firstCourse": [
+            "Fattoush salad",
+            "Mediterranean tomato herb salad"
+          ],
+          "mainCourse": [
+            "Seafood grilled",
+            "Lamb shank with tikka paste"
+          ],
+          "sideDishes": [
+            "Creamy spinach",
+            "Mediterranean pearl couscous with vegetables"
+          ]
+        }
+      ]
+    },
+
+    {
+      "lunch": [
+        {
+          "firstCourse": [
+            "Kidney bean salad with cilantro and dijon vinaigrette",
+            "Arugula salad with avocados and garlic herb vinaigrette"
+          ],
+          "mainCourse": [
+            "Mediterranean chicken skillet",
+            "Mediterranean fish parsels"
+          ],
+          "sideDishes": [
+            "Baked Sweet Potato Falafel",
+            "Mediterranean green beans in tomato sauce Fasolakia"
+          ]
+        }
+      ],
+      "dinner": [
+        {
+          "firstCourse": [
+            "Pineapple salad with herbs and chilli",
+            "Guacamole with cilantro"
+          ],
+          "mainCourse": [
+            "Prawns with green butter",
+            "Duck roasted with apples"
+          ],
+          "sideDishes": [
+            "Polenta with parmesan",
+            "Steamed vegetables"
+          ]
+        }
+      ]
+    },
+
+    {
+      "lunch": [
+        {
+          "firstCourse": [
+            "Assorted letuce with orange dressing",
+            "Labneh with olives, pistachios and oregano",
+            "Georgean stuffed tomatoes"
+          ],
+          "mainCourse": [
+            "Vienna Shnitzel with tzatziki sauce",
+            "Grilled baby squid"
+          ],
+          "sideDishes": [
+            "Farro grains with mushrooms and peas",
+            "Brussel sprouts with pomegranate and pistachios"
+          ]
+        }
+      ],
+      "dinner": [
+        {
+          "firstCourse": [
+            "Caprese salad",
+            "Adjika georgian dip"
+          ],
+          "mainCourse": [
+            "Beef velington",
+            "Mediterrenean fish fillet, Shakshuka style"
+          ],
+          "sideDishes": [
+            "Mashed potato",
+            "Challah bread"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "frenchCharter": [
+    { 
+      "dinner": [
+      "Field lettuce with goat cheese and wild berries",
+      "Lobster Bellevue with colorful tomatoes and saffron foam",
+      "Soup crème du Barry",
+      "Roasted lamb shoulder with sorrel and new potatoes",
+      "Tart Tatin" ]
+    },
+
+    { 
+      "dinner": [
+        "Terrine of Foie Gras with rhubarb confit",
+        "Delicate vegetable pie with young parmesan sauce",
+        "Traditional Pot Au Feu with tender veal and seasonal veges",
+        "Monk fish with potato puree and olives tapenade",
+        "Crème Anglase with merengue and hazelnut praline" ]
+    },
+
+    { 
+      "dinner": [
+        "Seasonal vegetable salad with braised eel",
+        "Lightly cooked scalops with home made spaghettini and rum foam",
+        "French onion soup",
+        "New styled French veal blanket",
+        "Chocolate sufflee with home made coffee ice cream" ]
+    },
+
+    { 
+      "dinner": [
+        "Flan of Foie Gras with lime jelly and poarched egg",
+        "Baked gnocchi Parisienne",
+        "Sole fish with mushrooms and potato ecrase",
+        "Beef mignon with vegetables strips and truffles",
+        "Crème brulee" ]
+    },
+
+    { 
+      "dinner": [
+        "Tuna tartar",
+        "Game terrine with red onion pickles and potato Dauphne",
+        "French mushroom soup",
+        "Steamed John Dory with cucumber mousse and anis butter",
+        "Rum baba with chestnuts and chantilly cream" ]
+    },
+    
+    { 
+      "dinner": [
+        "Salad with baked beet roots and greens",
+        "Grilled prawns with leek confite and green peas puree",
+        "Traditional French Navarin",
+        "Baked Halibut with garlic, parsley and mint butter and green asparagus",
+        "Vasherin with vanilla ice cream and strawberry sorbet" ]
     }
   ],
 
@@ -146,12 +355,5 @@
     "Pavlova cake",
     "Fruite mousse cake",
     "Sponge cake with cream and berries"
-  ],
-
-  "pastry": [
-    "White bread",
-    "Dark wholegrain bread",
-    "Rye bread",
-    "Croissants and viennoiserie"
   ]
 }
