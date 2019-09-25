@@ -9,7 +9,7 @@ import image from '../../img/middle_eastern.jpg';
 import classNames from 'classnames/bind';
 import styles from '../menu-slider/menu-slider.module.scss';
 
-const MiddleEasternMenu = ({ sliceId, prevId, onDotClick }) => {
+const MiddleEasternMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);
 
   const slices = menu['middleEastern'].length;
@@ -69,24 +69,18 @@ const MiddleEasternMenu = ({ sliceId, prevId, onDotClick }) => {
 
   return (
     <PageContainer image={image} type="MENU" position="CENTER">
-      <MenuSlider
+      <MenuSlider {...rest}
         sliceId={sliceId}
-        amountSlice={slices}
-        onDotClick={onDotClick}>
+        amountSlice={slices}>
           { items }
       </MenuSlider>
     </PageContainer>
   );
 };
 
-MiddleEasternMenu.defaultProps = {
-  onDotClick: () => {}
-};
-
 MiddleEasternMenu.propTypes = {
   sliceId: PropTypes.number.isRequired,
-  prevId: PropTypes.number,
-  onDotClick: PropTypes.func
+  prevId: PropTypes.number
 };
 
 export default MiddleEasternMenu;

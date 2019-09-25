@@ -9,7 +9,7 @@ import image from '../../img/crew.jpg';
 import classNames from 'classnames/bind';
 import styles from '../menu-slider/menu-slider.module.scss';
 
-const CrewMenu = ({ sliceId, prevId, onDotClick }) => {
+const CrewMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);
 
   const slices = menu["crewMenu"].length;
@@ -56,24 +56,18 @@ const CrewMenu = ({ sliceId, prevId, onDotClick }) => {
 
   return (
     <PageContainer image={image} type="MENU" position="CENTER">
-      <MenuSlider
+      <MenuSlider {...rest}
         sliceId={sliceId}
-        amountSlice={slices}
-        onDotClick={onDotClick}>
+        amountSlice={slices}>
         { items }
       </MenuSlider>
     </PageContainer>
   );
 };
 
-CrewMenu.defaultProps = {
-  onDotClick: () => {}
-};
-
 CrewMenu.propTypes = {
   sliceId: PropTypes.number.isRequired,
-  prevId: PropTypes.number,
-  onDotClick: PropTypes.func
+  prevId: PropTypes.number
 };
 
 export default CrewMenu;

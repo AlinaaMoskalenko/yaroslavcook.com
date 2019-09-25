@@ -9,7 +9,7 @@ import image from '../../img/french_dinner.jpg';
 import classNames from 'classnames/bind';
 import styles from '../menu-slider/menu-slider.module.scss';
 
-const FrenchCharterMenu = ({ sliceId, prevId, onDotClick }) => {
+const FrenchCharterMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);
 
   const slices = menu['frenchCharter'].length;
@@ -34,24 +34,18 @@ const FrenchCharterMenu = ({ sliceId, prevId, onDotClick }) => {
 
   return (
     <PageContainer image={image} type="MENU" position="CENTER">
-      <MenuSlider
+      <MenuSlider {...rest}
         sliceId={sliceId}
-        amountSlice={slices}
-        onDotClick={onDotClick}>
+        amountSlice={slices}>
           { items }
       </MenuSlider>
     </PageContainer>
   );
 };
 
-FrenchCharterMenu.defaultProps = {
-  onDotClick: () => {}
-};
-
 FrenchCharterMenu.propTypes = {
   sliceId: PropTypes.number.isRequired,
-  prevId: PropTypes.number,
-  onDotClick: PropTypes.func
+  prevId: PropTypes.number
 };
 
 export default FrenchCharterMenu;
