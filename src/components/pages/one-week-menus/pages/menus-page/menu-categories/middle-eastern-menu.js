@@ -4,6 +4,7 @@ import menu from '../../data/menus.json';
 
 import PageContainer from '../../../../../common/page-container';
 import MenuSlider from '../menu-slider';
+import Breadcrumbs from '../../../../../common/breadcrumbs/breadcrumbs.js';
 import image from '../../img/middle_eastern.jpg';
 
 import classNames from 'classnames/bind';
@@ -11,6 +12,11 @@ import styles from '../menu-slider/menu-slider.module.scss';
 
 const MiddleEasternMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);
+
+  const links = [
+    { url: '/one-week-menu', title: 'All menus' },
+    { url: '#', title: 'Middle Eastern Menu', active: true }
+  ];
 
   const slices = menu['middleEastern'].length;
 
@@ -68,13 +74,16 @@ const MiddleEasternMenu = ({ sliceId, prevId, ...rest }) => {
   });
 
   return (
-    <PageContainer image={image} type="MENU" position="CENTER">
-      <MenuSlider {...rest}
-        sliceId={sliceId}
-        amountSlice={slices}>
-          { items }
-      </MenuSlider>
-    </PageContainer>
+    <>
+      <Breadcrumbs items={links} />
+      <PageContainer image={image} type="MENU" position="CENTER">
+        <MenuSlider {...rest}
+          sliceId={sliceId}
+          amountSlice={slices}>
+            { items }
+        </MenuSlider>
+      </PageContainer>
+    </>
   );
 };
 

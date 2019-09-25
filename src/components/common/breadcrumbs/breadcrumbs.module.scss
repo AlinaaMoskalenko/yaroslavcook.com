@@ -1,0 +1,35 @@
+@import '../../../styles/base-styles.scss';
+@import '../../../typography/typography.scss';
+
+.breadcrumbs {
+  text-align: center;
+  font-family: $font-stack-monotype;
+  font-size: $font-size-x-large;
+
+  .link {
+    &:first-child {
+      padding-right: 20px;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        border: 2px solid $dark-gray;
+      }
+    }
+
+    &:last-child {
+      padding-left: 20px;
+    }
+
+    &Active {
+      color: $gray;
+    }
+  }
+}
