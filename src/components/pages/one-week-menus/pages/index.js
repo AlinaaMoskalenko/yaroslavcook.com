@@ -1,11 +1,15 @@
-import CrewMenu from './menus-page/crew-menu';
-import DessertsMenu from './menus-page/desserts-menu';
-import FrenchCharterMenu from './menus-page/french-charter-menu';
-import MiddleEasternMenu from './menus-page/middle-eastern-menu';
-import MenuHomePage from './menus-page/menu-home-page/menu-home-page';
+import MenuHomePage from './menus-page/menu-home-page';
+
+import {
+  MenuContainer,
+  CrewMenu,
+  DessertsMenu,
+  FrenchCharterMenu, 
+  MiddleEasternMenu } from './menus-page/menu-categories';
 
 export {
   MenuHomePage,
+  MenuContainer,
   CrewMenu,
   DessertsMenu,
   FrenchCharterMenu,
