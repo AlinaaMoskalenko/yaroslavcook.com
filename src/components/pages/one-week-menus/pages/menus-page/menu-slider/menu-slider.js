@@ -5,6 +5,14 @@ import styles from './menu-slider.module.scss';
 import Dots from './components/dots';
 
 const MenuSlider = ({ children, amountSlice, onArrowClick, ...rest }) => {
+  let dots = [];
+
+  if (amountSlice !== undefined) {
+    for (let i = 0; i < amountSlice; i++) {
+      dots.push( <Dots key={i} id={i} {...rest} /> );
+    }
+  }
+  
   return (
     <div className={styles.menuSlider}>
       { amountSlice !== undefined && 
@@ -16,10 +24,9 @@ const MenuSlider = ({ children, amountSlice, onArrowClick, ...rest }) => {
       { amountSlice !== undefined &&
         <i className="fas fa-chevron-right"
           onClick={() => onArrowClick(1, amountSlice)} />}
+          
       <div className={styles.slideDots}>
-        { amountSlice !== undefined &&
-          <Dots {...rest}
-            amountSlice={amountSlice} />}
+        { dots }
       </div>
     </div>
   );
