@@ -3,48 +3,33 @@
 
 .footer {
   @include flex-center-center;
+  height: 100px;
   width: 100%;
-  height: $footer-size-primary;
-  background-color: $lightgray;
   position: absolute;
   bottom: 0;
   left: 0;
 
   @include sm {
-    height: $footer-size-sm;
+    height: 80px;
   }
 
   .link {
-    margin-right: 15px;
+    margin-right: 50px;
+
+    @include sm {
+      margin-right: 40px;
+    }
 
     &:last-child {
       margin-right: 0;
     }
 
     i {
-      background-color: $white;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      position: relative;
-      color: $lightgray;
+      color: $socialIconColor;
       font-size: $font-size-large;
-  
-      &:before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
 
       @include sm {
-        width: 35px;
-        height: 35px;
         font-size: $font-size-larger;
-
-        &:before {
-          top: 53%;
-        }
       }
     }
   }

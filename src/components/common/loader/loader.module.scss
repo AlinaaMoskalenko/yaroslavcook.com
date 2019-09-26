@@ -9,12 +9,12 @@ $peak: 40%; // pancake's highest level, obviously ;)
 
 .loader {
   position: absolute;
-  top: calc(50% - #{$main-pagging-bottom-primary});
+  top: calc(50% - #{$padding-bottom-position-absolute} + 20px);
   left: 50%;
   transform: translate(-50%, -50%);
 
   @include sm {
-    top: calc(50% - #{$main-pagging-bottom-sm} + #{$header-height});
+    top: calc(50% - #{$padding-bottom-position-absolute-sm} + #{$header-height} + 20px);
   }
 
   & > h1 {

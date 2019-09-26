@@ -2,7 +2,6 @@
 @import '../../styles/base-styles.scss';
 
 .header {
-  @include flex-column-center-center;
   @include page-width;
   padding: 35px 0;
 
@@ -36,6 +35,7 @@
     .titleSmallScreen {
       display: none;
       margin-right: 25px;
+      text-align: right;
 
       @include sm {
         display: block;

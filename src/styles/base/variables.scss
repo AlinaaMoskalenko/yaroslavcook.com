@@ -1,10 +1,8 @@
-$footer-size-primary: 110px;
-$footer-size-sm: 90px;
-$main-padding: 20px;
-$main-pagging-bottom-primary: calc(#{$footer-size-primary} + #{$main-padding}); //main-padding intent to footer 
-$main-pagging-bottom-sm: calc(#{$footer-size-sm} + #{$main-padding});
+$padding-bottom-position-absolute: 100px;
+$padding-bottom-position-absolute-sm: 80px;
 
 $header-height: 74px;
+$padding-top-position-absolute: calc(#{$header-height} + 20px);
 
 $photo-viewer-indent-xl: 50px;
 $photo-viewer-indent-md: 35px;

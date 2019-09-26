@@ -38,34 +38,26 @@ const withTransition = (Wrapped) => {
       this.setState({ photosList: newList });
 
       // slider functionality
-      this.startSliding();
+      this.timerInterval = setInterval(this.onAutoTransition, this.SLIDER_TIME);
   
       document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
-          this.startSliding();
+          this.timerInterval = setInterval(this.onAutoTransition, this.SLIDER_TIME);
         } else {
-          this.stopSliding();
+          clearInterval(this.timerInterval);
         }
       });
     }
 
-    startSliding = () => {
-      this.timerInterval = setInterval(this.onAutoTransition, this.SLIDER_TIME);
-    };
-
-    stopSliding = () => {
-      clearInterval(this.timerInterval);
-    };
-
     toggleSlider = (idx) => {
 
       if (this.state.autoSliding) {
-        this.stopSliding();
+        clearInterval(this.timerInterval);
         this.setState({ autoSliding: false });
 
         this.timeOut = setTimeout(() => {
           this.setState({ autoSliding: true });
-          this.startSliding();
+          this.timerInterval = setInterval(this.onAutoTransition, this.SLIDER_TIME);
         }, this.PAUSE_TIME);
       }
 
@@ -123,9 +115,9 @@ const withTransition = (Wrapped) => {
       clearTimeout(this.timeOut);
       document.removeEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
-          this.startSliding();
+          this.timerInterval = setInterval(this.onAutoTransition, this.SLIDER_TIME);
         } else {
-          this.stopSliding();
+          clearInterval(this.timerInterval);
         }
       });
     }

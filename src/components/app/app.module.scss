@@ -65,12 +65,12 @@ h6 {
   }
 
   .main {
-    padding-bottom: $main-pagging-bottom-primary;
+    padding-bottom: $padding-bottom-position-absolute;
     position: relative;
 
     @include sm {
-      padding-bottom: $main-pagging-bottom-sm;
-      padding-top: calc(#{$header-height} + #{$main-padding});
+      padding-bottom: $padding-bottom-position-absolute-sm;
+      padding-top: $padding-top-position-absolute;
     }
   }
 }

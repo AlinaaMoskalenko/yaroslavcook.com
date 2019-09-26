@@ -46,7 +46,7 @@ class HomePage extends Component {
     window.addEventListener('resize', this.onChangeInfoHeight);
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.onChangeInfoHeight);
   }
 
