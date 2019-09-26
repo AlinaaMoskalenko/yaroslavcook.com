@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import menu from '../../data/menus.json';
+import menu from '../../../data/menus.json';
 
-import PageContainer from '../../../../../common/page-container';
-import MenuSlider from '../menu-slider';
-import Breadcrumbs from '../../../../../common/breadcrumbs/breadcrumbs.js';
-import image from '../../img/crew.jpg';
+import PageContainer from '../../../../../../common/page-container';
+import MenuSlider from '../../menu-slider';
+import Breadcrumbs from '../../../../../../common/breadcrumbs/breadcrumbs.js';
+import image from '../../../img/crew.jpg';
 
 import classNames from 'classnames/bind';
-import styles from '../menu-slider/menu-slider.module.scss';
+import styles from './crew-menu.module.scss';
 
 const CrewMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);
@@ -39,21 +39,17 @@ const CrewMenu = ({ sliceId, prevId, ...rest }) => {
       );
     }
     
-    const [ lunchMenu, dinnerMenu ] = [ lunch, dinner ].map((item, idx) => {
-      return <p key={idx}>{ item }</p>;
-    });
-
     return (
       <div key={idx} className={classes}>
         <h1 className={styles.mainTitle}>Day {idx + 1}</h1>
         <div className={styles.content}>
           <div className={styles.menu}>
             <h1>Lunch</h1>
-            { lunchMenu }
+            { lunch.map((item, idx) => (<p key={idx}>{ item }</p>)) }
           </div>
           <div className={styles.menu}>
             <h1>Dinner</h1>
-            { dinnerMenu }
+            { dinner.map((item, idx) => (<p key={idx}>{ item }</p>)) }
           </div>
         </div>
       </div>

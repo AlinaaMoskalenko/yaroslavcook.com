@@ -1,0 +1,36 @@
+@import '../../../../../../../styles/base-styles.scss';
+
+.menuContainer {
+  text-align: center;
+  max-width: 500px;
+  width: 500px;
+  margin: 0 auto;
+
+  @include xs {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .mainTitle {
+    @include main-title-menu;
+  }
+
+  .simpleContent {
+    @include md {
+      display: flex;
+      flex-wrap: wrap;
+
+      & > p {
+        flex-basis: 50%;
+      }
+    }
+
+    @include sm {
+      display: block;
+    }
+
+    & > p {
+      @include main-items-menu-p;
+    }
+  }
+}

@@ -1,18 +1,6 @@
 @import '../../../../../../typography/typography.scss';
 @import '../../../../../../styles/base-styles.scss';
 
-@mixin bottom-separator {
-  width: 50%;
-  height: initial;
-  top: initial;
-  right: initial;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 0);
-  border-right: none;
-  border-bottom: 2px dashed $dark-gray;
-}
-
 .menuSlider {
   position: relative;
   padding: 40px 60px;
@@ -20,173 +8,49 @@
   @include sm {
     padding: 30px 20px;
   }
-}
 
-.menuContainer {
-  text-align: center;
-  width: 800px;
-
-  @include lg {
+  .arrowToggles {
+    position: absolute;
+    left: 0;
     width: 100%;
-    max-width: 900px;
-    height: auto;
-  }
-
-  .mainTitle {
-    font-family: $font-stack-monotype;
-    font-size: $font-size-xx-large;
-    margin-bottom: 20px;
-
-    @include sm {
-      font-size: $font-size-x-large;
-      margin-bottom: 15px;
-    }
-  }
-
-  .content {
     display: flex;
+    justify-content: space-between;
+    font-size: $font-size-x-larger;
+    color: $dark-gray;
+    padding: 0 60px;
+    padding-top: 10px;
 
     @include sm {
-      flex-direction: column;
+      padding: 0 35px;
+      padding-top: 5px;
     }
 
-    @include landscape-xs {
-      flex-direction: column;
-    }
+    & > i {
+      cursor: pointer;
+      position: relative;
+      width: 25px;
+      height: 25px;
 
-    .menu {
-      flex-basis: 50%;
-
-      &:first-child {
-        position: relative;
-        padding-right: 30px;
-
-        &:before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: 0;
-          height: 80%;
-          transform: translateY(-50%);
-          border-right: 2px dashed $dark-gray;
-
-          @include sm {
-            @include bottom-separator;
-          }
-
-          @include landscape-xs {
-            @include bottom-separator;
-          }
-        }
-
-        @include sm {
-          padding-right: 0;
-          padding-bottom: 20px;
-        }
-
-        @include landscape-xs {
-          padding-right: 0;
-          padding-bottom: 20px;
-        }
-      }
-
-      &:last-child {
-        padding-left: 30px;
-
-        @include sm {
-          padding-left: 0;
-          padding-top: 20px;
-        }
-
-        @include landscape-xs {
-          padding-left: 0;
-          padding-top: 20px;
-        }
-      }
-
-      & > h1 {
-        font-family: $font-stack-monotype;
-        margin-bottom: 15px;
-
-        @include sm {
-          font-size: $font-size-large;
-        }
-      }
-
-      & > p {
-        font-size: $font-size-larger;
-        margin-bottom: 10px;
-
-        @include sm {
-          font-size: $font-size-primary;
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-        }
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
-  }
-
-  .simpleContent {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    @include sm {
-      flex-direction: column;
-    }
-
-    & > p {
-      flex-basis: 50%;
-      font-size: $font-size-larger;
-      margin-bottom: 10px;
-
-      @include sm {
-        font-size: $font-size-primary;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-.menuDay {
-  display: none;
-  opacity: 0;
-  height: 320px;
-
-  &Visible {
-    display: block;
-    opacity: 1;
   }
 }
 
 .slideDots {
   position: absolute;
   left: 50%;
-  bottom: -40px;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   height: 25px;
+  padding: 30px;
 
   @include sm {
     height: 20px;
-  }
-}
-
-.animation {
-  animation: menu-on 1s;
-}
-
-@keyframes menu-on {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

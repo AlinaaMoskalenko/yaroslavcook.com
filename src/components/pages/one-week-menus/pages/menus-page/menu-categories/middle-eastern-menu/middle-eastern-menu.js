@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import menu from '../../data/menus.json';
+import menu from '../../../data/menus.json';
 
-import PageContainer from '../../../../../common/page-container';
-import MenuSlider from '../menu-slider';
-import Breadcrumbs from '../../../../../common/breadcrumbs/breadcrumbs.js';
-import image from '../../img/middle_eastern.jpg';
+import PageContainer from '../../../../../../common/page-container';
+import MenuSlider from '../../menu-slider';
+import Breadcrumbs from '../../../../../../common/breadcrumbs/breadcrumbs.js';
+import image from '../../../img/middle_eastern.jpg';
 
 import classNames from 'classnames/bind';
-import styles from '../menu-slider/menu-slider.module.scss';
+import styles from './middle-eastern-menu.module.scss';
 
 const MiddleEasternMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);
@@ -28,33 +28,28 @@ const MiddleEasternMenu = ({ sliceId, prevId, ...rest }) => {
         'animation': idx === sliceId && prevId !== null }
     );
 
-    const [ lunchMenu, dinnerMenu ] =
-      [ lunch, dinner ].map(({ courses }) => {
-        const { firstCourse, mainCourse, sideDishes } = courses;
-
-        const [ firstMenu, mainMenu, sideMenu ] = [ firstCourse, mainCourse, sideDishes ].map((item, idx) => {
-          return <p key={idx}>{ item }</p>;
-        });
-
-        return(
-          <>
-            <div className={styles.firstCourse}>
-              <h1>First course</h1>
-              { firstMenu }
-            </div>
-
-            <div className={styles.mainCourse}>
-              <h1>Main course</h1>
-              { mainMenu }
-            </div>
-
-            <div className={styles.sideDishes}>
-              <h1>Side dishes</h1>
-              { sideMenu }
-            </div>
-          </>
-        );
-      });
+    const menuCreator = ({ courses }) => {
+      const { firstCourse, mainCourse, sideDishes } = courses;
+  
+      return (
+        <>
+          <div className={styles.course}>
+            <h1>First course</h1>
+            { firstCourse.map((item, idx) => (<p key={idx}>{ item }</p>)) }
+          </div>
+  
+          <div className={styles.course}>
+            <h1>Main course</h1>
+            { mainCourse.map((item, idx) => (<p key={idx}>{ item }</p>)) }
+          </div>
+  
+          <div className={styles.course}>
+            <h1>Side dishes</h1>
+            { sideDishes.map((item, idx) => (<p key={idx}>{ item }</p>)) }
+          </div>
+        </>
+      );
+    };
 
     return (
       <div key={idx} className={classes}>
@@ -62,11 +57,11 @@ const MiddleEasternMenu = ({ sliceId, prevId, ...rest }) => {
         <div className={styles.content}>
           <div className={styles.menu}>
             <h1>Lunch</h1>
-            { lunchMenu }
+            { menuCreator(lunch) }
           </div>
           <div className={styles.menu}>
             <h1>Dinner</h1>
-            { dinnerMenu }
+            { menuCreator(dinner) }
           </div>
         </div>
       </div>

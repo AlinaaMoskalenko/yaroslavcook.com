@@ -3,17 +3,11 @@
 
 .header {
   @include page-width;
-  padding: 35px 0;
+  padding-top: 35px;
 
   @include sm {
-    align-items: flex-end;
-    padding: 25px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: $white;
     width: 100%;
+    padding-top: 25px;
     height: $header-height;
     border-bottom: 1.5px solid $lightgray;
 
@@ -34,7 +28,7 @@
 
     .titleSmallScreen {
       display: none;
-      margin-right: 25px;
+      margin-right: 10px;
       text-align: right;
 
       @include sm {

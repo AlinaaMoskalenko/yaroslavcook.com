@@ -1,0 +1,51 @@
+@import '../../../../../../../styles/base-styles.scss';
+
+.menuContainer {
+  text-align: center;
+  width: 800px;
+
+  @include md {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .mainTitle {
+    @include main-title-menu;
+  }
+
+  .content {
+    display: flex;
+
+    @include sm {
+      flex-direction: column;
+    }
+
+    @include landscape-xs {
+      flex-direction: column;
+    }
+
+    .menu {
+      @include menu-item-block;
+    }
+  }
+
+  .simpleContent > p {
+    @include main-items-menu-p;
+  }
+}
+
+.menuDay {
+  display: none;
+  opacity: 0;
+
+  &Visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.animation {
+  animation: menu-on 1s;
+}
+
+@include menu-slider-animation;

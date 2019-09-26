@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import menu from '../../data/menus.json';
+import menu from '../../../data/menus.json';
 
-import PageContainer from '../../../../../common/page-container';
-import MenuSlider from '../menu-slider';
-import Breadcrumbs from '../../../../../common/breadcrumbs/breadcrumbs.js';
-import image from '../../img/french_dinner.jpg';
+import PageContainer from '../../../../../../common/page-container';
+import MenuSlider from '../../menu-slider';
+import Breadcrumbs from '../../../../../../common/breadcrumbs';
+import image from '../../../img/french_dinner.jpg';
 
 import classNames from 'classnames/bind';
-import styles from '../menu-slider/menu-slider.module.scss';
+import styles from './french-charter-menu.module.scss';
 
 const FrenchCharterMenu = ({ sliceId, prevId, ...rest }) => {
   const cx = classNames.bind(styles);

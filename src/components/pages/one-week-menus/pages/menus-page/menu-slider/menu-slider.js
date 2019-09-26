@@ -14,21 +14,24 @@ const MenuSlider = ({ children, amountSlice, onArrowClick, ...rest }) => {
   }
   
   return (
-    <div className={styles.menuSlider}>
-      { amountSlice !== undefined && 
-        <i className="fas fa-chevron-left"
-          onClick={() => onArrowClick(-1, amountSlice)} />}
+    <>
+      <div className={styles.menuSlider}>
+        { amountSlice !== undefined && 
+          <div className={styles.arrowToggles}>
+            <i className="fas fa-chevron-left"
+              onClick={() => onArrowClick(-1, amountSlice)} />
+            <i className="fas fa-chevron-right"
+              onClick={() => onArrowClick(1, amountSlice)} />
+          </div>
+        }
+        
+        { children }
+      </div>
 
-      { children }
-
-      { amountSlice !== undefined &&
-        <i className="fas fa-chevron-right"
-          onClick={() => onArrowClick(1, amountSlice)} />}
-          
       <div className={styles.slideDots}>
         { dots }
       </div>
-    </div>
+    </>
   );
 }
 

@@ -4,7 +4,8 @@
 .breadcrumbs {
   text-align: center;
   font-family: $font-stack-monotype;
-  font-size: $font-size-x-large;
+  font-size: $font-size-breadcrumbs;
+  padding: 15px;
 
   .link {
     &:first-child {

@@ -1,12 +1,12 @@
 import React from 'react';
-import menu from '../../data/menus.json';
+import menu from '../../../data/menus.json';
 
-import PageContainer from '../../../../../common/page-container';
-import MenuSlider from '../menu-slider';
-import Breadcrumbs from '../../../../../common/breadcrumbs/breadcrumbs.js';
-import image from '../../img/dessert.jpg';
+import PageContainer from '../../../../../../common/page-container';
+import MenuSlider from '../../menu-slider';
+import Breadcrumbs from '../../../../../../common/breadcrumbs/breadcrumbs.js';
+import image from '../../../img/dessert.jpg';
 
-import styles from '../menu-slider/menu-slider.module.scss';
+import styles from './desserts-menu.module.scss';
 
 const DessertsMenu = () => {
   const links = [

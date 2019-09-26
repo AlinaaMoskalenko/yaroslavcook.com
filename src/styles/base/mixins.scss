@@ -1,3 +1,5 @@
+@import '../../typography/typography.scss';
+
 $xs-screen: 576px;
 $sm-screen: 768px;
 $md-screen: 1032px;
@@ -128,6 +130,7 @@ $lg-xl-screen: 1427px;
 @mixin page-width {
   width: 70%;
   margin: 0 auto;
+  padding-top: 25px;
 
   @include lg-xl {
     width: 80%;
@@ -139,6 +142,125 @@ $lg-xl-screen: 1427px;
 
   @include sm {
     width: 95%;
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@mixin main-title-menu {
+  font-family: $font-stack-monotype;
+  font-size: $font-size-xx-large;
+  margin-bottom: 25px;
+
+  @include sm {
+    font-size: $font-size-x-large;
+  }
+}
+
+@mixin main-items-menu-p {
+  font-size: $font-size-larger;
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include sm {
+    font-size: $font-size-primary;
+  }
+}
+
+@mixin second-h1-menu {
+  font-family: $font-stack-monotype;
+  margin-bottom: 15px;
+
+  @include sm {
+    font-size: $font-size-large;
+  }
+}
+
+@mixin menu-item-block {
+  flex-basis: 50%;
+
+  &:first-child {
+    position: relative;
+    padding-right: 30px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 80%;
+      transform: translateY(-50%);
+      border-right: 2px dashed $dark-gray;
+
+      @include sm {
+        width: 50%;
+        height: initial;
+        top: initial;
+        right: initial;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 0);
+        border-right: none;
+        border-bottom: 2px dashed $dark-gray;
+      }
+
+      @include landscape-xs {
+        width: 50%;
+        height: initial;
+        top: initial;
+        right: initial;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 0);
+        border-right: none;
+        border-bottom: 2px dashed $dark-gray;
+      }
+    }
+
+    @include sm {
+      padding-right: 0;
+      padding-bottom: 20px;
+    }
+
+    @include landscape-xs {
+      padding-right: 0;
+      padding-bottom: 20px;
+    }
+  }
+
+  &:last-child {
+    padding-left: 30px;
+
+    @include sm {
+      padding-left: 0;
+      padding-top: 20px;
+    }
+
+    @include landscape-xs {
+      padding-left: 0;
+      padding-top: 20px;
+    }
+  }
+
+  & > h1 {
+    @include second-h1-menu;
+  }
+
+  & > p {
+    @include main-items-menu-p;
+  }
+}
+
+@mixin menu-slider-animation {
+  @keyframes menu-on {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
