@@ -1,55 +1,97 @@
 @import '../../../styles/base-styles.scss';
 @import '../../../typography/typography.scss';
 
-.title {
-  text-transform: uppercase;
-  color: $dark-gray;
-  margin-bottom: 40px;
+.contactsPage {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 25px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
 
-  @include xs {
-    margin-bottom: 25px;
-    font-size: $font-size-x-larger;
+  @include md {
+    justify-content: center;
   }
 
   @include landscape {
-    margin-bottom: 25px;
-    font-size: $font-size-x-larger;
-  }
-}
-
-.contact {
-  @include flex-align-center;
-  font-size: $font-size-x-larger;
-
-  & > span {
-    margin-left: 20px;
-
-    @include xs {
-      margin-left: 15px;
-    }
-  }
-
-  .phoneIcon {
-    transform: scale(-1, 1);
-  }
-
-  &:last-child {
+    position: static;
+    padding: 40px;
     margin-top: 25px;
+  }
+
+  .content {
+    background-color: $white-80;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: $dark-gray;
+    padding: 60px;
+    margin-left: 5%;
+
+    @include md {
+      margin: 0 7%;
+    }
 
     @include xs {
-      margin-top: 15px;
+      padding: 35px;
     }
 
     @include landscape {
-      margin-top: 15px;
+      padding: 35px;
     }
-  }
 
-  @include xs {
-    font-size: $font-size-larger;
-  }
-
-  @include landscape {
-    font-size: $font-size-larger;
+    .title {
+      text-transform: uppercase;
+      color: $dark-gray;
+      margin-bottom: 40px;
+    
+      @include xs {
+        margin-bottom: 25px;
+        font-size: $font-size-x-larger;
+      }
+    
+      @include landscape {
+        margin-bottom: 25px;
+        font-size: $font-size-x-larger;
+      }
+    }
+    
+    .contact {
+      @include flex-align-center;
+      font-size: $font-size-x-larger;
+    
+      & > span {
+        margin-left: 20px;
+    
+        @include xs {
+          margin-left: 15px;
+        }
+      }
+    
+      .phoneIcon {
+        transform: scale(-1, 1);
+      }
+    
+      &:last-child {
+        margin-top: 25px;
+    
+        @include xs {
+          margin-top: 15px;
+        }
+    
+        @include landscape {
+          margin-top: 15px;
+        }
+      }
+    
+      @include xs {
+        font-size: $font-size-larger;
+      }
+    
+      @include landscape {
+        font-size: $font-size-larger;
+      }
+    }
   }
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './menu-slider.module.scss';
 import Dots from './components/dots';
 
-const MenuSlider = ({ children, amountSlice, onArrowClick, ...rest }) => {
+const MenuSlider = ({ children, amountSlice, ...rest }) => {
   let dots = [];
 
   if (amountSlice !== undefined) {
@@ -14,35 +14,18 @@ const MenuSlider = ({ children, amountSlice, onArrowClick, ...rest }) => {
   }
   
   return (
-    <>
-      <div className={styles.menuSlider}>
-        { amountSlice !== undefined && 
-          <div className={styles.arrowToggles}>
-            <i className="fas fa-chevron-left"
-              onClick={() => onArrowClick(-1, amountSlice)} />
-            <i className="fas fa-chevron-right"
-              onClick={() => onArrowClick(1, amountSlice)} />
-          </div>
-        }
-        
-        { children }
-      </div>
-
+    <div className={styles.menuSlider}>
+      { children }
       <div className={styles.slideDots}>
         { dots }
       </div>
-    </>
+    </div>
   );
 }
 
-MenuSlider.defaultProps = {
-  onArrowClick: () => {}
-};
-
 MenuSlider.propTypes = {
   children: PropTypes.node.isRequired,
-  amountSlice: PropTypes.number,
-  onArrowClick: PropTypes.func
+  amountSlice: PropTypes.number
 };
 
 export default MenuSlider;

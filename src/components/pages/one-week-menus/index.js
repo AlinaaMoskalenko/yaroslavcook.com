@@ -1,8 +1,8 @@
 import React from 'react';
 import MenuModule from './module';
 
-const MenuPagesContainer = () => {
-  return <MenuModule />;
+const MenuPagesContainer = (props) => {
+  return <MenuModule {...props} />;
 };
 
 export {

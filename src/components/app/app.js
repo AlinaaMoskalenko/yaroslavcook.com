@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { closeViewer } from '../../reducers/actions';
+import { closeViewer, setBackgroundImage, setBreadcrumbs } from '../../reducers/actions';
 
 import HeaderContainer from '../header';
 import Footer from '../footer';
 import PhotoViewerContainer from '../common/photo-viewer';
+import Breadcrumbs from '../common/breadcrumbs';
+
 import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
 import { MenuPages } from '../pages/one-week-menus';
@@ -28,11 +30,12 @@ const menuLink = [
 class App extends Component {
   state = {
     isOpened: false,
-    appHeight: null,
-    mainHeight: null
+    mainHeight: null,
+    // breadcrumbsHeight: 0
   };
 
   headerRef = React.createRef();
+  breadcrumbsRef = React.createRef();
   footerRef = React.createRef();
 
   toggleNavMenu = () => {
@@ -52,8 +55,12 @@ class App extends Component {
                           document.documentElement.clientHeight;
 
     const headerHeight = this.headerRef.current.offsetHeight;
+    // ???
+    // const breadcrumbsHeight = this.breadcrumbsRef.current.clientHeight;
+    // console.log(breadcrumbsHeight)
     const footerHeight = this.footerRef.current.offsetHeight;
     const mainHeight = windowHeight - headerHeight - footerHeight;
+    // const mainHeight = windowHeight - headerHeight - breadcrumbsHeight - footerHeight;
 
     this.setState({ mainHeight });
   };
@@ -69,13 +76,25 @@ class App extends Component {
     window.removeEventListener('resize', this.getHeight);
   }
 
+  // componentDidUpdate({ breadcrumbsLinks: oldLinks }) {
+  //   const { breadcrumbsLinks } = this.props;
+  //   if(oldLinks !== breadcrumbsLinks) {
+  //     const breadcrumbsHeight = this.breadcrumbsRef.current.clientHeight;
+  //     this.setState({breadcrumbsHeight});
+  //   }
+  // }
+
   render() {
     const { isOpened, mainHeight } = this.state;
     const {
+      backgroundImage,
+      breadcrumbsLinks,
       photosList,
       currentPhoto,
       photoViewer,
-      closeViewer
+      closeViewer,
+      setBackgroundImage,
+      setBreadcrumbs
     } = this.props;
 
     const cx = classNames.bind(styles);
@@ -90,12 +109,21 @@ class App extends Component {
             isViewer={photoViewer}
             toggleNavMenu={this.toggleNavMenu} />
 
+          <Breadcrumbs ref={this.breadcrumbsRef} items={breadcrumbsLinks} />
+
           <main className={cx('main', { 'mainHidden': isOpened })}
-            style={{'minHeight': `${mainHeight}px`}}>
+            style={{'minHeight': `${mainHeight}px`,
+            'backgroundImage': `url(${ backgroundImage })`
+            }}>
             <Switch>
               <Route path="/" component={HomePage} exact />
               <Route path="/gallery" component={GalleryPage} />
-              <Route path="/one-week-menu" component={MenuPages} />
+              <Route path="/one-week-menu" render={() => (
+                <MenuPages
+                  onBackground={setBackgroundImage}
+                  onBreadcrumbs={setBreadcrumbs} />
+                )}
+              />
               <Route path="/documents" component={DocumentsPage} />
               <Route path="/contacts" component={ContactsPage} />
             </Switch>
@@ -127,18 +155,28 @@ class App extends Component {
 }
 
 //get current state from redux store
-const mapStateToProps = ({ photosList, currentPhoto, photoViewer }) => {
+const mapStateToProps = ({
+  photosList,
+  currentPhoto,
+  photoViewer,
+  backgroundImage,
+  breadcrumbsLinks
+}) => {
   return {
     photosList,
     currentPhoto,
-    photoViewer
+    photoViewer,
+    backgroundImage,
+    breadcrumbsLinks
   };
 };
 
 //get action creators
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    closeViewer
+    closeViewer,
+    setBackgroundImage,
+    setBreadcrumbs
   }, dispatch);
 };
 

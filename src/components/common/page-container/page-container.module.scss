@@ -1,104 +1,94 @@
 @import '../../../styles/base-styles.scss';
 
 .pageContainer {
-  position: absolute;
-  top: 0;
-  padding-bottom: $main-pagging-bottom-primary;
-  width: 100%;
-  height: 100%;
+  background-position: center;
+  background-size: cover;
 
   &Primary {
-    @include sm {
-      padding-bottom: $main-pagging-bottom-sm;
-      padding-top: calc(#{$header-height} + #{$main-padding});
-    }
-  }
-
-  &Menu {
-    @include sm {
-      padding-bottom: 0;
-      position: relative;
-      height: 100%;
-    }
-
-    @include landscape-md {
-      padding-bottom: 0;
-      position: relative;
-      height: 100%;
-    }
-
-    @include landscape-xs {
-      padding-bottom: 0;
-      position: relative;
-      height: 100%;
-    }
-
-    @include xs {
-      height: 100%;
-    }
-
-  }
-
-  .mainContentContainer {
-    background-position: center;
-    background-size: cover;
+    position: absolute;
+    top: 25px;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    @include flex-align-center;
-    
+    display: flex;
+    align-items: center;
+
     @include md {
       justify-content: center;
     }
 
-    .contentArea {
-      padding: 60px;
-      background-color: $white-80;
-      border-top-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-      color: $dark-gray;
-
-      @include xs {
-        padding: 35px;
-      }
-    
-      @include landscape {
-        padding: 35px;
-      }
+    @include landscape {
+      position: static;
+      padding: 40px;
+      margin-top: 25px;
     }
   }
 
-  .mainContentContainer.contentLeft {
-    padding-left: 5%;
+  &Menu {
+    // position: absolute;
+    // top: $breadcrumbs-height;
+    // bottom: #{$padding-bottom-position-absolute};
+
+    // @include sm {
+    //   position: inherit;
+    //   top: 0;
+    // }
+
+    // @include landscape-md {
+    //   position: inherit;
+    //   top: 0;
+    // }
+
+    // @include landscape-xs {
+    //   position: inherit;
+    //   top: 0;
+    // }
+  }
+
+  .contentArea {
+    background-color: $white-80;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: $dark-gray;
+  }
+
+  
+}
+
+.contentCenter {
+  padding: 40px;
+  text-align: center;
+
+  @include sm {
+    padding: 25px;
+  }
+
+
+
+  // @include sm {
+  //   padding: 20px;
+  //   // padding-bottom: 60px;
+  // }
+
+  // @include landscape-md {
+  //   // padding-bottom: 60px;
+  // }
+
+  // @include landscape-xs {
+  //   // padding: 20px;
+  //   // padding-bottom: 60px;
+  // }
+
+  .contentArea {
+    display: inline-block;
+    // max-width: 60%;
+    // margin: 0 auto;
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
 
     @include md {
-      padding: 0 7%;
-    }
-  }
-
-  .mainContentContainer.contentCenter {
-    justify-content: center;
-
-    @include lg {
-      padding: 0 30px;
-    }
-
-    @include sm {
-      padding: 15px;
-      padding-bottom: 60px;
-    }
-
-    @include landscape-md {
-      padding: 30px;
-      padding-bottom: 60px;
-    }
-
-    @include landscape-xs {
-      padding: 15px;
-      padding-bottom: 60px;
-    }
-
-    .contentArea {
-      padding: 0;
+      width: 100%;
     }
   }
 }

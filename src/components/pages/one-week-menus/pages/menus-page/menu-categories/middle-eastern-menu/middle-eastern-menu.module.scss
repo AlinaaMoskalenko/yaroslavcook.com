@@ -1,68 +1,118 @@
 @import '../../../../../../../styles/base-styles.scss';
 
-.menuContainer {
+.middleEasternMenu {
+  background-position: center;
+  background-size: cover;
+  padding: 40px;
   text-align: center;
-  width: 1000px;
 
-  @include md {
-    width: 100%;
-    max-width: 1000px;
+  @include sm {
+    padding: 25px;
   }
 
-  .mainTitle {
-    @include main-title-menu;
-  }
+  .menuDay {
+    display: none;
+    opacity: 0;
 
-  .content {
-    display: flex;
+    &Visible {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      margin: 0 auto;
+      padding: 30px;
+
+      @include sm {
+        padding: 20px;
+      }
+    }
+
+    background-color: $bg-menu;
+    color: $white;
+    text-align: center;
+    width: 900px;
+    height: 590px;
+
+    @include lg {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    @include md {
+      height: 610px;
+    }
 
     @include sm {
-      flex-direction: column;
+      height: 822px;
     }
 
-    @include landscape-xs {
-      flex-direction: column;
+    @include xs {
+      height: 936px;
     }
 
-    .menu {
-      @include menu-item-block;
+    @include landscape {
+      height: 936px;
+    }
 
-      & > h1 {
-        margin-bottom: 10px;
+    .mainTitle {
+      @include main-title-menu;
+
+      & > i {
+        font-size: $font-size-x-larger;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+
+      @include sm {
+        flex-direction: column;
       }
 
-      .course {
-        margin-bottom: 30px;
+      @include landscape-xs {
+        flex-direction: column;
+      }
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+      .menu {
+        @include menu-item-block;
 
         & > h1 {
-          font-family: $font-stack-monotype;
           margin-bottom: 10px;
-
-          @include sm {
-            font-size: $font-size-large;
-          }
         }
 
-        & > p {
-          @include main-items-menu-p;
-          margin-bottom: 10px;
-        } 
+        .course {
+          margin-bottom: 30px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          & > h1 {
+            font-family: $font-stack-monotype;
+            margin-bottom: 10px;
+
+            @include sm {
+              font-size: $font-size-large;
+            }
+          }
+
+          & > p {
+            @include main-items-menu-p;
+            margin-bottom: 10px;
+          } 
+        }
       }
     }
-  }
-}
-
-.menuDay {
-  display: none;
-  opacity: 0;
-
-  &Visible {
-    display: block;
-    opacity: 1;
   }
 }
 

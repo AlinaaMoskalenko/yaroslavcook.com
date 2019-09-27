@@ -151,6 +151,8 @@ $lg-xl-screen: 1427px;
   font-family: $font-stack-monotype;
   font-size: $font-size-xx-large;
   margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
 
   @include sm {
     font-size: $font-size-x-large;
@@ -193,7 +195,7 @@ $lg-xl-screen: 1427px;
       right: 0;
       height: 80%;
       transform: translateY(-50%);
-      border-right: 2px dashed $dark-gray;
+      border-right: 2px dashed $white;
 
       @include sm {
         width: 50%;
@@ -204,7 +206,7 @@ $lg-xl-screen: 1427px;
         bottom: 0;
         transform: translate(-50%, 0);
         border-right: none;
-        border-bottom: 2px dashed $dark-gray;
+        border-bottom: 2px dashed $white;
       }
 
       @include landscape-xs {
@@ -216,7 +218,7 @@ $lg-xl-screen: 1427px;
         bottom: 0;
         transform: translate(-50%, 0);
         border-right: none;
-        border-bottom: 2px dashed $dark-gray;
+        border-bottom: 2px dashed $white;
       }
     }
 

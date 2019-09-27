@@ -1,11 +1,13 @@
 const initialState = {
   photosList: [],
   currentPhoto: {},
-  photoViewer: false
+  photoViewer: false,
+  backgroundImage: null,
+  breadcrumbsLinks: []
 };
 
 //reducer
-const viewerReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -33,9 +35,21 @@ const viewerReducer = (state = initialState, action) => {
         currentPhoto: payload
       };
 
+    case 'SET_BACKGROUND_IMAGE':
+      return {
+        ...state,
+        backgroundImage: payload
+      };
+
+    case 'SET_BREADCRUMBS':
+      return {
+        ...state,
+        breadcrumbsLinks: payload
+      };
+
     default:
       return state;
   }
 };
 
-export default viewerReducer;
+export default reducer;

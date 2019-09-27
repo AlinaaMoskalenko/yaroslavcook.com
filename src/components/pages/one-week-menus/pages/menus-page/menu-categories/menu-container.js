@@ -42,7 +42,13 @@ export default class MenuContainer extends Component {
   };
 
   render() {
-    const { component: Component, ...rest } = this.props;
+    const {
+      component: Component,
+      onBackground,
+      onBreadcrumbs,
+      ...rest
+    } = this.props;
+
     const { id, prevId } = this.state;
 
     return (
@@ -52,7 +58,9 @@ export default class MenuContainer extends Component {
           sliceId={id}
           prevId={prevId}
           onArrowClick={this.onArrowClick}
-          onDotClick={this.onDotClick} /> 
+          onDotClick={this.onDotClick}
+          onBackground={onBackground}
+          onBreadcrumbs={onBreadcrumbs} /> 
       )} />
     );
   }
