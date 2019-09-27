@@ -56,11 +56,9 @@ h6 {
   position: relative;
 
   .main {
-    padding-bottom: $padding-bottom-position-absolute;
     position: relative;
 
     @include sm {
-      padding-bottom: $padding-bottom-position-absolute-sm;
 
       &Hidden {
         opacity: 0.5;

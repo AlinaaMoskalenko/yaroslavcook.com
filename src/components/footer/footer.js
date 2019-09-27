@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './footer.module.scss';
 import '../../typography/font-awesome/all.min.css';
 
-const Footer = () => {
+const Footer = React.forwardRef((props, ref) => {
   return (
-    <div className={styles.footer}>
+    <div className={styles.footer} ref={ref}>
       <a href="https://www.facebook.com/yaroslavcook"
         className={styles.link} 
         target="_blank"
@@ -29,6 +29,6 @@ const Footer = () => {
       </a>
     </div>
   );
-};
+});
 
 export default Footer;

@@ -11,6 +11,12 @@
     height: $header-height;
     border-bottom: 1.5px solid $lightgray;
 
+    &Hidden {
+      opacity: 0.5;
+      background-color: $bg;
+      pointer-events: none;
+    }
+
     .title,
     .subtitle {
       display: none;

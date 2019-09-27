@@ -5,11 +5,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { closeViewer } from '../../reducers/actions';
 
-import NavMenu from '../nav-menu';
-import Header from '../header';
+import HeaderContainer from '../header';
 import Footer from '../footer';
 import PhotoViewerContainer from '../common/photo-viewer';
-
 import HomePage from '../pages/home-page';
 import GalleryPage from '../pages/gallery-page';
 import { MenuPages } from '../pages/one-week-menus';
@@ -22,7 +20,6 @@ import styles from './app.module.scss';
 const menuLink = [
   { name: 'Home', link: '/' },
   { name: 'Gallery', link: '/gallery' },
-  // { name: 'About Chef', link: '/about' },
   { name: 'One Week Menu', link: '/one-week-menu' },
   { name: 'Documents', link: '/documents' },
   { name: 'Contacts', link: '/contacts' }
@@ -36,6 +33,7 @@ class App extends Component {
   };
 
   headerRef = React.createRef();
+  footerRef = React.createRef();
 
   toggleNavMenu = () => {
     this.setState(({ isOpened }) => ({ isOpened: !isOpened }));
@@ -48,29 +46,31 @@ class App extends Component {
     }
   };
 
-  onWindowHeight = () => {
-    const appHeight = window.innerHeight;
+  getHeight = () => {
+    const windowHeight = 'innerHeight' in window ?
+                          window.innerHeight :
+                          document.documentElement.clientHeight;
 
-    const headerHeight = this.headerRef.current.clientHeight;
-    const value = appHeight - headerHeight;
-    const mainHeight = value < 450 ? 450 : value;
+    const headerHeight = this.headerRef.current.offsetHeight;
+    const footerHeight = this.footerRef.current.offsetHeight;
+    const mainHeight = windowHeight - headerHeight - footerHeight;
 
-    this.setState({ appHeight, mainHeight });
+    this.setState({ mainHeight });
   };
 
   componentDidMount() {
-    this.onWindowHeight();    
+    this.getHeight();    
     window.addEventListener('orientationchange', this.closeNavMenu);
-    window.addEventListener('resize', this.onWindowHeight);
+    window.addEventListener('resize', this.getHeight);
   }
 
   componentWillUnmount() {
     window.removeEventListener('orientationchange', this.closeNavMenu);
-    window.removeEventListener('resize', this.onWindowHeight);
+    window.removeEventListener('resize', this.getHeight);
   }
 
   render() {
-    const { isOpened, appHeight, mainHeight } = this.state;
+    const { isOpened, mainHeight } = this.state;
     const {
       photosList,
       currentPhoto,
@@ -79,36 +79,29 @@ class App extends Component {
     } = this.props;
 
     const cx = classNames.bind(styles);
-    const classes = cx('app', { 'appHidden': isOpened });
 
     return (
       <>
-        <NavMenu 
-          link={menuLink} 
-          isOpened={isOpened}
-          isViewer={photoViewer}
-          toggleNavMenu={this.toggleNavMenu}
-          type="SIDE" />
+        <div className={styles.app} onClick={this.closeNavMenu}>
+          <HeaderContainer
+            ref={this.headerRef}
+            menuLink={menuLink}
+            isOpened={isOpened}
+            isViewer={photoViewer}
+            toggleNavMenu={this.toggleNavMenu} />
 
-        <div
-          className={classes}
-          style={{ 'minHeight': appHeight }}
-          onClick={this.closeNavMenu}>
-          <Header menuLink={menuLink} ref={this.headerRef} />
-          <main
-            className={styles.main}
-            style={{ 'minHeight': mainHeight }}>
+          <main className={cx('main', { 'mainHidden': isOpened })}
+            style={{'minHeight': `${mainHeight}px`}}>
             <Switch>
               <Route path="/" component={HomePage} exact />
               <Route path="/gallery" component={GalleryPage} />
-              {/* <Route path="/about" component={AboutPage} /> */}
               <Route path="/one-week-menu" component={MenuPages} />
               <Route path="/documents" component={DocumentsPage} />
               <Route path="/contacts" component={ContactsPage} />
             </Switch>
           </main>
 
-          <Footer />
+          <Footer ref={this.footerRef} />
         </div>
 
         { photoViewer && 
