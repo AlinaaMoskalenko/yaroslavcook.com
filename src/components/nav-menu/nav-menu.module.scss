@@ -7,13 +7,55 @@ $transition-time: 0.3s;
   margin-top: 35px;
   position: relative;
 
-  .toggle {
-    display: none;
-  }
-
   @include sm {
     display: none;
   }
+}
+
+.toggle {
+  display: none;
+
+  @include sm {
+    @include flex-column-center-around;
+    width: 20px;
+    height: 18px;
+    position: absolute;
+    cursor: pointer;
+    left: 25px;
+    top: 28px;
+    transition: $transition-time;
+
+    .toggleLine {
+      width: 20px;
+      height: 2px;
+      background-color: $primary;
+    }
+
+    &Change {
+      left: 180px;
+  
+      .toggleLine {
+        z-index: 2;
+        background-color: $gray;
+  
+        &:first-child {
+          position: absolute;
+          transform: rotate(45deg);
+        }
+  
+        &:nth-child(2) {
+          position: absolute;
+          transform: rotate(-45deg);
+        }
+  
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  
 }
 
 .sideMenu {
@@ -21,27 +63,16 @@ $transition-time: 0.3s;
 
   @include sm {
     display: block;
-    margin-top: 0;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
     left: 0;
     top: 0;
-    height: 100%;
     width: 0;
+    height: 100%;
     padding: 45px 0;
     background-color: $white;
     box-shadow: 0 1px 4px $box-shadow;
-
-    .toggle {
-      @include flex-column-center-around;
-      width: 20px;
-      height: 18px;
-      position: absolute;
-      cursor: pointer;
-      left: 25px;
-      top: 28px;
-      transition: $transition-time;
-    }
+    transition: $transition-time;
 
     .linkBlock {
       display: none;
@@ -60,29 +91,6 @@ $transition-time: 0.3s;
       overflow: auto;
       padding-left: 20px;
       padding-right: 20px;
-      transition: $transition-time;
-
-      .toggle {
-        left: 180px;
-
-        .toggleLine {
-          background-color: $gray;
-
-          &:first-child {
-            position: absolute;
-            transform: rotate(45deg);
-          }
-
-          &:nth-child(2) {
-            position: absolute;
-            transform: rotate(-45deg);
-          }
-
-          &:last-child {
-            display: none;
-          }
-        }
-      }
 
       .linkBlock {
         display: flex;
@@ -93,12 +101,6 @@ $transition-time: 0.3s;
     &Hidden {
       pointer-events: none;
     }
-  }
-
-  .toggleLine {
-    width: 20px;
-    height: 2px;
-    background-color: $primary;
   }
 }
 

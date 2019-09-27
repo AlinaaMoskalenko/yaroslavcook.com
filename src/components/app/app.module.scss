@@ -55,21 +55,18 @@ h6 {
   margin: 0 auto;
   position: relative;
 
-  &Hidden {
-    opacity: 0.5;
-    background-color: $bg;
-
-    .main {
-      pointer-events: none;
-    }
-  }
-
   .main {
     padding-bottom: $padding-bottom-position-absolute;
     position: relative;
 
     @include sm {
       padding-bottom: $padding-bottom-position-absolute-sm;
+
+      &Hidden {
+        opacity: 0.5;
+        background-color: $bg;
+        pointer-events: none;
+      }
     }
   }
 }

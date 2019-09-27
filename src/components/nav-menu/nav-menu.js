@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, matchPath, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import classNames from 'classnames/bind';
 import styles from './nav-menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-const NavMenu = ({ link, isOpened, isViewer, toggleNavMenu, type, location }) => {
+const NavMenu = ({ menuLink, isOpened, isViewer, toggleNavMenu, type, location }) => {
   const isActive = (path) => {
     const opts = {
       path,
@@ -16,7 +17,7 @@ const NavMenu = ({ link, isOpened, isViewer, toggleNavMenu, type, location }) =>
     return !!matchPath(location.pathname, opts);
   };
 
-  const menuLinks = link.map(({ name, link }) => {
+  const menuLinks = menuLink.map(({ name, link }) => {
     const classes = cx('link', { 'linkActive': isActive(link) });
 
     return <Link to={link}
@@ -35,17 +36,21 @@ const NavMenu = ({ link, isOpened, isViewer, toggleNavMenu, type, location }) =>
   });
 
   return (
-    <div className={classesMenu}>
-      <div className={styles.toggle} onClick={toggleNavMenu}>
-        <div className={styles.toggleLine} />
-        <div className={styles.toggleLine} />
-        <div className={styles.toggleLine} />
-      </div>
+    <>
+      { type === 'SIDE' &&
+        <div className={cx('toggle', { 'toggleChange': isOpened })} onClick={toggleNavMenu}>
+          <div className={styles.toggleLine} />
+          <div className={styles.toggleLine} />
+          <div className={styles.toggleLine} />
+        </div>
+      }
 
-      <div className={styles.linkBlock}>
-        { menuLinks }
+      <div className={classesMenu}>
+        <div className={styles.linkBlock}>
+          { menuLinks }
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -55,7 +60,7 @@ NavMenu.defaultProps = {
 };
 
 NavMenu.propTypes = {
-  link: PropTypes.arrayOf(PropTypes.shape({
+  menuLink: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired
   })),
