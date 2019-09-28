@@ -3,7 +3,8 @@ const initialState = {
   currentPhoto: {},
   photoViewer: false,
   backgroundImage: null,
-  breadcrumbsLinks: []
+  breadcrumbsLinks: [],
+  breadcrumbsHeight: null
 };
 
 //reducer
@@ -45,6 +46,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         breadcrumbsLinks: payload
+      };
+
+    case 'SET_BREADCRUMBS_HEIGHT':
+      return {
+        ...state,
+        breadcrumbsHeight: payload
       };
 
     default:

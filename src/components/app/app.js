@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { closeViewer, setBackgroundImage, setBreadcrumbs } from '../../reducers/actions';
+import {
+  closeViewer,
+  setBackgroundImage,
+  setBreadcrumbs,
+  setBreadcrumbsHeight
+} from '../../reducers/actions';
 
 import HeaderContainer from '../header';
 import Footer from '../footer';
@@ -30,12 +35,10 @@ const menuLink = [
 class App extends Component {
   state = {
     isOpened: false,
-    mainHeight: null,
-    // breadcrumbsHeight: 0
+    mainHeight: null
   };
 
   headerRef = React.createRef();
-  breadcrumbsRef = React.createRef();
   footerRef = React.createRef();
 
   toggleNavMenu = () => {
@@ -55,12 +58,8 @@ class App extends Component {
                           document.documentElement.clientHeight;
 
     const headerHeight = this.headerRef.current.offsetHeight;
-    // ???
-    // const breadcrumbsHeight = this.breadcrumbsRef.current.clientHeight;
-    // console.log(breadcrumbsHeight)
     const footerHeight = this.footerRef.current.offsetHeight;
     const mainHeight = windowHeight - headerHeight - footerHeight;
-    // const mainHeight = windowHeight - headerHeight - breadcrumbsHeight - footerHeight;
 
     this.setState({ mainHeight });
   };
@@ -76,25 +75,19 @@ class App extends Component {
     window.removeEventListener('resize', this.getHeight);
   }
 
-  // componentDidUpdate({ breadcrumbsLinks: oldLinks }) {
-  //   const { breadcrumbsLinks } = this.props;
-  //   if(oldLinks !== breadcrumbsLinks) {
-  //     const breadcrumbsHeight = this.breadcrumbsRef.current.clientHeight;
-  //     this.setState({breadcrumbsHeight});
-  //   }
-  // }
-
   render() {
     const { isOpened, mainHeight } = this.state;
     const {
       backgroundImage,
       breadcrumbsLinks,
+      breadcrumbsHeight,
       photosList,
       currentPhoto,
       photoViewer,
       closeViewer,
       setBackgroundImage,
-      setBreadcrumbs
+      setBreadcrumbs,
+      setBreadcrumbsHeight
     } = this.props;
 
     const cx = classNames.bind(styles);
@@ -109,10 +102,14 @@ class App extends Component {
             isViewer={photoViewer}
             toggleNavMenu={this.toggleNavMenu} />
 
-          <Breadcrumbs ref={this.breadcrumbsRef} items={breadcrumbsLinks} />
+          { breadcrumbsLinks.length !== 0 &&
+            <Breadcrumbs
+              items={breadcrumbsLinks}
+              setBreadcrumbsHeight={setBreadcrumbsHeight} /> }
+                    
 
           <main className={cx('main', { 'mainHidden': isOpened })}
-            style={{'minHeight': `${mainHeight}px`,
+            style={{'minHeight': `${mainHeight - breadcrumbsHeight}px`,
             'backgroundImage': `url(${ backgroundImage })`
             }}>
             <Switch>
@@ -143,14 +140,23 @@ class App extends Component {
   }
 
   static defaultProps = {
-    closeViewer: () => {}
+    closeViewer: () => {},
+    setBackgroundImage: () => {},
+    setBreadcrumbs: () => {},
+    setBreadcrumbsHeight: () => {}
   };
 
   static propTypes = {
     photosList: PropTypes.arrayOf(PropTypes.object),
     currentPhoto: PropTypes.object,
     photoViewer: PropTypes.bool,
-    closeViewer: PropTypes.func
+    backgroundImage: PropTypes.string,
+    breadcrumbsLinks: PropTypes.arrayOf(PropTypes.object),
+    breadcrumbsHeight: PropTypes.number,
+    closeViewer: PropTypes.func,
+    setBackgroundImage: PropTypes.func,
+    setBreadcrumbs: PropTypes.func,
+    setBreadcrumbsHeight: PropTypes.func
   };
 }
 
@@ -160,14 +166,16 @@ const mapStateToProps = ({
   currentPhoto,
   photoViewer,
   backgroundImage,
-  breadcrumbsLinks
+  breadcrumbsLinks,
+  breadcrumbsHeight
 }) => {
   return {
     photosList,
     currentPhoto,
     photoViewer,
     backgroundImage,
-    breadcrumbsLinks
+    breadcrumbsLinks,
+    breadcrumbsHeight
   };
 };
 
@@ -176,7 +184,8 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     closeViewer,
     setBackgroundImage,
-    setBreadcrumbs
+    setBreadcrumbs,
+    setBreadcrumbsHeight
   }, dispatch);
 };
 
