@@ -9,13 +9,9 @@ $peak: 40%; // pancake's highest level, obviously ;)
 
 .loader {
   position: absolute;
-  top: calc(50% - #{$padding-bottom-position-absolute} + 20px);
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  @include sm {
-    top: calc(50% - #{$padding-bottom-position-absolute-sm} + #{$header-height} + 20px);
-  }
 
   & > h1 {
     text-align: center;
