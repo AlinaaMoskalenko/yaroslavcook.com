@@ -57,6 +57,15 @@ h6 {
 
   .main {
     position: relative;
+    @include flex-align-center;
+
+    @include sm {
+      align-items: flex-start;
+    }
+
+    @include landscape {
+      align-items: flex-start;
+    }
 
     &Background {
       background-position: center;

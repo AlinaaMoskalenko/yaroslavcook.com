@@ -37,9 +37,7 @@
 }
 
 .pastry {
-  @include md {
-    height: auto;
-  }
+  height: auto;
 }
 
 @include slider-animation;

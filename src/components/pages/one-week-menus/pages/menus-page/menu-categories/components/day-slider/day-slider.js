@@ -7,19 +7,15 @@ import styles from './day-slider.module.scss';
 
 const DaySlider = ({ children, amountSlice, ...rest }) => {
   let dots = [];
-
-  if (amountSlice !== undefined) {
-    for (let i = 0; i < amountSlice; i++) {
-      dots.push( <Dots key={i} id={i} {...rest} /> );
-    }
+  for (let i = 0; i < amountSlice; i++) {
+    dots.push( <Dots key={i} id={i} {...rest} /> );
   }
   
   return (
     <div className={styles.daySlider}>
       { children }
-      <div className={styles.slideDots}>
-        { dots }
-      </div>
+      { amountSlice !== undefined &&
+        <div className={styles.slideDots}>{ dots } </div> }
     </div>
   );
 }

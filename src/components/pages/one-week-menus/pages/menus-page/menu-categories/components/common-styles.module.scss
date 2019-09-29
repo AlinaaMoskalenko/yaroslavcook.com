@@ -3,6 +3,7 @@
 .pageContainer {
   padding: 40px;
   text-align: center;
+  width: 100%;
 
   @include sm {
     padding: 25px;

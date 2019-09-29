@@ -56,14 +56,6 @@ $lg-xl-screen: 1427px;
   }
 }
 
-@mixin landscape-md {
-  @media (orientation: landscape) and
-          (max-height: #{$landscape-screen - 0.1px}) and
-          (max-width: #{$md-screen - 0.1px}) {
-    @content;
-  }
-}
-
 @mixin flex-align-center {
   display: flex;
   align-items: center;
