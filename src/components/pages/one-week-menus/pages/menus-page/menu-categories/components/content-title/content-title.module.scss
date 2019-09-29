@@ -1,0 +1,25 @@
+@import '../../../../../../../../styles/base/mixins.scss';
+@import '../../../../../../../../typography/typography.scss';
+
+.menuDayTitle {
+  font-family: $font-stack-monotype;
+  font-size: $font-size-xx-large;
+  margin-bottom: 25px;
+  @include flex-justify-between;
+
+  @include sm {
+    font-size: $font-size-x-large;
+  }
+
+  & > i {
+    font-size: $font-size-x-larger;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+
+    &:before {
+      @include position-absolute-center;
+    }
+  }
+}
