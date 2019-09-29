@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import menu from '../../../data/menus.json';
 
-import MenuSlider from '../../menu-slider';
+import DaySlider from '../components/day-slider';
 import ContentContainer from '../components/content-container/content-container.js';
 import ContentTitle from '../components/content-title';
 import Content from '../components/content/content.js';
@@ -76,11 +76,11 @@ export default class CrewMenu extends Component {
 
     return (
       <div className={commonStyles.pageContainer}>
-        <MenuSlider {...rest}
+        <DaySlider {...rest}
           sliceId={sliceId}
           amountSlice={slices}>
           { items }
-        </MenuSlider>
+        </DaySlider>
       </div>
     );
   }

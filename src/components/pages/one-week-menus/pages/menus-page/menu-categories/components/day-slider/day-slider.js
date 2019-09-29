@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Dots from './components/dots';
 
-import styles from './menu-slider.module.scss';
+import styles from './day-slider.module.scss';
 
-const MenuSlider = ({ children, amountSlice, ...rest }) => {
+const DaySlider = ({ children, amountSlice, ...rest }) => {
   let dots = [];
 
   if (amountSlice !== undefined) {
@@ -15,7 +15,7 @@ const MenuSlider = ({ children, amountSlice, ...rest }) => {
   }
   
   return (
-    <div className={styles.menuSlider}>
+    <div className={styles.daySlider}>
       { children }
       <div className={styles.slideDots}>
         { dots }
@@ -24,9 +24,9 @@ const MenuSlider = ({ children, amountSlice, ...rest }) => {
   );
 }
 
-MenuSlider.propTypes = {
+DaySlider.propTypes = {
   children: PropTypes.node.isRequired,
   amountSlice: PropTypes.number
 };
 
-export default MenuSlider;
+export default DaySlider;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import menu from '../../../data/menus.json';
 
-import MenuSlider from '../../menu-slider';
+import DaySlider from '../components/day-slider';
 import ContentContainer from '../components/content-container/content-container.js';
 import ContentTitle from '../components/content-title';
 import Content from '../components/content/content.js';
@@ -34,12 +34,12 @@ export default class DessertsMenu extends Component {
 
     return (
       <div className={commonStyles.pageContainer}>
-        <MenuSlider>
+        <DaySlider>
           <ContentContainer className={styles.container}>
             <ContentTitle title={'Desserts'} type="SIMPLE" />
             <Content content={menuContent} change />
           </ContentContainer>
-        </MenuSlider>
+        </DaySlider>
       </div>
     );
   }
