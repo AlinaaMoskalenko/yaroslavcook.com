@@ -22,10 +22,10 @@
   }
 
   .content {
-    background-color: $white-80;
+    background-color: $whiteOpacity80;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    color: $dark-gray;
+    color: $darkGray;
     padding: 60px;
     margin-left: 5%;
 
@@ -43,7 +43,7 @@
 
     .title {
       text-transform: uppercase;
-      color: $dark-gray;
+      color: $darkGray;
       margin-bottom: 40px;
     
       @include xs {

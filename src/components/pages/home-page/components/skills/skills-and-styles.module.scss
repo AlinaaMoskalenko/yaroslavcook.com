@@ -9,7 +9,7 @@
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   @include flex-column-align-center;
-  border: 1px solid $lightergray;
+  border: 1px solid $lighterGray;
 
   @include lg {
     width: 90%;
@@ -48,7 +48,7 @@
       left: 0;
       font-size: $font-size-xxxx-large;
       transform: translateY(-50%) rotate(-20deg);
-      color: $darkslategray;
+      color: $darkSlateGray;
     }
   }
 
@@ -78,7 +78,7 @@
       margin: 0 15px 15px 0;
 
       & > i {
-        color: $darkslategray;
+        color: $darkSlateGray;
       }
       
       .title {
