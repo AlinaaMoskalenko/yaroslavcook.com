@@ -91,6 +91,11 @@ class App extends Component {
     } = this.props;
 
     const cx = classNames.bind(styles);
+    const mainClasses = cx(
+      'main',
+      'mainBackground',
+      { 'mainHidden': isOpened,
+        'mainFlex': backgroundImage !== null });
 
     return (
       <>
@@ -108,7 +113,7 @@ class App extends Component {
               setBreadcrumbsHeight={setBreadcrumbsHeight} /> }
                     
 
-          <main className={cx('main', 'mainBackground', { 'mainHidden': isOpened })}
+          <main className={mainClasses}
             style={{'minHeight': `${mainHeight - breadcrumbsHeight}px`,
             'backgroundImage': `url(${ backgroundImage })`
             }}>
