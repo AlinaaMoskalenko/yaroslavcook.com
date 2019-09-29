@@ -1,17 +1,11 @@
-$padding-bottom-position-absolute: 100px;
-$padding-bottom-position-absolute-sm: 80px;
-
 $header-height: 74px;
-$padding-top-position-absolute: calc(#{$header-height} + 20px);
-
-$breadcrumbs-height: 57px;
 
 $photo-viewer-indent-xl: 50px;
 $photo-viewer-indent-md: 35px;
 $photo-viewer-indent-xs: 20px;
-
 $padding-top-xl: calc(2 * #{$photo-viewer-indent-xl});
 $padding-top-md: calc(2 * #{$photo-viewer-indent-md});
 $padding-top-xs: calc(2 * #{$photo-viewer-indent-xs});
 
 $gradient-btn: linear-gradient(#ffffff, #ececec);
+$box-shadow: #0000003a;

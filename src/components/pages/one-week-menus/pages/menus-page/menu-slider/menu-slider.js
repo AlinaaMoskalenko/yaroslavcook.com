@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './menu-slider.module.scss';
 import Dots from './components/dots';
+
+import styles from './menu-slider.module.scss';
 
 const MenuSlider = ({ children, amountSlice, ...rest }) => {
   let dots = [];

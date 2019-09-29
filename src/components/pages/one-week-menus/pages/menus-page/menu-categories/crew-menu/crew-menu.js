@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import menu from '../../../data/menus.json';
 
-// import PageContainer from '../../../../../../common/page-container';
 import MenuSlider from '../../menu-slider';
-import image from '../../../img/crew.jpg';
+import ContentContainer from '../components/content-container/content-container.js';
+import ContentTitle from '../components/content-title';
+import Content from '../components/content/content.js';
 
+import image from '../../../img/crew.jpg';
 import classNames from 'classnames/bind';
 import styles from './crew-menu.module.scss';
+import commonStyles from '../components/common-styles.module.scss';
 
-class CrewMenu extends Component {
+export default class CrewMenu extends Component {
   links = [
     { url: '/one-week-menu', title: 'All menus' },
     { url: '#', title: 'Crew menu', active: true }
@@ -26,64 +29,71 @@ class CrewMenu extends Component {
   }
   
   render () {
+    const { sliceId, prevId, onArrowClick, ...rest } = this.props;
     const cx = classNames.bind(styles);
-    const { sliceId, prevId, ...rest } = this.props;
 
     const slices = menu["crewMenu"].length;
 
     const items = menu['crewMenu'].map(({ lunch, dinner, pastry }, idx) => {
-      const classes = cx(
-        'menuContainer',
-        'menuDay',
-        { 'menuDayVisible': idx === sliceId,
-          'animation': idx === sliceId && prevId !== null }
-      );
+      const containerClasess = cx('container', {'containerVisible': idx === sliceId });
+      const classes = cx({ 'menuDayAnimation': idx === sliceId && prevId !== null });
 
       if (idx === slices - 1) {
+        const menuContent = pastry.map((item, idx) => ( <p key={idx}>{ item }</p> ));
+
         return (
-          <div key={idx} className={classes}>
-            <h1 className={styles.mainTitle}>Pastry</h1>
-            <div className={styles.simpleContent}>
-              { pastry.map((item, idx) => ( <p key={idx}>{ item }</p> )) }
+          <ContentContainer key={idx}
+            className={`${containerClasess} ${styles.pastry}`}>
+            <div className={classes}>
+              <ContentTitle
+                title={'Pastry'}
+                slices={slices}
+                onArrowClick={onArrowClick} />
+
+              <Content content={menuContent} />
             </div>
-          </div>
+          </ContentContainer>
         );
       }
+      const menuContent = [
+        lunch.map((item, idx) => (<p key={idx}>{ item }</p>)),
+        dinner.map((item, idx) => (<p key={idx}>{ item }</p>))
+      ];
       
       return (
-        <div key={idx} className={classes}>
-          <h1 className={styles.mainTitle}>Day {idx + 1}</h1>
-          <div className={styles.content}>
-            <div className={styles.menu}>
-              <h1>Lunch</h1>
-              { lunch.map((item, idx) => (<p key={idx}>{ item }</p>)) }
-            </div>
-            <div className={styles.menu}>
-              <h1>Dinner</h1>
-              { dinner.map((item, idx) => (<p key={idx}>{ item }</p>)) }
-            </div>
+        <ContentContainer key={idx} className={containerClasess}>
+          <div className={classes}>
+            <ContentTitle
+              title={`Day ${idx + 1}`}
+              slices={slices}
+              onArrowClick={onArrowClick} />
+
+            <Content type="EXTENDED" content={menuContent} />
           </div>
-        </div>
+        </ContentContainer>
       );
     });
 
     return (
-      <>
-        {/* <PageContainer image={image} type="MENU" position="CENTER"> */}
-          <MenuSlider {...rest}
-            sliceId={sliceId}
-            amountSlice={slices}>
-            { items }
-          </MenuSlider>
-        {/* </PageContainer> */}
-      </>
+      <div className={commonStyles.pageContainer}>
+        <MenuSlider {...rest}
+          sliceId={sliceId}
+          amountSlice={slices}>
+          { items }
+        </MenuSlider>
+      </div>
     );
   }
+
+  static defaultProps = {
+    onArrowClick: () => {},
+    onBackground: () => {}
+  };
+
+  static propTypes = {
+    sliceId: PropTypes.number.isRequired,
+    prevId: PropTypes.number,
+    onArrowClick: PropTypes.func,
+    onBackground: PropTypes.func
+  };
 }
-
-CrewMenu.propTypes = {
-  sliceId: PropTypes.number.isRequired,
-  prevId: PropTypes.number
-};
-
-export default CrewMenu;

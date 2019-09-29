@@ -1,0 +1,112 @@
+@import '../../../../../../../../styles/base-styles.scss';
+@import '../../../../../../../../typography/typography.scss';
+@import '../common-styles.module.scss';
+
+@mixin separator-bottom {
+  width: 50%;
+  height: initial;
+  top: initial;
+  right: initial;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  border-right: none;
+  border-bottom: 2px dashed $primary;
+}
+
+.primary {
+  &Change {
+    @include md {
+      display: flex;
+      flex-wrap: wrap;
+
+      & > p {
+        flex-basis: 50%;
+      }
+    }
+
+    @include sm {
+      display: block;
+    }
+  }
+
+  & >  p {
+    @include menu-content-p;
+  }
+}
+
+.extended {
+  display: flex;
+
+  @include sm {
+    flex-direction: column;
+  }
+
+  @include landscape-xs {
+    flex-direction: column;
+  }
+
+  .menu {
+    flex-basis: 50%;
+  
+    &:first-child {
+      position: relative;
+      padding-right: 30px;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 80%;
+        transform: translateY(-50%);
+        border-right: 2px dashed $primary;
+  
+        @include sm {
+          @include separator-bottom;
+        }
+  
+        @include landscape-xs {
+          @include separator-bottom;
+        }
+      }
+  
+      @include sm {
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+  
+      @include landscape-xs {
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+    }
+  
+    &:last-child {
+      padding-left: 30px;
+  
+      @include sm {
+        padding-left: 0;
+        padding-top: 20px;
+      }
+  
+      @include landscape-xs {
+        padding-left: 0;
+        padding-top: 20px;
+      }
+    }
+  
+    .blockTitle {
+      font-family: $font-stack-monotype;
+      margin-bottom: 15px;
+  
+      @include sm {
+        font-size: $font-size-large;
+      }
+    }
+
+    & > p {
+      @include menu-content-p;
+    }
+  }
+}

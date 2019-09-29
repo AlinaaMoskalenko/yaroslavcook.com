@@ -1,36 +1,18 @@
-@import '../../../../../../../styles/base-styles.scss';
+@import '../../../../../../../styles/base/mixins.scss';
 
-.menuContainer {
-  text-align: center;
-  max-width: 500px;
+.container {
   width: 500px;
-  margin: 0 auto;
 
-  @include xs {
+  @include lg {
     width: 100%;
     max-width: 500px;
   }
 
-  .mainTitle {
-    @include main-title-menu;
+  @include md {
+    max-width: 700px;
   }
 
-  .simpleContent {
-    @include md {
-      display: flex;
-      flex-wrap: wrap;
-
-      & > p {
-        flex-basis: 50%;
-      }
-    }
-
-    @include sm {
-      display: block;
-    }
-
-    & > p {
-      @include main-items-menu-p;
-    }
+  @include sm {
+    max-width: 400px;
   }
 }

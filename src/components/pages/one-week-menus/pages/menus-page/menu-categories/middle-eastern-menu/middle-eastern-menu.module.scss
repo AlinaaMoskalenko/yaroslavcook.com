@@ -1,123 +1,68 @@
-@import '../../../../../../../styles/base-styles.scss';
+@import '../../../../../../../styles/base/mixins.scss';
+@import '../../../../../../../typography/typography.scss';
+@import '../components/common-styles.module.scss';
 
-.middleEasternMenu {
-  background-position: center;
-  background-size: cover;
-  padding: 40px;
-  text-align: center;
+.container {
+  display: none;
+  width: 900px;
+  height: 590px;
+
+  &Visible {
+    display: block;
+  }
+
+  @include lg {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  @include md {
+    height: 610px;
+  }
 
   @include sm {
-    padding: 25px;
+    height: 822px;
+  }
+
+  @include xs {
+    height: 936px;
+  }
+
+  @include landscape {
+    height: 936px;
+  }
+
+  @include landscape-xs {
+    height: 975px;
   }
 
   .menuDay {
-    display: none;
-    opacity: 0;
+    &Animation {
+      animation: menu-on 1s;
+    }
 
-    &Visible {
-      display: flex;
-      flex-direction: column;
-      opacity: 1;
-      margin: 0 auto;
-      padding: 30px;
+    .course {
+      margin-bottom: 30px;
 
-      @include sm {
-        padding: 20px;
+      &:last-child {
+        margin-bottom: 0;
       }
-    }
 
-    background-color: $bg-menu;
-    color: $white;
-    text-align: center;
-    width: 900px;
-    height: 590px;
+      .courseTitle {
+        font-family: $font-stack-monotype;
+        margin-bottom: 10px;
 
-    @include lg {
-      width: 100%;
-      max-width: 900px;
-    }
-
-    @include md {
-      height: 610px;
-    }
-
-    @include sm {
-      height: 822px;
-    }
-
-    @include xs {
-      height: 936px;
-    }
-
-    @include landscape {
-      height: 936px;
-    }
-
-    .mainTitle {
-      @include main-title-menu;
-
-      & > i {
-        font-size: $font-size-x-larger;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        position: relative;
-
-        &:before {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+        @include sm {
+          font-size: $font-size-large;
         }
       }
-    }
 
-    .content {
-      display: flex;
-
-      @include sm {
-        flex-direction: column;
-      }
-
-      @include landscape-xs {
-        flex-direction: column;
-      }
-
-      .menu {
-        @include menu-item-block;
-
-        & > h1 {
-          margin-bottom: 10px;
-        }
-
-        .course {
-          margin-bottom: 30px;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          & > h1 {
-            font-family: $font-stack-monotype;
-            margin-bottom: 10px;
-
-            @include sm {
-              font-size: $font-size-large;
-            }
-          }
-
-          & > p {
-            @include main-items-menu-p;
-            margin-bottom: 10px;
-          } 
-        }
+      & > p {
+        @include menu-content-p;
+        margin-bottom: 10px;
       }
     }
   }
 }
 
-.animation {
-  animation: menu-on 1s;
-}
-
-@include menu-slider-animation;
+@include slider-animation;

@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import menu from '../../../data/menus.json';
 
 import MenuSlider from '../../menu-slider';
+import ContentContainer from '../components/content-container/content-container.js';
+import ContentTitle from '../components/content-title';
+import Content from '../components/content/content.js';
 
 import image from '../../../img/middle_eastern.jpg';
 import classNames from 'classnames/bind';
 import styles from './middle-eastern-menu.module.scss';
+import commonStyles from '../components/common-styles.module.scss';
 
 export default class MiddleEasternMenu extends Component { 
   links = [
@@ -25,17 +29,14 @@ export default class MiddleEasternMenu extends Component {
   }
   
   render () {
-    const { sliceId, prevId, height, onArrowClick, ...rest } = this.props;
+    const { sliceId, prevId, onArrowClick, ...rest } = this.props;
     const cx = classNames.bind(styles);
 
     const slices = menu['middleEastern'].length;
 
     const items = menu['middleEastern'].map(({ lunch, dinner }, idx) => {
-      const classes = cx(
-        'menuDay',
-        { 'menuDayVisible': idx === sliceId,
-          'animation': idx === sliceId && prevId !== null }
-      );
+      const containerClasess = cx('container', {'containerVisible': idx === sliceId });
+      const classes = cx('menuDay', { 'menuDayAnimation': idx === sliceId && prevId !== null });
 
       const menuCreator = ({ courses }) => {
         const { firstCourse, mainCourse, sideDishes } = courses;
@@ -43,68 +44,59 @@ export default class MiddleEasternMenu extends Component {
         return (
           <>
             <div className={styles.course}>
-              <h1>First course</h1>
+              <h1 className={styles.courseTitle}>First course</h1>
               { firstCourse.map((item, idx) => (<p key={idx}>{ item }</p>)) }
             </div>
     
             <div className={styles.course}>
-              <h1>Main course</h1>
+              <h1 className={styles.courseTitle}>Main course</h1>
               { mainCourse.map((item, idx) => (<p key={idx}>{ item }</p>)) }
             </div>
     
             <div className={styles.course}>
-              <h1>Side dishes</h1>
+              <h1 className={styles.courseTitle}>Side dishes</h1>
               { sideDishes.map((item, idx) => (<p key={idx}>{ item }</p>)) }
             </div>
           </>
         );
       };
 
+      const menuContent = [menuCreator(lunch), menuCreator(dinner)];
+
       return (
-        <div key={idx} className={classes}>
-          <h1 className={styles.mainTitle}>
-            <i className="fas fa-chevron-left"
-              onClick={() => onArrowClick(-1, slices)} />
+        <ContentContainer key={idx} className={containerClasess}>
+          <div className={classes}>
+            <ContentTitle
+              title={`Day ${idx + 1}`}
+              slices={slices}
+              onArrowClick={onArrowClick} />
 
-            Day {idx + 1}
-
-            <i className="fas fa-chevron-right"
-              onClick={() => onArrowClick(1, slices)} />
-          </h1>
-          <div className={styles.content}>
-            <div className={styles.menu}>
-              <h1>Lunch</h1>
-              { menuCreator(lunch) }
-            </div>
-            <div className={styles.menu}>
-              <h1>Dinner</h1>
-              { menuCreator(dinner) }
-            </div>
+            <Content type="EXTENDED" content={menuContent} />
           </div>
-        </div>
+        </ContentContainer>
       );
     });
 
     return (
-      <>
-        <div className={styles.middleEasternMenu}>
-            <MenuSlider {...rest}
-              sliceId={sliceId}
-              amountSlice={slices}>
-                { items }
-            </MenuSlider>
-        </div>
-      </>
+      <div className={commonStyles.pageContainer}>
+        <MenuSlider {...rest}
+          sliceId={sliceId}
+          amountSlice={slices}>
+            { items }
+        </MenuSlider>
+      </div>
     );
   }
 
   static defaultProps = {
-    onArrowClick: () => {}
+    onArrowClick: () => {},
+    onBackground: () => {}
   };
   
   static propTypes = {
     sliceId: PropTypes.number.isRequired,
     prevId: PropTypes.number,
-    onArrowClick: PropTypes.func
+    onArrowClick: PropTypes.func,
+    onBackground: PropTypes.func
   };
 }

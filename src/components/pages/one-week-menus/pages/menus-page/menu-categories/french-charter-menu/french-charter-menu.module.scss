@@ -1,37 +1,27 @@
-@import '../../../../../../../styles/base-styles.scss';
+@import '../../../../../../../styles/base/mixins.scss';
+@import '../components/common-styles.module.scss';
 
-.menuContainer {
-  text-align: center;
-  max-width: 500px;
-  width: 500px;
-  margin: 0 auto;
-
-  @include xs {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .mainTitle {
-    @include main-title-menu;
-  }
-
-  .content > p {
-    @include main-items-menu-p;
-  }
-}
-
-.menuDay {
+.container {
   display: none;
-  opacity: 0;
+  width: 600px;
+  min-height: 285px;
 
   &Visible {
     display: block;
-    opacity: 1;
+  }
+
+  @include lg {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  @include xs {
+    min-height: 316px;
+  }
+
+  .menuDayAnimation {
+    animation: menu-on 1s;
   }
 }
 
-.animation {
-  animation: menu-on 1s;
-}
-
-@include menu-slider-animation;
+@include slider-animation;

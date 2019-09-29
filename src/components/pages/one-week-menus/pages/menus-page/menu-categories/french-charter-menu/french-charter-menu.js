@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import menu from '../../../data/menus.json';
 
-// import PageContainer from '../../../../../../common/page-container';
 import MenuSlider from '../../menu-slider';
-// import Breadcrumbs from '../../../../../../common/breadcrumbs';
-import image from '../../../img/french_dinner.jpg';
+import ContentContainer from '../components/content-container/content-container.js';
+import ContentTitle from '../components/content-title';
+import Content from '../components/content/content.js';
 
+import image from '../../../img/french_dinner.jpg';
 import classNames from 'classnames/bind';
 import styles from './french-charter-menu.module.scss';
+import commonStyles from '../components/common-styles.module.scss';
 
 export default class FrenchCharterMenu extends Component {
   links = [
@@ -27,47 +29,53 @@ export default class FrenchCharterMenu extends Component {
   }
 
   render () {
-    const{ sliceId, prevId, ...rest } = this.props;
+    const{ sliceId, prevId, onArrowClick, ...rest } = this.props;
     const cx = classNames.bind(styles);
-
-    
 
     const slices = menu['frenchCharter'].length;
 
     const items = menu['frenchCharter'].map(({ dinner }, idx) => {
-      const classes = cx(
-        'menuContainer',
-        'menuDay',
-        { 'menuDayVisible': idx === sliceId,
-          'animation': idx === sliceId && prevId !== null }
-      );
+      const containerClasess = cx('container', {'containerVisible': idx === sliceId });
+      const classes = cx({ 'menuDayAnimation': idx === sliceId && prevId !== null });
+
+      const menuContent = dinner.map((item, idx) => ( 
+        <p key={idx}>{ item }</p>
+      ));
 
       return (
-        <div key={idx} className={classes}>
-          <h1 className={styles.mainTitle}>Day {idx + 1}</h1>
-          <div className={styles.content}>
-              { dinner.map((item, idx) => ( <p key={idx}>{ item }</p> )) }
+        <ContentContainer key={idx} className={containerClasess}>
+          <div className={classes}>
+            <ContentTitle
+              title={`Day ${idx + 1}`}
+              slices={slices}
+              onArrowClick={onArrowClick} />
+
+            <Content content={menuContent} />
           </div>
-        </div>
+        </ContentContainer>
       );
     });
 
     return (
-      <>
-        {/* <Breadcrumbs items={links} /> */}
-        {/* <PageContainer image={image} type="MENU" position="CENTER"> */}
-          <MenuSlider {...rest}
-            sliceId={sliceId}
-            amountSlice={slices}>
-              { items }
-          </MenuSlider>
-        {/* </PageContainer> */}
-      </>
+      <div className={commonStyles.pageContainer}>
+        <MenuSlider {...rest}
+          sliceId={sliceId}
+          amountSlice={slices}>
+            { items }
+        </MenuSlider>
+      </div>
     );
   }
 
+  static defaultProps = {
+    onArrowClick: () => {},
+    onBackground: () => {}
+  };
+
   static propTypes = {
     sliceId: PropTypes.number.isRequired,
-    prevId: PropTypes.number
+    prevId: PropTypes.number,
+    onArrowClick: PropTypes.func,
+    onBackground: PropTypes.func
   };
 }

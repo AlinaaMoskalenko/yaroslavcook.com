@@ -108,7 +108,7 @@ class App extends Component {
               setBreadcrumbsHeight={setBreadcrumbsHeight} /> }
                     
 
-          <main className={cx('main', { 'mainHidden': isOpened })}
+          <main className={cx('main', 'mainBackground', { 'mainHidden': isOpened })}
             style={{'minHeight': `${mainHeight - breadcrumbsHeight}px`,
             'backgroundImage': `url(${ backgroundImage })`
             }}>

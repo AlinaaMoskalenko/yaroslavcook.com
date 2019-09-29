@@ -1,51 +1,45 @@
-@import '../../../../../../../styles/base-styles.scss';
+@import '../../../../../../../styles/base/mixins.scss';
+@import '../components/common-styles.module.scss';
 
-.menuContainer {
-  text-align: center;
+.container {
+  display: none;
   width: 800px;
+  height: 441px;
 
-  @include md {
+  &Visible {
+    display: block;
+  }
+
+  @include lg {
     width: 100%;
     max-width: 800px;
   }
 
-  .mainTitle {
-    @include main-title-menu;
+  @include md {
+    height: 481px;
   }
 
-  .content {
-    display: flex;
-
-    @include sm {
-      flex-direction: column;
-    }
-
-    @include landscape-xs {
-      flex-direction: column;
-    }
-
-    .menu {
-      @include menu-item-block;
-    }
+  @include sm {
+    height: 587px;
   }
 
-  .simpleContent > p {
-    @include main-items-menu-p;
+  @include xs {
+    height: 683px;
+  }
+
+  @include landscape {
+    height: 683px;
+  }
+
+  .menuDayAnimation {
+    animation: menu-on 1s;
   }
 }
 
-.menuDay {
-  display: none;
-  opacity: 0;
-
-  &Visible {
-    display: block;
-    opacity: 1;
+.pastry {
+  @include md {
+    height: auto;
   }
 }
 
-.animation {
-  animation: menu-on 1s;
-}
-
-@include menu-slider-animation;
+@include slider-animation;

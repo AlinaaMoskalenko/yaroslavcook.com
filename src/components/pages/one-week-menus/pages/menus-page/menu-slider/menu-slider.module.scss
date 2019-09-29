@@ -1,23 +1,17 @@
 @import '../../../../../../typography/typography.scss';
-@import '../../../../../../styles/base-styles.scss';
+@import '../../../../../../styles/base/mixins.scss';
+@import '../../../../../../styles/base/colors.scss';
 
 .menuSlider {
   position: relative;
-  // padding: 30px 40px;
-
-  @include sm {
-    // padding-left: 20px;
-    // padding-right: 20px;
-  }
 
   .arrowToggles {
     position: absolute;
     left: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    @include flex-justify-between;
     font-size: $font-size-x-larger;
-    color: $dark-gray;
+    color: $darkGray;
     padding: 0 60px;
     padding-top: 10px;
 
@@ -33,21 +27,18 @@
       height: 25px;
 
       &:before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include position-absolute-center;
       }
     }
   }
-}
 
-.slideDots {
-  @include flex-center-center;
-  margin-top: 20px;
-  height: 20px;
-
-  @include sm {
-    margin-top: 10px;
+  .slideDots {
+    @include flex-center-center;
+    margin-top: 20px;
+    height: 20px;
+  
+    @include sm {
+      margin-top: 10px;
+    }
   }
 }

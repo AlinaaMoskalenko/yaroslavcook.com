@@ -1,0 +1,12 @@
+@import '../../../../../../../../styles/base/colors.scss';
+@import '../../../../../../../../styles/base/mixins.scss';
+
+.contentContainer {
+  background-color: $whiteOpacity80;
+  margin: 0 auto;
+  padding: 30px;
+
+  @include sm {
+    padding: 20px;
+  }
+}

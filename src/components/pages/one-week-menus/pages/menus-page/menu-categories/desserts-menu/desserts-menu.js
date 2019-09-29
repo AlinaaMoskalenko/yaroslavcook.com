@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import menu from '../../../data/menus.json';
 
-// import PageContainer from '../../../../../../common/page-container';
 import MenuSlider from '../../menu-slider';
-import image from '../../../img/dessert.jpg';
+import ContentContainer from '../components/content-container/content-container.js';
+import ContentTitle from '../components/content-title';
+import Content from '../components/content/content.js';
 
+import image from '../../../img/dessert.jpg';
 import styles from './desserts-menu.module.scss';
+import commonStyles from '../components/common-styles.module.scss';
 
 export default class DessertsMenu extends Component {
   links = [
@@ -24,19 +28,27 @@ export default class DessertsMenu extends Component {
   }
 
   render () {
+    const menuContent = menu['desserts'].map((item, idx) => (
+      <p key={idx}>{item}</p>
+    ));
+
     return (
-      <>
-        {/* <PageContainer image={image} type="MENU" position="CENTER"> */}
-          <MenuSlider>
-            <div className={styles.menuContainer}>
-              <h1 className={styles.mainTitle}>Desserts</h1>
-              <div className={styles.simpleContent}>
-                { menu['desserts'].map((item, idx) => ( <p key={idx}>{item}</p> )) }
-              </div>
-            </div>
-          </MenuSlider>
-        {/* </PageContainer> */}
-      </>
+      <div className={commonStyles.pageContainer}>
+        <MenuSlider>
+          <ContentContainer className={styles.container}>
+            <ContentTitle title={'Desserts'} type="SIMPLE" />
+            <Content content={menuContent} change />
+          </ContentContainer>
+        </MenuSlider>
+      </div>
     );
   }
-};
+
+  static defaultProps = {
+    onBackground: () => {}
+  };
+
+  static propTypes = {
+    onBackground: PropTypes.func
+  };
+}

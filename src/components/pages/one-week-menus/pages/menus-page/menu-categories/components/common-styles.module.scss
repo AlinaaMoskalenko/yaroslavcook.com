@@ -1,0 +1,34 @@
+@import '../../../../../../../styles/base/mixins.scss';
+
+.pageContainer {
+  padding: 40px;
+  text-align: center;
+
+  @include sm {
+    padding: 25px;
+  }
+}
+
+@mixin slider-animation {
+  @keyframes menu-on {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin menu-content-p {
+  font-size: $font-size-larger;
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include sm {
+    font-size: $font-size-primary;
+  }
+}
